@@ -1593,5 +1593,18 @@ let checkCrumb = setInterval(function() {
     }
 }, 250); // Check every 250 milliseconds</script>
 <!-- end Simple Custom CSS and JS -->
-    </body>
+    
+<script>
+    // Hide 'Download' and 'Launch App' buttons if loaded inside the OpenPublisher App
+    if (window.location.search.includes('in_app=true') || window !== window.top) {
+        document.addEventListener("DOMContentLoaded", function() {
+            var downloadBtn = document.getElementById('download-header-btn');
+            var launchBtnContainer = document.querySelector('.opub-dropdown-container');
+            
+            if (downloadBtn) downloadBtn.style.display = 'none';
+            if (launchBtnContainer) launchBtnContainer.style.display = 'none';
+        });
+    }
+</script>
+</body>
 </html>
