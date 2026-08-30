@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+	<html lang="en-US">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Log In &lsaquo; Open Publisher &#8212; WordPress</title>
+	<link rel='stylesheet' id='dashicons-css' href='wp-includes/css/dashicons.min.css?ver=7.1' media='all'>
+<link rel='stylesheet' id='buttons-css' href='wp-includes/css/buttons.min.css?ver=7.1' media='all'>
+<link rel='stylesheet' id='forms-css' href='wp-admin/css/forms.min.css?ver=7.1' media='all'>
+<link rel='stylesheet' id='l10n-css' href='wp-admin/css/l10n.min.css?ver=7.1' media='all'>
+<link rel='stylesheet' id='wp-base-styles-css' href='wp-includes/css/dist/base-styles/admin-schemes.min.css?ver=7.1' media='all'>
+<link rel='stylesheet' id='wp-tooltip-css' href='wp-admin/css/wp-tooltip.min.css?ver=7.1' media='all'>
+<link rel='stylesheet' id='login-css' href='wp-admin/css/login.min.css?ver=7.1' media='all'>
+<link rel="shortcut icon" href="wp-content/uploads/2026/08/web-app-manifest-512x512-1.png">
+<link rel="apple-touch-icon" href="wp-content/uploads/2026/08/web-app-manifest-512x512-1.png">
+	<meta name='referrer' content='strict-origin-when-cross-origin'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		</head>
+	<body class="login no-js login-action-login wp-core-ui admin-color-modern locale-en-us">
+	<script>
+document.body.className = document.body.className.replace('no-js','js');
+</script>
+
+				<h1 class="screen-reader-text">Log In</h1>
+			<div id="login">
+		<h1 role="presentation" class="wp-login-logo"><a href="https://wordpress.org/">Powered by WordPress</a></h1>
+	
+		<form name="loginform" id="loginform" action="http://acr.floydcraft.co.uk/openpublisher/wp-login.php" method="post">
+			<p>
+				<label for="user_login">Username or Email Address</label>
+				<input type="text" name="log" id="user_login" class="input ltr" value="" size="20" autocapitalize="off" autocomplete="username" required="required">
+			</p>
+
+			<div class="user-pass-wrap">
+				<label for="user_pass">Password</label>
+				<div class="wp-pwd">
+					<input type="password" name="pwd" id="user_pass" class="input password-input ltr" value="" size="20" autocomplete="current-password" spellcheck="false" required="required">
+					<button type="button" class="button button-secondary wp-hide-pw hide-if-no-js" data-toggle="0" aria-label="Show password">
+						<span class="dashicons dashicons-visibility" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+									<p class="forgetmenot">
+				<input name="rememberme" type="checkbox" id="rememberme" value="forever">
+				<label for="rememberme">Remember Me</label>
+				<span class="wp-tooltip wp-is-toggletip">
+				<button aria-haspopup="dialog" class="wp-tooltip__toggle" popovertarget="rememberme-help-toggletip" type="button" aria-label="Help"><span class="dashicons dashicons-editor-help" aria-hidden="true"></span></button>
+				<span popover="auto" id="rememberme-help-toggletip" class="wp-tooltip__bubble" role="dialog" aria-label="Help" tabindex="-1" autofocus=""><span id="rememberme-help-toggletip-text" class="wp-tooltip__text">Selecting &quot;Remember Me&quot; increases the length of time until you&#8217;re asked to log in again on this device. To keep your account secure, use this option only on your personal devices.</span><button type="button" class="wp-tooltip__close" popovertarget="rememberme-help-toggletip" popovertargetaction="hide" aria-label="Close"><span class="dashicons dashicons-no-alt" aria-hidden="true"></span></button></span></span>			</p>
+			<p class="submit">
+				<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Log In">
+									<input type="hidden" name="redirect_to" value="http://acr.floydcraft.co.uk/openpublisher/wp-admin/">
+									<input type="hidden" name="testcookie" value="1">
+			</p>
+		</form>
+
+					<p id="nav">
+				<a class="wp-login-lost-password" href="http://acr.floydcraft.co.uk/openpublisher/wp-login.php?action=lostpassword">Lost your password?</a>			</p>
+			<script>
+function wp_attempt_focus() {setTimeout( function() {try {d = document.getElementById( "user_login" );d.focus(); d.select();} catch( er ) {}}, 200);}
+wp_attempt_focus();
+if ( typeof wpOnload === 'function' ) { wpOnload() }
+</script>
+		<p id="backtoblog">
+			<a href="index.htm">&larr; Go to Open Publisher</a>		</p>
+			</div>
+		
+	<script id="clipboard-js" src="wp-includes/js/clipboard.min.js?ver=2.0.11"></script>
+<script id="jquery-core-js" src="wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="zxcvbn-async-js-extra">
+var _zxcvbnSettings = {"src":"http://acr.floydcraft.co.uk/openpublisher/wp-includes/js/zxcvbn.min.js"};
+//# sourceURL=zxcvbn-async-js-extra
+</script>
+<script id="zxcvbn-async-js" src="wp-includes/js/zxcvbn-async.min.js?ver=1.0"></script>
+<script id="wp-hooks-js" src="wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="password-strength-meter-js-extra">
+var pwsL10n = {"unknown":"Password strength unknown","short":"Very weak","bad":"Weak","good":"Medium","strong":"Strong","mismatch":"Mismatch"};
+//# sourceURL=password-strength-meter-js-extra
+</script>
+<script id="password-strength-meter-js" src="wp-admin/js/password-strength-meter.min.js?ver=7.1"></script>
+<script id="underscore-js" src="wp-includes/js/underscore.min.js?ver=1.13.8"></script>
+<script id="wp-util-js-extra">
+var _wpUtilSettings = {"ajax":{"url":"/openpublisher/wp-admin/admin-ajax.php"}};
+//# sourceURL=wp-util-js-extra
+</script>
+<script id="wp-util-js" src="wp-includes/js/wp-util.min.js?ver=7.1"></script>
+<script id="wp-dom-ready-js" src="wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23"></script>
+<script id="wp-a11y-js" src="wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d"></script>
+<script id="user-profile-js-extra">
+var userProfileL10n = {"user_id":"0","nonce":"47b07b7448"};
+//# sourceURL=user-profile-js-extra
+</script>
+<script id="user-profile-js" src="wp-admin/js/user-profile.min.js?ver=7.1"></script>
+<script id="wp-tooltip-js" src="wp-includes/js/wp-tooltip.js?ver=7.1"></script>
+	</body>
+	</html>
+	

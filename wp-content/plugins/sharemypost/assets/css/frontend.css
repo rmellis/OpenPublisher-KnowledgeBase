@@ -1,0 +1,501 @@
+/* --- Root Variables & Brand Colors --- */
+:root {
+--sharemypost-facebook: #0866ff;
+--sharemypost-twitter: #000000;
+--sharemypost-linkedin: #0A66C2;
+--sharemypost-pinterest: #E60023;
+--sharemypost-reddit: #FF4500;
+--sharemypost-telegram: #0088CC;
+--sharemypost-whatsapp: #1ec25a;
+--sharemypost-email: #4A90E2;
+--sharemypost-print: #666666;
+--sharemypost-mastodon: #6364FF;
+--sharemypost-bluesky: #1185FE;
+--sharemypost-threads: #000000;
+--sharemypost-chatgpt: #10A37F;
+--sharemypost-perplexity: #8B5CF6;
+--sharemypost-messenger: #0084FF;
+--sharemypost-flipboard: #E51937;
+--sharemypost-hackernews: #FF6600;
+--sharemypost-snapchat: #FFFC00;
+--sharemypost-wechat: #7BB32E;
+--sharemypost-line: #00B900;
+--sharemypost-mix: #FFA500;
+--sharemypost-pocket: #EF4056;
+--sharemypost-sms: #0084FF;
+--sharemypost-tumblr: #36465D;
+--sharemypost-xing: #126567;
+--sharemypost-vk: #4680C2;
+--sharemypost-buffer: #323B43;
+--sharemypost-yummly: #E6771D;
+--sharemypost-nextdoor: #60ADA4;
+--sharemypost-gab: #21B581;
+--sharemypost-claude: #D97757;
+--sharemypost-google: #4285F4;
+--sharemypost-gemini: #1A73E8;
+--sharemypost-grok: #000000;
+}
+
+/* --- Main Layout --- */
+.sharemypost-share-bar {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 16px;
+transition: all 0.2s ease;
+}
+
+/* Inline alignments */
+.sharemypost-share-bar.sharemypost-inline-left { justify-content: flex-start; }
+.sharemypost-share-bar.sharemypost-inline-center { justify-content: center; }
+.sharemypost-share-bar.sharemypost-inline-right { justify-content: flex-end; }
+
+.sharemypost-button-group {
+display: flex;
+flex-wrap: wrap;
+gap: var(--sharemypost-button-gap, 10px);
+align-items: center;
+width: 100%;
+}
+
+/* --- Button Base Styles --- */
+.sharemypost-share-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+padding: var(--sharemypost-button-padding, 10px 16px);
+border: 2px solid transparent;
+text-decoration: none;
+color: #fff;
+background: var(--sharemypost-button-color, #1f75e1);
+transition: all 0.2s ease;
+font-size: var(--sharemypost-button-font-size, 13px);
+font-weight: 600;
+white-space: nowrap;
+overflow: visible;
+text-overflow: ellipsis;
+max-width: 100%;
+position: relative;
+cursor: pointer;
+box-sizing: content-box;
+}
+
+.sharemypost-share-button:hover {
+background: var(--sharemypost-button-hover, #0d5aa6);
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sharemypost-share-button:active {
+transform: translateY(0);
+}
+/* Existing Shapes */
+.sharemypost-shape-square .sharemypost-share-button { border-radius: 0; }
+.sharemypost-shape-rounded .sharemypost-share-button { border-radius: 6px; }
+.sharemypost-shape-circle .sharemypost-share-button {
+border-radius: 50%;
+width: var(--sharemypost-button-size, 40px);
+height: var(--sharemypost-button-size, 40px);
+padding: 0;
+}
+.sharemypost-shape-circle.sharemypost-size-custom .sharemypost-share-button {
+width: var(--sharemypost-button-size, auto);
+height: var(--sharemypost-button-size, auto);
+}
+
+/* 3. Drop: Teardrop shape using uneven border-radius */
+.sharemypost-shape-drop .sharemypost-share-button {
+width: var(--sharemypost-button-size, 40px);
+height: var(--sharemypost-button-size, 40px);
+border-radius: 50% 50% 0 50%;
+transform: rotate(45deg);
+position: relative;
+}
+.sharemypost-shape-drop .sharemypost-share-button i,
+.sharemypost-shape-drop .sharemypost-share-button svg {
+transform: rotate(-45deg); /* Counter-rotate icon */
+}
+.sharemypost-shape-circle.sharemypost-size-small .sharemypost-share-button { width: 32px; height: 32px; }
+.sharemypost-shape-circle.sharemypost-size-large .sharemypost-share-button { width: 48px; height: 48px; }
+
+.sharemypost-shape-pill .sharemypost-share-button {
+border-radius: 999px;
+padding: 8px 24px;
+}
+
+.sharemypost-shape-pill.sharemypost-labels-icon_only .sharemypost-share-button {
+padding: 10px 28px;
+width: auto;
+height: 40px;
+}
+.sharemypost-shape-pill.sharemypost-labels-icon_only.sharemypost-size-small .sharemypost-share-button {
+padding: 6px 22px;
+width: auto;
+height: 32px;
+}
+.sharemypost-shape-pill.sharemypost-labels-icon_only.sharemypost-size-large .sharemypost-share-button {
+padding: 12px 34px;
+width: auto;
+height: 48px;
+}
+
+/* Button Styles: Filled, Outline, Minimal */
+.sharemypost-style-filled .sharemypost-share-button {
+background: var(--sharemypost-button-color, #1f75e1);
+color: #fff;
+}
+
+.sharemypost-style-outline .sharemypost-share-button {
+background: transparent;
+color: var(--sharemypost-button-color, #1f75e1);
+border: 2px solid var(--sharemypost-button-color, #1f75e1);
+}
+
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-universal:hover {
+background: var(--sharemypost-universal-color, var(--sharemypost-button-color));
+}
+
+.sharemypost-style-minimal .sharemypost-share-button {
+background: transparent;
+color: var(--sharemypost-button-color, #1f75e1);
+border: none;
+box-shadow: none;
+padding: 8px 12px;
+}
+
+.sharemypost-style-minimal .sharemypost-share-button:hover {
+background: rgba(31, 117, 225, 0.1);
+text-decoration: underline;
+}
+
+/* Dashed: Dashed border */
+.sharemypost-style-dashed .sharemypost-share-button {
+background: transparent;
+color: var(--sharemypost-button-color, #1f75e1);
+border: 2px dashed var(--sharemypost-button-color, #1f75e1);
+}
+.sharemypost-style-dashed .sharemypost-share-button:hover {
+background: var(--sharemypost-button-color, #1f75e1);
+color: #fff;
+}
+
+/* Glass: Frosted glass effect */
+.sharemypost-style-glass .sharemypost-share-button {
+background: transparent;
+color: var(--sharemypost-button-color, #1f75e1);
+border: 1px solid rgba(255,255,255,0.3);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+position: relative;
+z-index: 1;
+}
+.sharemypost-style-glass .sharemypost-share-button::before {
+content: '';
+position: absolute;
+inset: 0;
+border-radius: inherit;
+background: currentColor;
+opacity: 0.08;
+z-index: -1;
+pointer-events: none;
+}
+.sharemypost-style-glass .sharemypost-share-button:hover::before {
+opacity: 0.15;
+}
+.sharemypost-style-glass .sharemypost-share-button:hover {
+border-color: rgba(255,255,255,0.5);
+}
+
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-universal {
+background: var(--sharemypost-universal-color, var(--sharemypost-button-color));
+color: #fff;
+}
+
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-universal,
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-universal {
+background: transparent;
+color: var(--sharemypost-universal-color, var(--sharemypost-button-color));
+border-color: var(--sharemypost-universal-color, var(--sharemypost-button-color));
+}
+
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-universal:hover,
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-universal:hover {
+background: var(--sharemypost-universal-color, var(--sharemypost-button-color));
+color: #fff;
+}
+
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-universal,
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-universal {
+color: var(--sharemypost-universal-color, var(--sharemypost-button-color));
+}
+
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-universal:hover {
+background: rgba(31, 117, 225, 0.1);
+}
+
+/* --- Sizes --- */
+.sharemypost-size-small .sharemypost-share-button { padding: 4px 6px; font-size: 12px; }
+.sharemypost-size-medium .sharemypost-share-button { padding: 8px 10px; font-size: 13px; }
+.sharemypost-size-large .sharemypost-share-button { padding: 10px 14px; font-size: 14px; }
+.sharemypost-size-custom .sharemypost-share-button { width: var(--sharemypost-button-size, auto); height: var(--sharemypost-button-size, auto); }
+
+/* --- Network Color Classes (Filled) --- */
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-facebook { background: var(--sharemypost-facebook); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-twitter { background: var(--sharemypost-twitter); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-linkedin { background: var(--sharemypost-linkedin); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-pinterest { background: var(--sharemypost-pinterest); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-reddit { background: var(--sharemypost-reddit); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-telegram { background: var(--sharemypost-telegram); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-whatsapp { background: var(--sharemypost-whatsapp); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-email { background: var(--sharemypost-email); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-print { background: var(--sharemypost-print); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-mastodon { background: var(--sharemypost-mastodon); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-bluesky { background: var(--sharemypost-bluesky); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-threads { background: var(--sharemypost-threads); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-chatgpt { background: var(--sharemypost-chatgpt); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-perplexity { background: var(--sharemypost-perplexity); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-messenger { background: var(--sharemypost-messenger); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-flipboard { background: var(--sharemypost-flipboard); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-hackernews { background: var(--sharemypost-hackernews); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-snapchat { background: var(--sharemypost-snapchat); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-wechat { background: var(--sharemypost-wechat); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-line { background: var(--sharemypost-line); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-mix { background: var(--sharemypost-mix); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-pocket { background: var(--sharemypost-pocket); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-sms { background: var(--sharemypost-sms); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-tumblr { background: var(--sharemypost-tumblr); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-xing { background: var(--sharemypost-xing); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-vk { background: var(--sharemypost-vk); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-buffer { background: var(--sharemypost-buffer); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-yummly { background: var(--sharemypost-yummly); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-nextdoor { background: var(--sharemypost-nextdoor); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-gab { background: var(--sharemypost-gab); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-claude { background: var(--sharemypost-claude); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-google { background: var(--sharemypost-google); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-gemini { background: var(--sharemypost-gemini); }
+.sharemypost-style-filled .sharemypost-share-button.sharemypost-network-grok { background: var(--sharemypost-grok); }
+
+/* --- Network Color Classes (Outline) --- */
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-facebook { border-color: var(--sharemypost-facebook); color: var(--sharemypost-facebook); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-twitter { border-color: var(--sharemypost-twitter); color: var(--sharemypost-twitter); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-linkedin { border-color: var(--sharemypost-linkedin); color: var(--sharemypost-linkedin); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-pinterest { border-color: var(--sharemypost-pinterest); color: var(--sharemypost-pinterest); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-reddit { border-color: var(--sharemypost-reddit); color: var(--sharemypost-reddit); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-telegram { border-color: var(--sharemypost-telegram); color: var(--sharemypost-telegram); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-whatsapp { border-color: var(--sharemypost-whatsapp); color: var(--sharemypost-whatsapp); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-email { border-color: var(--sharemypost-email); color: var(--sharemypost-email); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-print { border-color: var(--sharemypost-print); color: var(--sharemypost-print); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-mastodon { border-color: var(--sharemypost-mastodon); color: var(--sharemypost-mastodon); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-bluesky { border-color: var(--sharemypost-bluesky); color: var(--sharemypost-bluesky); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-threads { border-color: var(--sharemypost-threads); color: var(--sharemypost-threads); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-chatgpt { border-color: var(--sharemypost-chatgpt); color: var(--sharemypost-chatgpt); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-perplexity { border-color: var(--sharemypost-perplexity); color: var(--sharemypost-perplexity); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-messenger { border-color: var(--sharemypost-messenger); color: var(--sharemypost-messenger); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-flipboard { border-color: var(--sharemypost-flipboard); color: var(--sharemypost-flipboard); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-hackernews { border-color: var(--sharemypost-hackernews); color: var(--sharemypost-hackernews); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-snapchat { border-color: var(--sharemypost-snapchat); color: var(--sharemypost-snapchat); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-wechat { border-color: var(--sharemypost-wechat); color: var(--sharemypost-wechat); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-line { border-color: var(--sharemypost-line); color: var(--sharemypost-line); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-mix { border-color: var(--sharemypost-mix); color: var(--sharemypost-mix); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-pocket { border-color: var(--sharemypost-pocket); color: var(--sharemypost-pocket); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-sms { border-color: var(--sharemypost-sms); color: var(--sharemypost-sms); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-tumblr { border-color: var(--sharemypost-tumblr); color: var(--sharemypost-tumblr); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-xing { border-color: var(--sharemypost-xing); color: var(--sharemypost-xing); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-vk { border-color: var(--sharemypost-vk); color: var(--sharemypost-vk); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-buffer { border-color: var(--sharemypost-buffer); color: var(--sharemypost-buffer); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-yummly { border-color: var(--sharemypost-yummly); color: var(--sharemypost-yummly); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-nextdoor { border-color: var(--sharemypost-nextdoor); color: var(--sharemypost-nextdoor); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-gab { border-color: var(--sharemypost-gab); color: var(--sharemypost-gab); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-claude { border-color: var(--sharemypost-claude); color: var(--sharemypost-claude); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-google { border-color: var(--sharemypost-google); color: var(--sharemypost-google); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-gemini { border-color: var(--sharemypost-gemini); color: var(--sharemypost-gemini); }
+.sharemypost-style-outline .sharemypost-share-button.sharemypost-network-grok { border-color: var(--sharemypost-grok); color: var(--sharemypost-grok); }
+
+/* --- Network Color Classes (Dashed) --- */
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-facebook { border-color: var(--sharemypost-facebook); color: var(--sharemypost-facebook); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-twitter { border-color: var(--sharemypost-twitter); color: var(--sharemypost-twitter); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-linkedin { border-color: var(--sharemypost-linkedin); color: var(--sharemypost-linkedin); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-pinterest { border-color: var(--sharemypost-pinterest); color: var(--sharemypost-pinterest); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-reddit { border-color: var(--sharemypost-reddit); color: var(--sharemypost-reddit); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-telegram { border-color: var(--sharemypost-telegram); color: var(--sharemypost-telegram); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-whatsapp { border-color: var(--sharemypost-whatsapp); color: var(--sharemypost-whatsapp); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-email { border-color: var(--sharemypost-email); color: var(--sharemypost-email); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-print { border-color: var(--sharemypost-print); color: var(--sharemypost-print); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-mastodon { border-color: var(--sharemypost-mastodon); color: var(--sharemypost-mastodon); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-bluesky { border-color: var(--sharemypost-bluesky); color: var(--sharemypost-bluesky); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-threads { border-color: var(--sharemypost-threads); color: var(--sharemypost-threads); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-chatgpt { border-color: var(--sharemypost-chatgpt); color: var(--sharemypost-chatgpt); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-perplexity { border-color: var(--sharemypost-perplexity); color: var(--sharemypost-perplexity); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-messenger { border-color: var(--sharemypost-messenger); color: var(--sharemypost-messenger); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-flipboard { border-color: var(--sharemypost-flipboard); color: var(--sharemypost-flipboard); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-hackernews { border-color: var(--sharemypost-hackernews); color: var(--sharemypost-hackernews); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-snapchat { border-color: var(--sharemypost-snapchat); color: var(--sharemypost-snapchat); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-wechat { border-color: var(--sharemypost-wechat); color: var(--sharemypost-wechat); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-line { border-color: var(--sharemypost-line); color: var(--sharemypost-line); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-mix { border-color: var(--sharemypost-mix); color: var(--sharemypost-mix); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-pocket { border-color: var(--sharemypost-pocket); color: var(--sharemypost-pocket); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-sms { border-color: var(--sharemypost-sms); color: var(--sharemypost-sms); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-tumblr { border-color: var(--sharemypost-tumblr); color: var(--sharemypost-tumblr); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-xing { border-color: var(--sharemypost-xing); color: var(--sharemypost-xing); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-vk { border-color: var(--sharemypost-vk); color: var(--sharemypost-vk); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-buffer { border-color: var(--sharemypost-buffer); color: var(--sharemypost-buffer); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-yummly { border-color: var(--sharemypost-yummly); color: var(--sharemypost-yummly); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-nextdoor { border-color: var(--sharemypost-nextdoor); color: var(--sharemypost-nextdoor); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-gab { border-color: var(--sharemypost-gab); color: var(--sharemypost-gab); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-claude { border-color: var(--sharemypost-claude); color: var(--sharemypost-claude); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-google { border-color: var(--sharemypost-google); color: var(--sharemypost-google); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-gemini { border-color: var(--sharemypost-gemini); color: var(--sharemypost-gemini); }
+.sharemypost-style-dashed .sharemypost-share-button.sharemypost-network-grok { border-color: var(--sharemypost-grok); color: var(--sharemypost-grok); }
+
+/* --- Network Color Classes (Glass) --- */
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-facebook { color: var(--sharemypost-facebook); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-twitter { color: var(--sharemypost-twitter); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-linkedin { color: var(--sharemypost-linkedin); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-pinterest { color: var(--sharemypost-pinterest); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-reddit { color: var(--sharemypost-reddit); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-telegram { color: var(--sharemypost-telegram); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-whatsapp { color: var(--sharemypost-whatsapp); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-email { color: var(--sharemypost-email); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-print { color: var(--sharemypost-print); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-mastodon { color: var(--sharemypost-mastodon); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-bluesky { color: var(--sharemypost-bluesky); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-threads { color: var(--sharemypost-threads); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-chatgpt { color: var(--sharemypost-chatgpt); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-perplexity { color: var(--sharemypost-perplexity); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-messenger { color: var(--sharemypost-messenger); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-flipboard { color: var(--sharemypost-flipboard); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-hackernews { color: var(--sharemypost-hackernews); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-snapchat { color: var(--sharemypost-snapchat); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-wechat { color: var(--sharemypost-wechat); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-line { color: var(--sharemypost-line); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-mix { color: var(--sharemypost-mix); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-pocket { color: var(--sharemypost-pocket); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-sms { color: var(--sharemypost-sms); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-tumblr { color: var(--sharemypost-tumblr); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-xing { color: var(--sharemypost-xing); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-vk { color: var(--sharemypost-vk); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-buffer { color: var(--sharemypost-buffer); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-yummly { color: var(--sharemypost-yummly); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-nextdoor { color: var(--sharemypost-nextdoor); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-gab { color: var(--sharemypost-gab); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-claude { color: var(--sharemypost-claude); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-google { color: var(--sharemypost-google); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-gemini { color: var(--sharemypost-gemini); }
+.sharemypost-style-glass .sharemypost-share-button.sharemypost-network-grok { color: var(--sharemypost-grok); }
+
+/* --- Network Color Classes (Minimal) --- */
+.sharemypost-style-minimal .sharemypost-share-button[class*="sharemypost-network-"] { background: transparent; }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-facebook { color: var(--sharemypost-facebook); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-twitter { color: var(--sharemypost-twitter); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-linkedin { color: var(--sharemypost-linkedin); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-pinterest { color: var(--sharemypost-pinterest); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-reddit { color: var(--sharemypost-reddit); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-telegram { color: var(--sharemypost-telegram); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-whatsapp { color: var(--sharemypost-whatsapp); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-email { color: var(--sharemypost-email); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-print { color: var(--sharemypost-print); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-mastodon { color: var(--sharemypost-mastodon); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-bluesky { color: var(--sharemypost-bluesky); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-threads { color: var(--sharemypost-threads); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-chatgpt { color: var(--sharemypost-chatgpt); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-perplexity { color: var(--sharemypost-perplexity); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-messenger { color: var(--sharemypost-messenger); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-flipboard { color: var(--sharemypost-flipboard); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-hackernews { color: var(--sharemypost-hackernews); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-snapchat { color: var(--sharemypost-snapchat); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-wechat { color: var(--sharemypost-wechat); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-line { color: var(--sharemypost-line); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-mix { color: var(--sharemypost-mix); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-pocket { color: var(--sharemypost-pocket); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-sms { color: var(--sharemypost-sms); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-tumblr { color: var(--sharemypost-tumblr); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-xing { color: var(--sharemypost-xing); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-vk { color: var(--sharemypost-vk); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-buffer { color: var(--sharemypost-buffer); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-yummly { color: var(--sharemypost-yummly); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-nextdoor { color: var(--sharemypost-nextdoor); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-gab { color: var(--sharemypost-gab); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-claude { color: var(--sharemypost-claude); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-google { color: var(--sharemypost-google); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-gemini { color: var(--sharemypost-gemini); }
+.sharemypost-style-minimal .sharemypost-share-button.sharemypost-network-grok { color: var(--sharemypost-grok); }
+
+/* --- Icons & Icon Only --- */
+.sharemypost-button-icon {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: var(--sharemypost-button-icon-size, 20px);
+height: var(--sharemypost-button-icon-size, 20px);
+min-width: var(--sharemypost-button-icon-size, 20px);
+transition: opacity 0.18s ease;
+}
+
+.sharemypost-button-icon svg { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; }
+
+.sharemypost-labels-icon_only .sharemypost-share-button {
+padding: 10px;
+width: var(--sharemypost-button-size, 40px);
+height: var(--sharemypost-button-size, 40px);
+}
+
+.sharemypost-labels-icon_only.sharemypost-size-custom .sharemypost-share-button {
+width: var(--sharemypost-button-size, auto);
+height: var(--sharemypost-button-size, auto);
+}
+
+.sharemypost-labels-icon_only .sharemypost-button-label { display: none; }
+.sharemypost-labels-icon_only.sharemypost-size-small .sharemypost-share-button { width: 32px; height: 32px; padding: 6px; }
+.sharemypost-labels-icon_only.sharemypost-size-large .sharemypost-share-button { width: 48px; height: 48px; padding: 12px; }
+
+.sharemypost-label {
+font-size: 10px;
+color: #777;
+}
+
+/* --- Color Logic Override --- */
+.sharemypost-color-type-custom .sharemypost-share-button {
+background: var(--sharemypost-button-color, #1f75e1) !important;
+color: #fff !important;
+border-color: transparent !important;
+}
+
+.sharemypost-color-type-custom.sharemypost-style-outline .sharemypost-share-button {
+background: transparent !important;
+color: var(--sharemypost-button-color, #1f75e1) !important;
+border: 2px solid var(--sharemypost-button-color, #1f75e1) !important;
+}
+
+.sharemypost-color-type-custom.sharemypost-style-outline .sharemypost-share-button:hover {
+background: var(--sharemypost-button-color, #1f75e1) !important;
+color: #fff !important;
+}
+
+.sharemypost-color-type-custom.sharemypost-style-dashed .sharemypost-share-button {
+background: transparent !important;
+color: var(--sharemypost-button-color, #1f75e1) !important;
+border: 2px dashed var(--sharemypost-button-color, #1f75e1) !important;
+}
+
+.sharemypost-color-type-custom.sharemypost-style-dashed .sharemypost-share-button:hover {
+background: var(--sharemypost-button-color, #1f75e1) !important;
+color: #fff !important;
+}
+
+.sharemypost-color-type-custom.sharemypost-style-glass .sharemypost-share-button {
+background: transparent !important;
+color: var(--sharemypost-button-color, #1f75e1) !important;
+border: 1px solid rgba(255,255,255,0.3) !important;
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+}
+
+/* --- Responsive Layout --- */
+@media(max-width: 600px){
+.sharemypost-share-bar { padding: 10px; gap: 8px; }
+.sharemypost-share-button { font-size: 12px; padding: 6px 10px; gap: 4px; }
+.sharemypost-size-small .sharemypost-share-button { padding: 3px 5px; font-size: 11px; }
+.sharemypost-size-medium .sharemypost-share-button { padding: 6px 8px; font-size: 12px; }
+.sharemypost-size-large .sharemypost-share-button { padding: 8px 10px; font-size: 13px; }
+}
