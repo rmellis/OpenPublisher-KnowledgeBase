@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
+    
+    // --- SMART CLEAN URL REWRITER ---
+    var isStaticOffline = (window.location.protocol === 'file:');
+    var isOnlineWeb = window.location.protocol.startsWith('http');
+
+    if (isOnlineWeb) {
+        document.querySelectorAll('a').forEach(function(a) {
+            var href = a.getAttribute('href');
+            if (href && href.endsWith('index.html')) {
+                a.setAttribute('href', href.replace(/index\.html$/, ''));
+            } else if (href && href.endsWith('index.htm')) {
+                a.setAttribute('href', href.replace(/index\.htm$/, ''));
+            }
+        });
+    }
+
     var searchInputs = document.querySelectorAll('input[type="search"], input[name="s"]');
     
     var searchIndex = null;
@@ -18,34 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
-        
-    var isStaticOffline = (window.location.protocol === 'file:' || window.location.href.includes('index.htm') || window.location.hostname === 'localhost');
-    
-    // BRUTE FORCE LINK FIXER
-    // Scans the entire page and absolutely destroys any remaining live server links, 
-    // replacing them with purely relative offline routes.
-    var allLinks = document.querySelectorAll('a');
-    allLinks.forEach(function(link) {
-        var href = link.getAttribute('href');
-        if (href && href.includes('acr.floydcraft.co.uk/openpublisher')) {
-            var relativeTarget = href.split('acr.floydcraft.co.uk/openpublisher')[1];
-            
-            // Remove leading slash
-            if (relativeTarget.startsWith('/')) {
-                relativeTarget = relativeTarget.substring(1);
-            }
-            
-            var finalLink = basePath + relativeTarget;
-            
-            if (isStaticOffline && (finalLink === '' || finalLink.endsWith('/'))) {
-                finalLink += 'index.htm';
-            }
-            if (finalLink === '') {
-                finalLink = 'index.htm';
-            }
-            link.setAttribute('href', finalLink);
-        }
-    });
 
     if(searchInputs.length === 0) return;
     
@@ -194,9 +182,13 @@ document.addEventListener("DOMContentLoaded", function() {
                         if(relT.startsWith('/')) relT = relT.substring(1);
                         finalLink = basePath + relT;
                         if (isStaticOffline && (finalLink === '' || finalLink.endsWith('/'))) {
-                            finalLink += 'index.htm';
+                            finalLink += 'index.html';
                         }
-                        if(finalLink === '') finalLink = 'index.htm';
+                        if(finalLink === '') finalLink = 'index.html';
+                    }
+                    
+                    if (isOnlineWeb && finalLink.endsWith('index.html')) {
+                        finalLink = finalLink.replace(/index\.html$/, '');
                     }
                 
                     var a = document.createElement("a");
