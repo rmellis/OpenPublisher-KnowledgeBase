@@ -6,10 +6,14 @@
 	  	<meta charset="UTF-8">
 	  	<meta name="viewport" content="width=device-width">
 	  	<title>Open Publisher | Knowledge Base</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+
 <meta name='robots' content='index, max-snippet:-1, max-image-preview:large, max-video-preview:-1, follow'>
-<link rel="icon" href="wp-content/uploads/2026/08/web-app-manifest-512x512-1.png" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="wp-content/uploads/2026/08/web-app-manifest-512x512-1.png" media="(prefers-color-scheme: light)">
-<link rel="apple-touch-icon" href="wp-content/uploads/2026/08/web-app-manifest-512x512-1.png">
+
+
+
 <meta name="msapplication-TileImage" content="wp-content/uploads/2026/08/web-app-manifest-512x512-1.png">
 <meta name="google" content="nositelinkssearchbox"><link rel="canonical" href="index.html">
 <meta name="description" content="The official OpenPublisher Knowledge Base gives you detailed walkthroughs, screenshots,documentation, tips and all the information you need."><meta name="keywords" content="OpenPublisher Knowledge Base | Support &amp; Guides,OpenPublisher Support: Guides, Tutorials &amp; Help,Official Documentation &amp; Knowledge Base | OpenPublisher"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"#","name":"","url":"","logo":{"@type":"ImageObject","@id":"#logo","inLanguage":"en-US"},"description":"Open Publisher"}</script><meta property="og:url" content=""><meta property="og:site_name" content="Open Publisher"><meta property="og:locale" content="en_US"><meta property="og:type" content="website"><meta property="og:title" content="Open Publisher | Knowledge Base"><meta property="og:description" content="The official OpenPublisher Knowledge Base gives you detailed walkthroughs, screenshots,documentation, tips and all the information you need."><meta property="og:image" content="wp-content/uploads/2026/08/Copy_of_Copy_of_Copy_202608300200-scaled.jpeg"><meta property="og:image:height" content="1429"><meta property="og:image:width" content="2560"><meta name="twitter:card" content="summary"><meta name="twitter:locale" content="en_US"><meta name="twitter:title" content="Open Publisher | Knowledge Base"><meta name="twitter:description" content="The official OpenPublisher Knowledge Base gives you detailed walkthroughs, screenshots,documentation, tips and all the information you need."><meta name="twitter:url" content=""><meta name="twitter:image" content="wp-content/uploads/2026/08/Copy_of_Copy_of_Copy_202608300200-scaled.jpeg"><link rel='dns-prefetch' href='//fonts.googleapis.com'>
@@ -311,7 +315,7 @@ jQuery(document).ready(function($) {
         
         var $clone = $el.clone();
         $clone.find('i, svg, [class*="icon"], [class*="fa"], [class*="epkb"]').remove();
-        var text = $clone.text().trim().replace(/[\n\r]+/g, ' ').trim();
+        var text = $clone.text().trim().replace(/[\r]+/g, ' ').trim();
         
         return { text: text, html: iconHTML + text };
     }

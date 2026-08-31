@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var href = a.getAttribute('href');
             if (href && href.endsWith('index.html')) {
                 a.setAttribute('href', href.replace(/index\.html$/, ''));
-            } else if (href && href.endsWith('index.htm')) {
+            } else if (href && href.endsWith('index.html')) {
                 a.setAttribute('href', href.replace(/index\.htm$/, ''));
             }
         });
