@@ -84,6 +84,24 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel="https://api.w.org/" href="../../../wp-json/index.htm.json"><link rel="alternate" title="JSON" type="application/json" href="../../../wp-json/wp/v2/knowledgebase/2073.json"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc.php.xml?rsd">
 <meta name="generator" content="WordPress 7.1">
 <link rel='shortlink' href='index.htm?p=2073'>
+<!-- In-App Header Button Suppression (Zero Race Condition) -->
+<script type="text/javascript">
+(function() {
+    var inApp = false;
+    try {
+        if (window.location.search.includes('in_app=true') || window !== window.top || sessionStorage.getItem('in_app') === 'true') {
+            inApp = true;
+            sessionStorage.setItem('in_app', 'true');
+        }
+    } catch(e) { inApp = true; }
+    if (inApp) {
+        var style = document.createElement('style');
+        style.id = 'opub-in-app-style';
+        style.textContent = '#app-style-header button, .opub-dropdown-container, #download-header-btn { display: none !important; }';
+        (document.head || document.documentElement).appendChild(style);
+    }
+})();
+</script>
 <!-- start Simple Custom CSS and JS -->
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
@@ -1819,15 +1837,31 @@ let checkCrumb = setInterval(function() {
     
 <script>
     // Hide 'Download' and 'Launch App' buttons if loaded inside the OpenPublisher App
-    if (window.location.search.includes('in_app=true') || window !== window.top) {
-        document.addEventListener("DOMContentLoaded", function() {
-            var downloadBtn = document.getElementById('download-header-btn');
-            var launchBtnContainer = document.querySelector('.opub-dropdown-container');
-            
-            if (downloadBtn) downloadBtn.style.display = 'none';
-            if (launchBtnContainer) launchBtnContainer.style.display = 'none';
-        });
-    }
+    (function() {
+        var inApp = false;
+        try {
+            if (window.location.search.includes('in_app=true') || window !== window.top || sessionStorage.getItem('in_app') === 'true') {
+                inApp = true;
+                sessionStorage.setItem('in_app', 'true');
+            }
+        } catch(e) { inApp = true; }
+        if (inApp) {
+            function hideInAppButtons() {
+                var downloadBtn = document.getElementById('download-header-btn');
+                var launchBtnContainer = document.querySelector('.opub-dropdown-container');
+                var rawButtons = document.querySelectorAll('#app-style-header button');
+                if (downloadBtn) downloadBtn.style.display = 'none';
+                if (launchBtnContainer) launchBtnContainer.style.display = 'none';
+                rawButtons.forEach(function(b) { b.style.display = 'none'; });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener("DOMContentLoaded", hideInAppButtons);
+            } else {
+                hideInAppButtons();
+            }
+            window.addEventListener("load", hideInAppButtons);
+        }
+    })();
 </script>
 </body>
 </html>

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var href = a.getAttribute('href');
             if (href && href.endsWith('index.html')) {
                 a.setAttribute('href', href.replace(/index\.html$/, ''));
-            } else if (href && href.endsWith('index.html')) {
+            } else if (href && href.endsWith('index.htm')) {
                 a.setAttribute('href', href.replace(/index\.htm$/, ''));
             }
         });
@@ -29,10 +29,14 @@ document.addEventListener("DOMContentLoaded", function() {
             var wpContentIndex = src.indexOf('wp-content/');
             if (wpContentIndex !== -1) {
                 basePath = src.substring(0, wpContentIndex);
-                jsonUrl = basePath + 'wp-content/uploads/op-search-index.json';
                 break;
             }
         }
+    }
+    if (isStaticOffline) {
+        jsonUrl = basePath + 'wp-content/uploads/op-search-index.json';
+    } else {
+        jsonUrl = '/wp-content/uploads/op-search-index.json';
     }
 
     if(searchInputs.length === 0) return;
@@ -167,7 +171,11 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             
             var matches = searchIndex.filter(function(article) {
-                return article.title.toLowerCase().includes(query) || (article.excerpt && article.excerpt.toLowerCase().includes(query));
+                if(!article) return false;
+                var title = (article.title || '').toLowerCase();
+                var excerpt = (article.excerpt || '').toLowerCase();
+                var content = (article.content || '').toLowerCase();
+                return title.includes(query) || excerpt.includes(query) || content.includes(query);
             });
             
             resultsContainer.innerHTML = "";
@@ -175,22 +183,49 @@ document.addEventListener("DOMContentLoaded", function() {
                 resultsContainer.innerHTML = '<div style="padding: 15px 20px; color: #777; font-family: sans-serif;">No articles found matching "' + query + '".</div>';
             } else {
                 matches.forEach(function(match) {
-                    
-                    var finalLink = match.link;
+                    var rawLink = (match.link || match.url || '').trim();
+                    var finalLink = rawLink;
+
                     if (finalLink.includes('acr.floydcraft.co.uk/openpublisher')) {
                         var relT = finalLink.split('acr.floydcraft.co.uk/openpublisher')[1];
-                        if(relT.startsWith('/')) relT = relT.substring(1);
-                        finalLink = basePath + relT;
-                        if (isStaticOffline && (finalLink === '' || finalLink.endsWith('/'))) {
-                            finalLink += 'index.html';
-                        }
-                        if(finalLink === '') finalLink = 'index.html';
+                        if (relT.startsWith('/')) relT = relT.substring(1);
+                        finalLink = relT;
+                    } else if (finalLink.startsWith('http://') || finalLink.startsWith('https://')) {
+                        // External link
+                    } else {
+                        if (finalLink.startsWith('/')) finalLink = finalLink.substring(1);
                     }
+
+                    if (!finalLink.startsWith('http://') && !finalLink.startsWith('https://')) {
+                        if (isOnlineWeb) {
+                            finalLink = '/' + finalLink;
+                        } else {
+                            finalLink = basePath + finalLink;
+                        }
+                    }
+                    
+                    if (isStaticOffline && (finalLink === '' || finalLink.endsWith('/'))) {
+                        finalLink += 'index.html';
+                    }
+                    if (finalLink === '') finalLink = 'index.html';
                     
                     if (isOnlineWeb && finalLink.endsWith('index.html')) {
                         finalLink = finalLink.replace(/index\.html$/, '');
                     }
                 
+                    var isInApp = false;
+                    try {
+                        if (window.location.search.includes('in_app=true') || window !== window.top || sessionStorage.getItem('in_app') === 'true') {
+                            isInApp = true;
+                            sessionStorage.setItem('in_app', 'true');
+                        }
+                    } catch(e) {
+                        isInApp = true;
+                    }
+                    if (isInApp && !finalLink.includes('in_app=true') && !finalLink.startsWith('http://') && !finalLink.startsWith('https://')) {
+                        finalLink += (finalLink.includes('?') ? '&' : '?') + 'in_app=true';
+                    }
+
                     var a = document.createElement("a");
                     a.href = finalLink;
                     a.style.display = "block";

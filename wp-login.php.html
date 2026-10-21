@@ -103,15 +103,31 @@ var userProfileL10n = {"user_id":"0","nonce":"47b07b7448"};
 	
 <script>
     // Hide 'Download' and 'Launch App' buttons if loaded inside the OpenPublisher App
-    if (window.location.search.includes('in_app=true') || window !== window.top) {
-        document.addEventListener("DOMContentLoaded", function() {
-            var downloadBtn = document.getElementById('download-header-btn');
-            var launchBtnContainer = document.querySelector('.opub-dropdown-container');
-            
-            if (downloadBtn) downloadBtn.style.display = 'none';
-            if (launchBtnContainer) launchBtnContainer.style.display = 'none';
-        });
-    }
+    (function() {
+        var inApp = false;
+        try {
+            if (window.location.search.includes('in_app=true') || window !== window.top || sessionStorage.getItem('in_app') === 'true') {
+                inApp = true;
+                sessionStorage.setItem('in_app', 'true');
+            }
+        } catch(e) { inApp = true; }
+        if (inApp) {
+            function hideInAppButtons() {
+                var downloadBtn = document.getElementById('download-header-btn');
+                var launchBtnContainer = document.querySelector('.opub-dropdown-container');
+                var rawButtons = document.querySelectorAll('#app-style-header button');
+                if (downloadBtn) downloadBtn.style.display = 'none';
+                if (launchBtnContainer) launchBtnContainer.style.display = 'none';
+                rawButtons.forEach(function(b) { b.style.display = 'none'; });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener("DOMContentLoaded", hideInAppButtons);
+            } else {
+                hideInAppButtons();
+            }
+            window.addEventListener("load", hideInAppButtons);
+        }
+    })();
 </script>
 </body>
 	</html>
