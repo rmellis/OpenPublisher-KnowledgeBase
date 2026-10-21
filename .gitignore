@@ -1,0 +1,4 @@
+# Ignore release notes / update logs in repo
+update-log/
+update-logs/
+update-mds/
