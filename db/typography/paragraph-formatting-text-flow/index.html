@@ -84,8 +84,73 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel="https://api.w.org/" href="../../../wp-json/index.htm.json"><link rel="alternate" title="JSON" type="application/json" href="../../../wp-json/wp/v2/knowledgebase/746.json"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc.php.xml?rsd">
 <meta name="generator" content="WordPress 7.1">
 <link rel='shortlink' href='index.htm?p=746'>
-<!-- In-App Header Button Suppression (Zero Race Condition) -->
+<!-- OpenPublisher Unified Dynamic Header & In-App Engine -->
+<style id="opub-header-unified-css">
+/* 1. Instant Header Flash Suppression */
+header, #header, .site-header, .home-page-header, .middle-bar {
+    display: none !important;
+}
+
+/* 2. Responsive Top Bar Rules */
+@media (max-width: 768px) {
+    .opub-hide-mobile { display: none !important; }
+    #github-header-btn, #patreon-header-btn, #download-header-btn { padding: 6px 4px !important; }
+}
+@media (min-width: 769px) {
+    .opub-dropdown-container:hover .opub-dropdown-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+    .opub-dropdown-indicator { display: inline-block !important; }
+}
+.opub-dropdown-indicator { display: none; margin-left: 4px; font-size: 10px; transition: transform 0.2s ease; }
+.opub-dropdown-container:hover .opub-dropdown-indicator { transform: rotate(180deg); }
+
+/* 3. In-App Suppression: Always hide 'Launch App' and 'Download' when running inside the app iframe */
+html.opub-in-app #download-header-btn,
+html.opub-in-app .opub-dropdown-container,
+html.opub-in-app #app-style-header > button,
+html.opub-in-app #app-style-header button,
+body.opub-in-app #download-header-btn,
+body.opub-in-app .opub-dropdown-container,
+body.opub-in-app #app-style-header > button,
+body.opub-in-app #app-style-header button {
+    display: none !important;
+}
+
+/* 4. Clickable Category Crumb Styling */
+#dynamic-breadcrumbs a.kb-crumb-link {
+    color: inherit !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    position: relative !important;
+    display: inline-block !important;
+    transition: opacity 0.2s ease !important;
+}
+#dynamic-breadcrumbs a.kb-crumb-link::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    bottom: -3px !important;
+    width: 100% !important;
+    height: 1.5px !important;
+    background-color: #ffffff !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s ease !important;
+}
+#dynamic-breadcrumbs a.kb-crumb-link:hover {
+    opacity: 0.9 !important;
+    text-decoration: none !important;
+}
+#dynamic-breadcrumbs a.kb-crumb-link:hover::after {
+    opacity: 0.8 !important;
+}
+</style>
 <script type="text/javascript">
+/* Instant In-App Tagging */
 (function() {
     var inApp = false;
     try {
@@ -95,180 +160,22 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         }
     } catch(e) { inApp = true; }
     if (inApp) {
-        var style = document.createElement('style');
-        style.id = 'opub-in-app-style';
-        style.textContent = '#app-style-header button, .opub-dropdown-container, #download-header-btn { display: none !important; }';
-        (document.head || document.documentElement).appendChild(style);
+        document.documentElement.classList.add('opub-in-app');
     }
 })();
-</script>
-<!-- start Simple Custom CSS and JS -->
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-    var header = document.getElementById("app-style-header");
-    if(header && !document.getElementById("github-header-btn")) {
-        var launchBtn = header.querySelector("button");
-        if(launchBtn) {
-            // 1. Inject responsive CSS
-            var style = document.createElement("style");
-            style.innerHTML = `
-                @media (max-width: 768px) {
-                    .opub-hide-mobile { display: none !important; }
-                    #github-header-btn, #patreon-header-btn, #download-header-btn { padding: 6px 4px !important; }
-                }
-                @media (min-width: 769px) {
-                    .opub-dropdown-container:hover .opub-dropdown-menu {
-                        opacity: 1 !important;
-                        visibility: visible !important;
-                        transform: translateY(0) !important;
-                    }
-                    .opub-dropdown-indicator { display: inline-block !important; }
-                }
-                .opub-dropdown-indicator { display: none; margin-left: 4px; font-size: 10px; transition: transform 0.2s ease; }
-                .opub-dropdown-container:hover .opub-dropdown-indicator { transform: rotate(180deg); }
-            `;
-            document.head.appendChild(style);
 
-            // 2. Create main buttons wrapper
-            var btnWrapper = document.createElement("div");
-            btnWrapper.style.display = "flex";
-            btnWrapper.style.gap = "8px";
-            btnWrapper.style.alignItems = "center";
-            
-            var secondaryStyle = "background-color: transparent; border: none; padding: 6px 12px; font-weight: 600; font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 6px; text-decoration: none; color: #ffffff; opacity: 0.85; transition: all 0.2s ease;";
-            
-            var githubBtn = document.createElement("a");
-            githubBtn.id = "github-header-btn";
-            githubBtn.href = "https://github.com/rmellis/open-publisher"; 
-            githubBtn.target = "_blank";
-            githubBtn.style.cssText = secondaryStyle;
-            githubBtn.innerHTML = '<svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg> <span class="opub-hide-mobile">GitHub</span>';
-            
-            var patreonBtn = document.createElement("a");
-            patreonBtn.id = "patreon-header-btn";
-            patreonBtn.href = "https://www.patreon.com/cw/OpenPublisher"; 
-            patreonBtn.target = "_blank";
-            patreonBtn.style.cssText = secondaryStyle;
-            patreonBtn.innerHTML = '<svg height="16" viewBox="0 0 569 546" width="16" fill="currentColor"><g><circle cx="362.589" cy="204.589" r="204.589"></circle><rect height="545.799" width="100" x="0" y="0"></rect></g></svg> <span class="opub-hide-mobile">Patreon</span>';
-            
-            // New Download Button - Styled to be more prominent than social links, but secondary to "Launch App"
-            var downloadBtn = document.createElement("a");
-            downloadBtn.id = "download-header-btn";
-            downloadBtn.href = "https://download.openpublisher.app"; 
-            downloadBtn.target = "_blank";
-            // We give it a semi-transparent border and slightly more padding so it feels like a button, not just a link
-            downloadBtn.style.cssText = secondaryStyle + " border: 1px solid rgba(255,255,255,0.4); border-radius: 6px; margin-left: 4px; margin-right: 4px;";
-            // SVG Download Icon
-            downloadBtn.innerHTML = '<svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M8 12l-4-4h2.5V3h3v5H12L8 12zm-5 2v-2h10v2H3z"></path></svg> <span class="opub-hide-mobile">Download</span>';
-            
-            githubBtn.onmouseover = function() { this.style.opacity = "1"; this.style.transform = "translateY(-2px)"; };
-            githubBtn.onmouseout = function() { this.style.opacity = "0.85"; this.style.transform = "translateY(0)"; };
-            
-            patreonBtn.onmouseover = function() { this.style.opacity = "1"; this.style.transform = "translateY(-2px)"; };
-            patreonBtn.onmouseout = function() { this.style.opacity = "0.85"; this.style.transform = "translateY(0)"; };
-            
-            downloadBtn.onmouseover = function() { this.style.opacity = "1"; this.style.backgroundColor = "rgba(255,255,255,0.15)"; this.style.transform = "translateY(-2px)"; };
-            downloadBtn.onmouseout = function() { this.style.opacity = "0.85"; this.style.backgroundColor = "transparent"; this.style.transform = "translateY(0)"; };
-            
-            // 3. Dropdown logic for Launch App
-            var dropdownContainer = document.createElement("div");
-            dropdownContainer.className = "opub-dropdown-container";
-            dropdownContainer.style.position = "relative";
-            dropdownContainer.style.display = "inline-block";
-            
-            var dropdownMenu = document.createElement("div");
-            dropdownMenu.className = "opub-dropdown-menu";
-            dropdownMenu.style.position = "absolute";
-            dropdownMenu.style.top = "100%";
-            dropdownMenu.style.right = "0";
-            dropdownMenu.style.marginTop = "12px";
-            dropdownMenu.style.backgroundColor = "#ffffff";
-            dropdownMenu.style.borderRadius = "10px";
-            dropdownMenu.style.boxShadow = "0 8px 30px rgba(0,0,0,0.15)";
-            dropdownMenu.style.padding = "8px 0";
-            dropdownMenu.style.minWidth = "240px";
-            dropdownMenu.style.opacity = "0";
-            dropdownMenu.style.visibility = "hidden";
-            dropdownMenu.style.transform = "translateY(-10px)";
-            dropdownMenu.style.transition = "all 0.2s ease";
-            dropdownMenu.style.zIndex = "1000";
-            dropdownMenu.style.border = "1px solid #eaeaea";
-            
-            var launchUrl = "https://openpublisher.app";
-            
-            launchBtn.onclick = function(e) {
-                e.preventDefault();
-                window.open(launchUrl, '_blank');
-            };
-            
-            // Restored the 3rd "New Window" option!
-            var options = [
-                { title: "Launch in New Tab", desc: "Standard browser tab", icon: "⧉", action: function() { window.open(launchUrl, '_blank'); } },
-                { title: "Launch in New Window", desc: "Dedicated browser window", icon: "🗔", action: function() { window.open(launchUrl, '_blank', 'width=' + screen.availWidth + ',height=' + screen.availHeight + ',left=0,top=0,resizable=yes'); } },
-                { title: "Launch as App (Kiosk)", desc: "Clean UI with no toolbars", icon: "🖵", action: function() { window.open(launchUrl, '_blank', 'width=1200,height=800,menubar=no,toolbar=no,location=no,status=no,resizable=yes'); } }
-            ];
-            
-            options.forEach(function(opt) {
-                var item = document.createElement("a");
-                item.href = "javascript:void(0)";
-                item.style.display = "flex";
-                item.style.alignItems = "center";
-                item.style.gap = "12px";
-                item.style.padding = "10px 20px";
-                item.style.color = "#333";
-                item.style.textDecoration = "none";
-                item.style.transition = "background-color 0.15s ease";
-                
-                var iconSpan = document.createElement("span");
-                iconSpan.innerText = opt.icon;
-                iconSpan.style.fontSize = "16px";
-                iconSpan.style.color = "#007670";
-                
-                var textDiv = document.createElement("div");
-                textDiv.innerHTML = '<strong style="display: block; font-size: 14px; color: #1a1a1a;">' + opt.title + '</strong><span style="display: block; font-size: 11px; color: #777; margin-top: 2px;">' + opt.desc + '</span>';
-                
-                item.appendChild(iconSpan);
-                item.appendChild(textDiv);
-                
-                item.onmouseover = function() { this.style.backgroundColor = "#f8f9fa"; };
-                item.onmouseout = function() { this.style.backgroundColor = "transparent"; };
-                item.onclick = function(e) {
-                    e.preventDefault();
-                    opt.action();
-                };
-                dropdownMenu.appendChild(item);
-            });
-            
-            launchBtn.innerHTML += ' <span class="opub-dropdown-indicator">▼</span>';
-            launchBtn.style.margin = "0"; 
-            
-            launchBtn.parentNode.insertBefore(btnWrapper, launchBtn);
-            dropdownContainer.appendChild(launchBtn);
-            dropdownContainer.appendChild(dropdownMenu);
-            
-            btnWrapper.appendChild(githubBtn);
-            btnWrapper.appendChild(patreonBtn);
-            btnWrapper.appendChild(downloadBtn);
-            btnWrapper.appendChild(dropdownContainer);
-        }
-    }
-});
-</script>
-<!-- end Simple Custom CSS and JS -->
-<!-- start Simple Custom CSS and JS -->
-<script type="text/javascript">
-/* ========================================================
-   PHASE 1: INSTANT BUILD (Zero Delay)
-   ======================================================== */
-(function buildHeaderInstantly() {
-    if (!document.body) {
-        return window.requestAnimationFrame(buildHeaderInstantly);
-    }
-    
-    if (document.getElementById('app-style-header')) return;
+/* Unified Deterministic Header Builder (Zero Race Condition) */
+function buildOpenPublisherHeader() {
+    if (document.getElementById('app-style-header-complete')) return;
+    if (!document.body) return;
 
     var oldHeaders = document.querySelectorAll('header, #header, .site-header, .home-page-header, .middle-bar');
-    oldHeaders.forEach(function(el) { el.remove(); });
+    for (var i = 0; i < oldHeaders.length; i++) {
+        oldHeaders[i].remove();
+    }
+
+    var existing = document.getElementById('app-style-header');
+    if (existing) existing.remove();
 
     var header = document.createElement('div');
     header.id = 'app-style-header';
@@ -277,150 +184,223 @@ document.addEventListener("DOMContentLoaded", function() {
     var leftSec = document.createElement('div');
     leftSec.id = 'dynamic-breadcrumbs';
     leftSec.style.cssText = 'display: flex; align-items: center; flex-wrap: nowrap; overflow: hidden; padding-right: 15px;';
-    
+
     var logo = document.createElement('a');
     logo.href = '../../../';
     logo.style.cssText = 'display: flex; align-items: center; color: #ffffff; text-decoration: none; font-size: 20px; font-weight: bold; white-space: nowrap; flex-shrink: 0;';
     logo.innerHTML = '<i class="fas fa-print" style="margin-right: 10px; font-size: 24px;"></i>Open Publisher';
     leftSec.appendChild(logo);
 
-    var btn = document.createElement('button');
-    btn.style.cssText = 'background-color: #ffffff; color: #006c5b; border: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2); white-space: nowrap; flex-shrink: 0; transition: background-color 0.2s;';
-    btn.innerHTML = '<i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>Launch App';
-    
-    btn.onmouseover = function() { this.style.backgroundColor = '#e6f0ef'; };
-    btn.onmouseout = function() { this.style.backgroundColor = '#ffffff'; };
-    btn.onclick = function(e) {
-        e.preventDefault();
-        window.open('https://openpublisher.app', 'OpenPublisherKiosk', 'toolbar=no,menubar=no,location=no,status=no,scrollbars=yes,resizable=yes,width=1280,height=800,top=100,left=100');
-    };
-
-    header.appendChild(leftSec);
-    header.appendChild(btn);
-    document.body.insertBefore(header, document.body.firstChild);
-    
-    document.body.style.overflowX = 'hidden';
-    document.documentElement.style.overflowX = 'hidden';
-})();
-
-/* ========================================================
-   PHASE 2: THE BASEPRESS PRECISION HUNTER
-   ======================================================== */
-jQuery(document).ready(function($) {
+    /* Extract BasePress / Theme Breadcrumbs */
     var finalCategoryHTML = '';
     var finalArticleHTML = '';
     var pageTitle = '';
 
-    /* Helper Function: Surgically extracts ANY icon and pairs it with clean text */
-    function extractData($el) {
-        var $icon = $el.find('i, svg, [class*="icon"], [class*="fa"], [class*="epkb"]').first();
-        var iconHTML = '';
-        
-        if ($icon.length > 0) {
-            var $cIcon = $icon.clone().css({
-                'margin-right': '8px', 
-                'font-size': '16px', 
-                'opacity': '0.85', 
-                'color': 'inherit', 
-                'fill': 'currentColor'
-            });
-            iconHTML = $cIcon.prop('outerHTML');
-        }
-        
-        var $clone = $el.clone();
-        $clone.find('i, svg, [class*="icon"], [class*="fa"], [class*="epkb"]').remove();
-        var text = $clone.text().trim().replace(/[\r]+/g, ' ').trim();
-        
-        return { text: text, html: iconHTML + text };
-    }
-
-    /* --------------------------------------------------------
-       STRATEGY 1: Look directly for BasePress's exact architecture
-       -------------------------------------------------------- */
-    var $bpActive = $('.bpress-nav-article.active');
-    
-    if ($bpActive.length > 0) {
-        /* Grab the Active Article + Its Icon */
-        var $artItem = $bpActive.find('.bpress-nav-item').first();
-        if (!$artItem.length) $artItem = $bpActive; 
-        
-        var artData = extractData($artItem);
-        finalArticleHTML = artData.html;
-        pageTitle = artData.text; 
-
-        /* Climb the tree to the Parent Category + Its Icon */
-        var $bpSection = $bpActive.closest('.bpress-nav-section');
-        if ($bpSection.length > 0) {
-            var $secItem = $bpSection.find('> .bpress-nav-item, > a .bpress-nav-item, > a').first();
-            if ($secItem.length) {
-                finalCategoryHTML = extractData($secItem).html;
+    var $ = window.jQuery;
+    if ($) {
+        function extractData($el) {
+            var $icon = $el.find('i, svg, [class*="icon"], [class*="fa"], [class*="epkb"]').first();
+            var iconHTML = '';
+            if ($icon.length > 0) {
+                var $cIcon = $icon.clone().css({
+                    'margin-right': '8px', 
+                    'font-size': '16px', 
+                    'opacity': '0.85', 
+                    'color': 'inherit', 
+                    'fill': 'currentColor'
+                });
+                iconHTML = $cIcon.prop('outerHTML');
             }
+            var $clone = $el.clone();
+            $clone.find('i, svg, [class*="icon"], [class*="fa"], [class*="epkb"]').remove();
+            var text = $clone.text().trim().replace(/[\r\n\t]+/g, ' ').trim();
+            return { text: text, html: iconHTML + text };
         }
-    } 
-    /* --------------------------------------------------------
-       STRATEGY 2: Generic Fallback (If not on a BasePress page)
-       -------------------------------------------------------- */
-    else {
-        var $h1 = $('h1').first();
-        if ($h1.length && $h1.text().trim().length > 0) {
-            pageTitle = $h1.text().trim();
+
+        var $bpActive = $('.bpress-nav-article.active');
+        if ($bpActive.length > 0) {
+            var $artItem = $bpActive.find('.bpress-nav-item').first();
+            if (!$artItem.length) $artItem = $bpActive;
+            var artData = extractData($artItem);
+            finalArticleHTML = artData.html;
+            pageTitle = artData.text;
+
+            var $bpSection = $bpActive.closest('.bpress-nav-section');
+            if ($bpSection.length > 0) {
+                var $secItem = $bpSection.find('> .bpress-nav-item, > a .bpress-nav-item, > a').first();
+                if ($secItem.length) {
+                    finalCategoryHTML = extractData($secItem).html;
+                }
+            }
         } else {
-            pageTitle = document.title.split(/[-|– - ]/)[0].trim();
-        }
-        
-        finalArticleHTML = pageTitle; 
+            var $h1 = $('h1').first();
+            if ($h1.length && $h1.text().trim().length > 0) {
+                pageTitle = $h1.text().trim();
+            } else {
+                pageTitle = document.title.split(/[-|– - ]/)[0].trim();
+            }
+            finalArticleHTML = pageTitle;
 
-        if (pageTitle && pageTitle.toLowerCase() !== 'open publisher' && pageTitle.toLowerCase() !== 'openpublisher') {
-            var $sidebarLinks = $('a').filter(function() {
-                return $(this).text().trim().indexOf(pageTitle) !== -1; 
-            });
-
-            if ($sidebarLinks.length > 0) {
-                var $activeLink = $sidebarLinks.last();
-                var genericArtData = extractData($activeLink);
-                if (genericArtData.html !== genericArtData.text) finalArticleHTML = genericArtData.html;
-
-                var $parentList = $activeLink.closest('ul, div.kb-article-list, div.kb-section-articles, .elementor-widget-container, .widget');
-                if ($parentList.length > 0) {
-                    var $catEl = $parentList.prev();
-                    if ($catEl.length === 0) $catEl = $parentList.parent().children().first();
-                    if ($catEl.length > 0) finalCategoryHTML = extractData($catEl).html;
+            if (pageTitle && pageTitle.toLowerCase() !== 'open publisher' && pageTitle.toLowerCase() !== 'openpublisher') {
+                var $sidebarLinks = $('a').filter(function() {
+                    return $(this).text().trim().indexOf(pageTitle) !== -1;
+                });
+                if ($sidebarLinks.length > 0) {
+                    var $activeLink = $sidebarLinks.last();
+                    var genericArtData = extractData($activeLink);
+                    if (genericArtData.html !== genericArtData.text) finalArticleHTML = genericArtData.html;
+                    var $parentList = $activeLink.closest('ul, div.kb-article-list, div.kb-section-articles, .elementor-widget-container, .widget');
+                    if ($parentList.length > 0) {
+                        var $catEl = $parentList.prev();
+                        if ($catEl.length === 0) $catEl = $parentList.parent().children().first();
+                        if ($catEl.length > 0) finalCategoryHTML = extractData($catEl).html;
+                    }
                 }
             }
         }
+    } else {
+        var bpActive = document.querySelector('.bpress-nav-article.active');
+        if (bpActive) {
+            pageTitle = (bpActive.textContent || '').trim();
+            finalArticleHTML = pageTitle;
+        } else {
+            var h1 = document.querySelector('h1');
+            pageTitle = h1 ? h1.textContent.trim() : (document.title.split(/[-|– - ]/)[0] || '').trim();
+            finalArticleHTML = pageTitle;
+        }
     }
 
-    /* --------------------------------------------------------
-       DEPLOYMENT: Inject the icons and text into the header
-       -------------------------------------------------------- */
     if (pageTitle && pageTitle.toLowerCase() !== 'open publisher' && pageTitle.toLowerCase() !== 'openpublisher') {
-        var $leftSection = $('#dynamic-breadcrumbs');
-        var tempCatDiv = $('<div>').html(finalCategoryHTML);
-        var catTextOnly = tempCatDiv.text().trim();
-        
-        /* 1. Inject Category Arrow & HTML */
+        var tempCatDiv = document.createElement('div');
+        tempCatDiv.innerHTML = finalCategoryHTML;
+        var catTextOnly = tempCatDiv.textContent.trim();
+
         if (finalCategoryHTML && catTextOnly !== pageTitle) {
-            var $arrow1 = $('<i class="fas fa-chevron-right"></i>').css({
-                'color': 'rgba(255, 255, 255, 0.6)', 'margin': '0 12px', 'font-size': '14px', 'flex-shrink': '0'
-            });
-            var $catText = $('<span></span>').html(finalCategoryHTML).css({
-                'color': 'rgba(255, 255, 255, 0.85)', 'font-size': '18px', 'font-weight': '400',
-                'white-space': 'nowrap', 'overflow': 'hidden', 'text-overflow': 'ellipsis', 'display': 'flex', 'align-items': 'center'
-            });
-            $leftSection.append($arrow1).append($catText);
+            var arrow1 = document.createElement('i');
+            arrow1.className = 'fas fa-chevron-right';
+            arrow1.style.cssText = 'color: rgba(255, 255, 255, 0.6); margin: 0 12px; font-size: 14px; flex-shrink: 0;';
+            leftSec.appendChild(arrow1);
+
+            var catSpan = document.createElement('span');
+            catSpan.style.cssText = 'color: rgba(255, 255, 255, 0.85); font-size: 18px; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center;';
+            catSpan.innerHTML = '<a href="../" class="kb-crumb-link">' + finalCategoryHTML + '</a>';
+            leftSec.appendChild(catSpan);
         }
 
-        /* 2. Inject Article Arrow & HTML */
-        var $arrow2 = $('<i class="fas fa-chevron-right"></i>').css({
-            'color': 'rgba(255, 255, 255, 0.6)', 'margin': '0 12px', 'font-size': '14px', 'flex-shrink': '0'
-        });
-        var $artText = $('<span></span>').html(finalArticleHTML).css({
-            'color': '#ffffff', 'font-size': '18px', 'font-weight': '600',
-            'white-space': 'nowrap', 'overflow': 'hidden', 'text-overflow': 'ellipsis', 'display': 'flex', 'align-items': 'center'
-        });
-        $leftSection.append($arrow2).append($artText);
+        var arrow2 = document.createElement('i');
+        arrow2.className = 'fas fa-chevron-right';
+        arrow2.style.cssText = 'color: rgba(255, 255, 255, 0.6); margin: 0 12px; font-size: 14px; flex-shrink: 0;';
+        leftSec.appendChild(arrow2);
+
+        var artSpan = document.createElement('span');
+        artSpan.style.cssText = 'color: #ffffff; font-size: 18px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center;';
+        artSpan.innerHTML = finalArticleHTML;
+        leftSec.appendChild(artSpan);
+
+        var firstSpan = leftSec.querySelector('span');
+        if (firstSpan && !firstSpan.querySelector('a') && ('../../../' === '../../' || '../../../' === '../')) {
+            firstSpan.innerHTML = '<a href="../" class="kb-crumb-link">' + firstSpan.innerHTML + '</a>';
+        }
     }
-});</script>
+
+    /* Buttons Wrapper */
+    var btnWrapper = document.createElement('div');
+    btnWrapper.style.cssText = 'display: flex; gap: 8px; align-items: center;';
+
+    var secondaryStyle = 'background-color: transparent; border: none; padding: 6px 12px; font-weight: 600; font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 6px; text-decoration: none; color: #ffffff; opacity: 0.85; transition: all 0.2s ease;';
+
+    var githubBtn = document.createElement('a');
+    githubBtn.id = 'github-header-btn';
+    githubBtn.href = 'https://github.com/rmellis/open-publisher';
+    githubBtn.target = '_blank';
+    githubBtn.style.cssText = secondaryStyle;
+    githubBtn.innerHTML = '<svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg> <span class="opub-hide-mobile">GitHub</span>';
+    githubBtn.onmouseover = function() { this.style.opacity = '1'; this.style.transform = 'translateY(-2px)'; };
+    githubBtn.onmouseout = function() { this.style.opacity = '0.85'; this.style.transform = 'translateY(0)'; };
+
+    var patreonBtn = document.createElement('a');
+    patreonBtn.id = 'patreon-header-btn';
+    patreonBtn.href = 'https://www.patreon.com/cw/OpenPublisher';
+    patreonBtn.target = '_blank';
+    patreonBtn.style.cssText = secondaryStyle;
+    patreonBtn.innerHTML = '<svg height="16" viewBox="0 0 569 546" width="16" fill="currentColor"><g><circle cx="362.589" cy="204.589" r="204.589"></circle><rect height="545.799" width="100" x="0" y="0"></rect></g></svg> <span class="opub-hide-mobile">Patreon</span>';
+    patreonBtn.onmouseover = function() { this.style.opacity = '1'; this.style.transform = 'translateY(-2px)'; };
+    patreonBtn.onmouseout = function() { this.style.opacity = '0.85'; this.style.transform = 'translateY(0)'; };
+
+    var downloadBtn = document.createElement('a');
+    downloadBtn.id = 'download-header-btn';
+    downloadBtn.href = 'https://download.openpublisher.app';
+    downloadBtn.target = '_blank';
+    downloadBtn.style.cssText = secondaryStyle + ' border: 1px solid rgba(255,255,255,0.4); border-radius: 6px; margin-left: 4px; margin-right: 4px;';
+    downloadBtn.innerHTML = '<svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M8 12l-4-4h2.5V3h3v5H12L8 12zm-5 2v-2h10v2H3z"></path></svg> <span class="opub-hide-mobile">Download</span>';
+    downloadBtn.onmouseover = function() { this.style.opacity = '1'; this.style.backgroundColor = 'rgba(255,255,255,0.15)'; this.style.transform = 'translateY(-2px)'; };
+    downloadBtn.onmouseout = function() { this.style.opacity = '0.85'; this.style.backgroundColor = 'transparent'; this.style.transform = 'translateY(0)'; };
+
+    var dropdownContainer = document.createElement('div');
+    dropdownContainer.className = 'opub-dropdown-container';
+    dropdownContainer.style.position = 'relative';
+    dropdownContainer.style.display = 'inline-block';
+
+    var launchBtn = document.createElement('button');
+    launchBtn.style.cssText = 'background-color: #ffffff; color: #006c5b; border: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2); white-space: nowrap; flex-shrink: 0; transition: background-color 0.2s; margin: 0; display: inline-flex; align-items: center;';
+    launchBtn.innerHTML = '<i class="fas fa-external-link-alt" style="margin-right: 6px;"></i>Launch App <span class="opub-dropdown-indicator" style="margin-left: 4px; font-size: 10px;">▼</span>';
+    launchBtn.onmouseover = function() { this.style.backgroundColor = '#e6f0ef'; };
+    launchBtn.onmouseout = function() { this.style.backgroundColor = '#ffffff'; };
+    launchBtn.onclick = function(e) {
+        e.preventDefault();
+        window.open('https://openpublisher.app', '_blank');
+    };
+
+    var dropdownMenu = document.createElement('div');
+    dropdownMenu.className = 'opub-dropdown-menu';
+    dropdownMenu.style.cssText = 'position: absolute; top: 100%; right: 0; margin-top: 12px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); padding: 8px 0; min-width: 240px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.2s ease; z-index: 1000; border: 1px solid #eaeaea;';
+
+    var launchUrl = 'https://openpublisher.app';
+    var options = [
+        { title: 'Launch in New Tab', desc: 'Standard browser tab', icon: '⧉', action: function() { window.open(launchUrl, '_blank'); } },
+        { title: 'Launch in New Window', desc: 'Dedicated browser window', icon: '🗔', action: function() { window.open(launchUrl, '_blank', 'width=' + screen.availWidth + ',height=' + screen.availHeight + ',left=0,top=0,resizable=yes'); } },
+        { title: 'Launch as App (Kiosk)', desc: 'Clean UI with no toolbars', icon: '🖵', action: function() { window.open(launchUrl, '_blank', 'width=1200,height=800,menubar=no,toolbar=no,location=no,status=no,resizable=yes'); } }
+    ];
+
+    options.forEach(function(opt) {
+        var item = document.createElement('a');
+        item.href = 'javascript:void(0)';
+        item.style.cssText = 'display: flex; align-items: center; gap: 12px; padding: 10px 20px; color: #333; text-decoration: none; transition: background-color 0.15s ease;';
+        item.innerHTML = '<span style="font-size: 16px; color: #007670;">' + opt.icon + '</span><div><strong style="display: block; font-size: 14px; color: #1a1a1a;">' + opt.title + '</strong><span style="display: block; font-size: 11px; color: #777; margin-top: 2px;">' + opt.desc + '</span></div>';
+        item.onmouseover = function() { this.style.backgroundColor = '#f8f9fa'; };
+        item.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+        item.onclick = function(e) { e.preventDefault(); opt.action(); };
+        dropdownMenu.appendChild(item);
+    });
+
+    dropdownContainer.appendChild(launchBtn);
+    dropdownContainer.appendChild(dropdownMenu);
+
+    btnWrapper.appendChild(githubBtn);
+    btnWrapper.appendChild(patreonBtn);
+    btnWrapper.appendChild(downloadBtn);
+    btnWrapper.appendChild(dropdownContainer);
+
+    header.appendChild(leftSec);
+    header.appendChild(btnWrapper);
+
+    var marker = document.createElement('div');
+    marker.id = 'app-style-header-complete';
+    marker.style.display = 'none';
+    header.appendChild(marker);
+
+    document.body.insertBefore(header, document.body.firstChild);
+    document.body.style.overflowX = 'hidden';
+    document.documentElement.style.overflowX = 'hidden';
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildOpenPublisherHeader);
+} else {
+    buildOpenPublisherHeader();
+}
+window.addEventListener('load', buildOpenPublisherHeader);
+</script>
 <!-- end Simple Custom CSS and JS -->
 <link rel="prefetch" href="../../../wp-content/uploads/op-search-index.json" as="fetch" id="op-search-index-prefetch">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Open Publisher","description":"Knoledge Base","url":"../../../","inLanguage":"en_US","@id":"../../../#website"},{"@type":"WebPage","name":"Paragraphs &#038; Text Flow","url":"../../../db/typography/paragraph-formatting-text-flow/","description":"Paragraph Formatting &amp; Text Flow Beyond basic font styling, Open Publisher offers advanced typographic controls for managing paragraph structure,...","inLanguage":"en_US","@id":"../../../db/typography/paragraph-formatting-text-flow/#webpage"},{"@type":"BreadcrumbList","@id":"../../../db/typography/paragraph-formatting-text-flow/#breadcrumblist","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"../../../","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"../../../db/typography/paragraph-formatting-text-flow/","name":"Paragraphs &#038; Text Flow"}}]},{"@type":"SearchAction","@id":"../../../#searchaction","target":"../../../?s={search_term_string}","query-input":"required name=search_term_string"}]}</script>
@@ -1939,51 +1919,6 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 //# sourceURL=../../../wp-includes/js/wp-emoji-loader.min.js
 </script>
 <!-- start Simple Custom CSS and JS -->
-<script type="text/javascript">
-let checkCrumb = setInterval(function() {
-    // 1. Target the first span (the category name)
-    const categoryCrumb = document.querySelector('#dynamic-breadcrumbs span');
-    
-    // 2. Wait until the theme actually injects it into the DOM
-    if (categoryCrumb) {
-        if (!categoryCrumb.querySelector('a')) {
-            const originalContent = categoryCrumb.innerHTML;
-            
-            // 3. Wrap it in the back-link
-            categoryCrumb.innerHTML = `<a href="../" class="kb-crumb-link">${originalContent}</a>`;
-        }
-        clearInterval(checkCrumb); // Stop checking once the link is built
-    }
-}, 250); // Check every 250 milliseconds</script>
 <!-- end Simple Custom CSS and JS -->
-    
-<script>
-    // Hide 'Download' and 'Launch App' buttons if loaded inside the OpenPublisher App
-    (function() {
-        var inApp = false;
-        try {
-            if (window.location.search.includes('in_app=true') || window !== window.top || sessionStorage.getItem('in_app') === 'true') {
-                inApp = true;
-                sessionStorage.setItem('in_app', 'true');
-            }
-        } catch(e) { inApp = true; }
-        if (inApp) {
-            function hideInAppButtons() {
-                var downloadBtn = document.getElementById('download-header-btn');
-                var launchBtnContainer = document.querySelector('.opub-dropdown-container');
-                var rawButtons = document.querySelectorAll('#app-style-header button');
-                if (downloadBtn) downloadBtn.style.display = 'none';
-                if (launchBtnContainer) launchBtnContainer.style.display = 'none';
-                rawButtons.forEach(function(b) { b.style.display = 'none'; });
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener("DOMContentLoaded", hideInAppButtons);
-            } else {
-                hideInAppButtons();
-            }
-            window.addEventListener("load", hideInAppButtons);
-        }
-    })();
-</script>
 </body>
 </html>
