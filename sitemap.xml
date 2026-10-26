@@ -937,6 +937,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://kb.openpublisher.app/db/security-privacy/file-conversion-pipeline-threat-shield-quarantine-audit/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://kb.openpublisher.app/db/security-privacy/geographic-access-control-defense/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
