@@ -1285,21 +1285,24 @@ footer[role="contentinfo"] {
 html.epub-in-app .opub-web-only-cta,
 html.opub-in-app .opub-web-only-cta { display: none !important; }
 
-/* Metric Score Grid */
+/* Metric Score Grid - Responsive flex ensuring no orphan cards on wide or narrow screens */
 .opub-metric-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
     gap: 12px !important;
     margin: 20px 0 26px 0 !important;
 }
 
 .opub-metric-card {
+    flex: 1 1 160px !important;
+    min-width: 140px !important;
     background: #ffffff !important;
     border: 1px solid #cbd5e1 !important;
     border-top: 3px solid #007670 !important;
     border-radius: 8px !important;
     padding: 14px 16px !important;
     box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+    box-sizing: border-box !important;
 }
 
 .opub-metric-title {
@@ -1348,12 +1351,18 @@ html.opub-in-app .opub-web-only-cta { display: none !important; }
     margin-bottom: 10px !important;
 }
 
-/* Threat Category Cards */
+/* Threat Category Cards - Even 2x2 Grid on desktop, 1-col on mobile */
 .opub-threat-grid {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
-    gap: 14px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
     margin: 18px 0 26px 0 !important;
+}
+
+@media (max-width: 700px) {
+    .opub-threat-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 .opub-threat-card {
@@ -1362,6 +1371,7 @@ html.opub-in-app .opub-web-only-cta { display: none !important; }
     border-radius: 10px !important;
     padding: 16px 18px !important;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03) !important;
+    box-sizing: border-box !important;
 }
 
 .opub-threat-tag {
@@ -1378,7 +1388,7 @@ html.opub-in-app .opub-web-only-cta { display: none !important; }
 .threat-macro { background: #ecfdf5 !important; color: #065f46 !important; border: 1px solid #a7f3d0 !important; }
 .threat-phish { background: #eff6ff !important; color: #1e40af !important; border: 1px solid #bfdbfe !important; }
 
-/* Image Showcase Box */
+/* Image Showcase Box - Full Width Overflow across content and sidebar columns on desktop */
 .opub-showcase-box {
     background: #ffffff !important;
     border: 1.5px solid #007670 !important;
@@ -1387,16 +1397,32 @@ html.opub-in-app .opub-web-only-cta { display: none !important; }
     margin: 26px 0 32px 0 !important;
     box-shadow: 0 6px 24px rgba(0, 118, 112, 0.12) !important;
     text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+@media (min-width: 992px) {
+    .opub-showcase-box {
+        width: calc(133.333% + 80px) !important;
+        max-width: none !important;
+        position: relative !important;
+        z-index: 5 !important;
+        margin: 28px 0 36px 0 !important;
+    }
 }
 
 .opub-showcase-img {
     width: 100% !important;
-    max-width: 960px !important;
+    max-width: 100% !important;
     height: auto !important;
     border-radius: 8px !important;
     border: 1px solid #e2e8f0 !important;
     display: block !important;
     margin: 0 auto !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.opub-showcase-img:hover {
+    box-shadow: 0 4px 18px rgba(0, 118, 112, 0.18) !important;
 }
 
 /* FAQ Styling */
@@ -1421,7 +1447,7 @@ html.opub-in-app .opub-web-only-cta { display: none !important; }
     display: inline-block !important;
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "Open Publisher", "description": "Knowledge Base & User Documentation", "url": "../../", "inLanguage": "en_US", "@id": "../../#website"}, {"@type": "TechArticle", "headline": "Document Conversion Pipeline Security, Edge Threat Shield & Quarantine Audit", "description": "Comprehensive security architecture of OpenPublisher's drag-and-drop conversion pipeline (.pub, .docx, .doc to .opub/PDF). Explains edge heuristics, YARA disinformation filters, OLE macro sandboxing, and strict user privacy policies.", "url": "./", "inLanguage": "en_US", "isPartOf": {"@id": "../../#website"}, "datePublished": "2026-10-26T13:30:00+00:00", "dateModified": "2026-10-26T13:40:00+00:00"}, {"@type": "SoftwareApplication", "name": "OpenPublisher Telemetry & Shield", "operatingSystem": "All Supported Platforms", "applicationCategory": "SecurityApplication, DesignApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are my uploaded personal or business publications logged or shared?", "acceptedAnswer": {"@type": "Answer", "text": "No. Under OpenPublisher's zero-knowledge security architecture, legitimate user documents, file names, text content, and graphics are processed strictly in volatile RAM and streamed directly back to your browser. Benign user documents are never logged, stored, or shared."}}, {"@type": "Question", "name": "Why does OpenPublisher operate an edge threat shield for file conversions?", "acceptedAnswer": {"@type": "Answer", "text": "Legacy Microsoft Office formats (.doc, .pub) are common vectors for macro exploits, memory corruption CVEs, and phishing attachments. By inspecting files at the edge before converter workers execute libmspub, OpenPublisher guarantees that weaponized payloads never reach converter instances or user desktops."}}, {"@type": "Question", "name": "What happens if a malicious file is uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "Files triggering known exploit signatures (e.g., CVE-2017-11882), weaponized VBA AutoOpen macros, state-sponsored propaganda YARA rules, or sanctioned botnet floods are instantly blocked and quarantined at the edge. The conversion worker is never executed, and an immediate safety abort is signaled."}}, {"@type": "Question", "name": "Can I inspect the server-side conversion code?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! All backend server conversion code, libmspub integration scripts, and worker wrappers are 100% open-source and publicly viewable on GitHub in the dedicated ServerSide repository branch."}}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "Open Publisher", "description": "Knowledge Base & User Documentation", "url": "../../", "inLanguage": "en_US", "@id": "../../#website"}, {"@type": "TechArticle", "headline": "Document Conversion Pipeline Security, Edge Threat Shield & Quarantine Audit", "description": "Comprehensive security architecture of OpenPublisher's drag-and-drop conversion pipeline (.pub, .docx, .doc to .opub/PDF). Explains edge heuristics, YARA disinformation filters, OLE macro sandboxing, and strict user privacy policies.", "url": "./", "inLanguage": "en_US", "isPartOf": {"@id": "../../#website"}, "datePublished": "2026-10-26T13:30:00+00:00", "dateModified": "2026-10-26T14:25:00+00:00"}, {"@type": "SoftwareApplication", "name": "OpenPublisher Telemetry & Shield", "operatingSystem": "All Supported Platforms", "applicationCategory": "SecurityApplication, DesignApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are my uploaded personal or business publications logged or shared?", "acceptedAnswer": {"@type": "Answer", "text": "File names are logged strictly for internal analytics and operational telemetry on the production dashboard. However, document contents, text frames, and graphics are processed strictly in volatile RAM and streamed directly back to your workspace. Benign user documents are never retained or shared."}}, {"@type": "Question", "name": "Why does OpenPublisher operate an edge threat shield for file conversions?", "acceptedAnswer": {"@type": "Answer", "text": "Legacy Microsoft Office formats (.doc, .pub) are common vectors for macro exploits, memory corruption CVEs, and phishing attachments. By inspecting files at the edge before converter workers execute libmspub, OpenPublisher guarantees that weaponized payloads never reach converter instances or user desktops."}}, {"@type": "Question", "name": "What happens if a malicious file is uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "Files triggering known exploit signatures (e.g., CVE-2017-11882), weaponized VBA AutoOpen macros, state-sponsored propaganda YARA rules, or sanctioned botnet floods are instantly blocked and quarantined at the edge. The conversion worker is never executed, and an immediate safety abort is signaled."}}, {"@type": "Question", "name": "Where does the conversion server run and can I host my own?", "acceptedAnswer": {"@type": "Answer", "text": "The conversion server itself is located directly on our main GitHub repository under the dedicated ServerSide branch, containing only the document converter and allowing users to set up their own local or self-hosted copy. The internal telemetry shield is closed for production infrastructure security, routing clean uploads through to the converter and back to the user."}}]}]}</script>
 </head>
 
 	<body class="wp-singular knowledgebase-template-default single single-knowledgebase postid-2073 wp-custom-logo wp-embed-responsive wp-theme-knowledge-base-lite ctypo">
@@ -1659,17 +1685,17 @@ html.opub-in-app .opub-web-only-cta { display: none !important; }
 </style>
 
 <h2 class="western"><span style="color: #007670;">Document Conversion Pipeline Security &amp; Edge Threat Shield Audit</span></h2>
-<p class="western">When users migrate legacy publications to OpenPublisher by dragging and dropping <code class="opub-spec-chip">.pub</code>, <code class="opub-spec-chip">.docx</code>, or <code class="opub-spec-chip">.doc</code> files into their browser or desktop client, documents are processed through OpenPublisher's dedicated cloud conversion architecture. To safeguard users, education networks, and server infrastructure from malicious payloads, all incoming files pass through an automated edge inspection stack known as the <strong>Sentinel Content &amp; Threat Shield</strong> before converter workers ever execute.</p>
+<p class="western">When users migrate legacy publications to OpenPublisher by dragging and dropping <code class="opub-spec-chip">.pub</code>, <code class="opub-spec-chip">.docx</code>, or <code class="opub-spec-chip">.doc</code> files into their browser or desktop client, documents are processed through OpenPublisher's dedicated cloud conversion architecture. To safeguard users, education networks, and server infrastructure from malicious payloads, all incoming uploads pass through an internal automated edge inspection layer known as the <strong>Sentinel Content &amp; Threat Shield</strong>. Clean files then immediately stream into the containerized document converter (powered by <span style="font-family: Courier New, monospace;">libmspub</span>) and are returned directly to the user.</p>
 
 <!-- Strict User Privacy Callout Box -->
 <div class="opub-privacy-box">
-    <div class="opub-privacy-badge">CRITICAL USER PRIVACY GUARANTEE</div>
-    <h4 class="western" style="margin: 0 0 8px 0; color: #005a55; font-size: 18px;">Zero User Document Logging: Ephemeral In-Memory Processing</h4>
+    <div class="opub-privacy-badge">USER PRIVACY &amp; TELEMETRY POLICY</div>
+    <h4 class="western" style="margin: 0 0 8px 0; color: #005a55; font-size: 18px;">Document Content Protection &amp; Internal Analytics Logging</h4>
     <p class="western" style="margin: 0 0 10px 0; font-size: 13.5px; color: #334155; line-height: 1.55;">
-        OpenPublisher operates under strict zero-knowledge confidentiality standards: <strong>no legitimate user documents, file names, text content, or graphics are ever logged, stored, or shared.</strong> Legitimate user publications uploaded for conversion are parsed strictly in isolated, volatile memory on Cloudflare-protected servers and immediately streamed back as <code class="opub-spec-chip">.opub</code> objects and vector PDF streams. Once conversion completes, memory is zeroed out and destroyed.
+        OpenPublisher maintains strict user document confidentiality: <strong>original document contents, text frames, and embedded graphics are never stored, indexed, or shared.</strong> Files uploaded for conversion are parsed strictly in isolated, volatile memory (RAM) and immediately streamed back to the user as native <code class="opub-spec-chip">.opub</code> objects and vector PDF streams. Once conversion completes, the ephemeral memory container is immediately destroyed.
     </p>
     <p class="western" style="margin: 0; font-size: 13px; color: #005a55; line-height: 1.5; font-weight: 600;">
-        Telemetry logs and interception records are maintained solely for quarantined threats, malware payloads, and abusive automated floods. The telemetry data published in this audit represents a one-off transparency review to illustrate how the edge shield protects the community.
+        For operational visibility, file names are among the few telemetry attributes logged strictly for internal analytics to populate the operational dashboard, track format ratios, and identify abusive traffic. Telemetry records and quarantined files are maintained solely for detected threats, malware payloads, and automated spam floods.
     </p>
 </div>
 
@@ -1727,7 +1753,7 @@ html.opub-in-app .opub-web-only-cta { display: none !important; }
         <p align="left"><span style="font-size: small;"><strong style="color: #007670;">4. OLE Macro &amp; Exploit Sandboxing:</strong> Embedded VBA macro streams, AutoOpen triggers, and known CVE payloads (such as Equation Editor shellcodes) are quarantined. Legitimate text frames are extracted without executing hostile code.</span></p>
     </li>
     <li>
-        <p align="left"><span style="font-size: small;"><strong style="color: #007670;">5. Isolated Worker Execution:</strong> Only clean, verified files are dispatched to containerized worker nodes running the open-source <span style="font-family: Courier New, monospace;">libmspub</span> library on dedicated, Cloudflare-protected conversion servers (open-source on GitHub in the <span style="font-family: Courier New, monospace;">ServerSide</span> branch).</span></p>
+        <p align="left"><span style="font-size: small;"><strong style="color: #007670;">5. Converter Worker &amp; ServerSide Branch:</strong> The conversion server itself is maintained on our main GitHub repository under the dedicated <span style="font-family: Courier New, monospace;">ServerSide</span> branch. This open-source branch contains only the document converter, providing users and system administrators with everything needed to set up their own local or self-hosted conversion node (running containerized <span style="font-family: Courier New, monospace;">libmspub</span>). The telemetry and threat shield layer is closed for internal production use: incoming uploads quickly pass through the shield, into the converter, and immediately back to the user.</span></p>
     </li>
 </ul>
 
@@ -1791,12 +1817,14 @@ html.opub-in-app .opub-web-only-cta { display: none !important; }
 
 <!-- Image Showcase: The Production Interception Audit Log -->
 <h3 class="western" style="margin-top: 32px;"><span style="color: #007670;">Production Threat Shield Telemetry &amp; Interception Preview</span></h3>
-<p class="western">Below is the complete, high-resolution production capture from the <span style="font-family: Courier New, monospace;">OpenPublisher Telemetry &amp; Shield (v5.4.2-PROD)</span> dashboard, illustrating the 30-day audit log and real-time quarantine decisions:</p>
+<p class="western">Below is the complete, high-resolution production capture from the <span style="font-family: Courier New, monospace;">OpenPublisher Telemetry &amp; Shield (v5.4.2-PROD)</span> dashboard, illustrating the 30-day audit log and real-time quarantine decisions. The preview expands across the full page layout for optimal readability:</p>
 
 <div class="opub-showcase-box">
-    <img src="../../../assets/security/OpenPublisher-October2026FileInterceptionsPreview.png" alt="OpenPublisher Telemetry and Threat Shield October 2026 Interceptions Preview" class="opub-showcase-img" loading="lazy">
+    <a href="../../../assets/security/OpenPublisher-October2026FileInterceptionsPreview.png" target="_blank" rel="noopener" title="Click to view full-resolution telemetry capture (2442 x 6300)">
+        <img src="../../../assets/security/OpenPublisher-October2026FileInterceptionsPreview.png" alt="OpenPublisher Telemetry and Threat Shield October 2026 Interceptions Preview" class="opub-showcase-img" loading="lazy">
+    </a>
     <p style="margin: 12px 0 0 0; font-size: 12.5px; color: #64748b; font-style: italic;">
-        Internal Production Dashboard: OpenPublisher Telemetry &amp; Threat Shield (v5.4.2-PROD). Illustrates quarantined uploads intercepted before worker execution. No user documents or identities are logged.
+        Internal Production Dashboard: OpenPublisher Telemetry &amp; Threat Shield (v5.4.2-PROD). Illustrates quarantined uploads intercepted before worker execution. File names are logged strictly for internal analytics; document contents are never stored. Click the preview to open in full resolution.
     </p>
 </div>
 
@@ -1805,7 +1833,7 @@ html.opub-in-app .opub-web-only-cta { display: none !important; }
 
 <div class="opub-faq-item">
     <h4 class="western" style="margin: 0 0 6px 0; color: #007670;">Are my personal or business documents monitored or logged when converting?</h4>
-    <p class="western" style="margin: 0; font-size: 13.5px;">No. OpenPublisher does not log, inspect for marketing, or retain legitimate user publications. Conversion occurs in ephemeral RAM, and the resulting <code class="opub-spec-chip">.opub</code> document stream is transmitted directly to your client workspace. Only uploads that trigger malicious exploit signatures, weaponized macros, or statutory sanctions are quarantined.</p>
+    <p class="western" style="margin: 0; font-size: 13.5px;">File names and format metrics are logged strictly for internal analytics on our operational dashboard to monitor pipeline performance and traffic ratios. However, document contents, text frames, images, and layout designs are processed strictly in volatile RAM and are never stored, logged, or shared. Quarantined records are only preserved when an upload triggers active threat signatures or statutory sanctions.</p>
 </div>
 
 <div class="opub-faq-item">
@@ -1814,8 +1842,13 @@ html.opub-in-app .opub-web-only-cta { display: none !important; }
 </div>
 
 <div class="opub-faq-item">
-    <h4 class="western" style="margin: 0 0 6px 0; color: #007670;">Where does the conversion code execute and is it open-source?</h4>
-    <p class="western" style="margin: 0; font-size: 13.5px;">Yes! OpenPublisher uses the battle-tested <span style="font-family: Courier New, monospace;">libmspub</span> library running on dedicated, Cloudflare-protected conversion servers. All backend conversion code and pipeline scripts are 100% open-source and publicly verifiable on GitHub in the dedicated <span style="font-family: Courier New, monospace;">ServerSide</span> repository branch.</p>
+    <h4 class="western" style="margin: 0 0 6px 0; color: #007670;">Where does the conversion server run and can I host my own?</h4>
+    <p class="western" style="margin: 0; font-size: 13.5px;">The conversion server itself is located directly on our main GitHub repository under the dedicated <span style="font-family: Courier New, monospace;">ServerSide</span> branch. This branch contains only the document converter and provides users with the complete instructions and containerized scripts needed to set up their own local or hosted copy using <span style="font-family: Courier New, monospace;">libmspub</span>. OpenPublisher's telemetry shield layer is closed for internal production security: user uploads pass rapidly through the shield, stream into the converter, and return straight back to the user.</p>
+</div>
+
+<div class="opub-faq-item">
+    <h4 class="western" style="margin: 0 0 6px 0; color: #007670;">Why was this audit log published?</h4>
+    <p class="western" style="margin: 0; font-size: 13.5px;">This 30-day telemetry audit is published as a one-off transparency preview to inform schools, charities, businesses, and government teams of the rigorous edge security safeguards protecting OpenPublisher's document conversion infrastructure.</p>
 </div>
 
 <div class="opub-faq-item">
