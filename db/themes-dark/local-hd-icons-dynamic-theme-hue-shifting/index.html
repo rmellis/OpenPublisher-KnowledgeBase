@@ -1381,22 +1381,108 @@ footer[role="contentinfo"] {
 <div style="text-align: center; margin: 24px 0 28px 0;">
   <img src="https://github.com/user-attachments/assets/a1b70fd9-f547-44c0-8265-e60429af3650" alt="Local HD Icons &amp; Dynamic Theme Hue Shifting" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); border: 1px solid #d1d5db;" />
 </div>
-<p class="western">Open Publisher incorporates refreshed, high-definition local PNG icons for Legacy WordArt, Beta WordArt, and Templates across the application ribbon and context menus. These assets are bundled directly in the local project directory (<span style="font-family: Courier New, monospace;">ui/icons/</span>), removing external remote CDN dependencies and ensuring instant rendering with zero network latency and complete offline functionality in PWA mode.</p>
+<p class="western">Open Publisher features refreshed, high-definition local PNG icons for Legacy WordArt, Beta WordArt, and Templates across the application ribbon and context menus. These assets are bundled directly in the local project directory (<span style="font-family: Courier New, monospace;">ui/icons/</span>), removing external remote CDN dependencies and ensuring instant rendering with zero network latency and complete offline functionality in PWA mode.</p>
+
+<div style="background-color: #f0fdf4; border-left: 4px solid #007670; padding: 14px 18px; margin: 20px 0; border-radius: 4px;">
+  <p style="margin: 0; color: #164e63; font-size: 0.95em;"><strong>Offline Durability:</strong> By replacing remote image URLs with local high-resolution assets, icons render immediately on application boot, with zero flickering, zero external tracking, and full durability even when working disconnected from the internet.</p>
+</div>
+
+<h3 class="western"><span style="color: #007670;">Local High-Definition Icon Assets</span></h3>
+<p class="western">The following optimized local assets are deployed across the user interface:</p>
+
+<div style="overflow-x: auto; margin: 20px 0;">
+<table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+<thead>
+<tr style="background-color: #007670; color: #ffffff;">
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Asset File</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Feature / Tool</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Interface Locations</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Visual Design</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;"><span style="font-family: Courier New, monospace;">ui/icons/WordArt.png</span></td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Legacy WordArt</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Insert ribbon tab, Canvas right-click context menu</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Classic angled metallic letter 'A' with (LEGACY) badge</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;"><span style="font-family: Courier New, monospace;">ui/icons/BetaWordArt.png</span></td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Beta WordArt</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Insert ribbon tab, Canvas right-click context menu</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Modern extruded letter 'A' with (BETA) badge</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;"><span style="font-family: Courier New, monospace;">ui/icons/Templates.png</span></td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Templates Gallery</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">File ribbon tab, Home ribbon tab, Insert ribbon tab</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Dedicated multi-column publication layout illustration</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 <h3 class="western"><span style="color: #007670;">Dynamic CSS Theme Hue Shifting</span></h3>
-<p class="western">Rather than relying on static colored icon assets, Open Publisher's UI icons are connected directly to the application's theme engine via CSS custom properties:</p>
+<p class="western">Rather than relying on static pre-rendered icon colors that clash when users change themes, Open Publisher connects all three icons directly to the application theme engine via CSS custom properties:</p>
+
 <div style="background-color: #f8fafc; border-left: 4px solid #007670; padding: 12px 18px; margin: 16px 0; border-radius: 4px; font-family: Courier New, monospace; font-size: 0.9em; color: #1e293b;">
 filter: hue-rotate(var(--ui-theme-hue-shift, 0deg)) grayscale(var(--ui-theme-grayscale, 0%));
 </div>
-<p class="western">When users switch themes between Office Classic, Teal, Purple, Emerald, Crimson, Dark, or Custom themes, the icons dynamically rotate their hue angle and adjust saturation in real time to blend with the active interface palette.</p>
 
-<h3 class="western"><span style="color: #007670;">Ribbon &amp; Context Menu Parity</span></h3>
-<p class="western">The high-definition local icon assets are applied consistently across both top-level ribbons and right-click menus:</p>
-<ul>
-<li><p align="left"><span style="font-size: small;"><strong>WordArt Icons:</strong> <span style="font-family: Courier New, monospace;">WordArt.png</span> (Legacy WordArt) and <span style="font-family: Courier New, monospace;">BetaWordArt.png</span> (Beta WordArt) are featured in the Insert ribbon tab and the canvas right-click context flyout.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Templates Icon:</strong> A dedicated multi-column layout illustration (<span style="font-family: Courier New, monospace;">Templates.png</span>) replaces generic column icons in both the File and Home ribbon tabs.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Dark Mode Inversion:</strong> When Dark Mode or monochrome themes are enabled, grayscale filtering automatically engages to preserve high contrast and clean visual hierarchy.</span></p></li>
-</ul>
+<div style="overflow-x: auto; margin: 20px 0;">
+<table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+<thead>
+<tr style="background-color: #007670; color: #ffffff;">
+<th style="padding: 10px 14px; border: 1px solid #005a55;">UI Theme Name</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Primary Theme Accent</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Computed Hue Rotation</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Grayscale Filter</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Office Classic</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Classic Office Blue</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">0deg</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">0%</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Teal (Signature)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Publisher Teal (#007670)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">-20deg</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">0%</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Purple / Amethyst</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Royal Violet (#7c3aed)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">+60deg</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">0%</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Emerald</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Forest Emerald (#059669)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">-65deg</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">0%</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Crimson</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Bold Ruby (#dc2626)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">+140deg</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">0%</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Dark Mode</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Dark Slate (#1e293b)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">0deg</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">10% (Subdued contrast adaptation)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="western"><span style="color: #007670;">Ribbon &amp; Right-Click Menu Parity</span></h3>
+<p class="western">The dynamic theme filtering applies equally to ribbon buttons and context menus. When right-clicking blank canvas space and opening the <strong>Insert...</strong> flyout, WordArt Old and WordArt New display their high-definition PNG icons with the same dynamic hue rotation, ensuring aesthetic unity across every corner of the application.</p>
 </div>
 	</div>
 

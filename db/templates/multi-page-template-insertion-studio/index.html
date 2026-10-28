@@ -1383,33 +1383,74 @@ footer[role="contentinfo"] {
 </div>
 <p class="western">Open Publisher's <strong>Multi-Page Template Insertion Studio</strong> allows creators to seamlessly incorporate any of Open Publisher's 270+ professional templates directly into existing multi-page publications. Rather than being restricted to starting with a single template or duplicating identical page layouts, users can now combine diverse templates across different pages of the same document (e.g., combining a newsletter cover, an article layout, a photo spread, and a back-cover brochure).</p>
 
-<h3 class="western"><span style="color: #007670;">Flexible Insertion Modes</span></h3>
-<p class="western">The dedicated insertion modal (<span style="font-family: Courier New, monospace;">window.showInsertTemplateModal()</span>) provides five precise insertion modes:</p>
+<div style="background-color: #f0fdf4; border-left: 4px solid #007670; padding: 14px 18px; margin: 20px 0; border-radius: 4px;">
+  <p style="margin: 0; color: #164e63; font-size: 0.95em;"><strong>Non-Destructive Multi-Page Workflows:</strong> Previously, selecting a template in traditional publishing suites would overwrite your entire workspace. Open Publisher gives you granular control over where and how each template page is introduced into your publication.</p>
+</div>
+
+<h3 class="western"><span style="color: #007670;">5 Flexible Insertion Modes</span></h3>
+<p class="western">The dedicated insertion studio modal (<span style="font-family: Courier New, monospace;">window.showInsertTemplateModal()</span>) provides five precise insertion modes:</p>
+
+<div style="overflow-x: auto; margin: 20px 0;">
+<table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+<thead>
+<tr style="background-color: #007670; color: #ffffff;">
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Insertion Mode</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Target Page Action</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Resulting Page Order</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Ideal Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Insert as New Page (After Target)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Creates a new blank page directly after active page</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Target + 1</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Default mode: adding a follow-up story or sub-article</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Insert as New Page (At End of Document)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Appends a new page at the very end of publication</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Final Page (N+1)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Adding back covers, contact forms, or summary pages</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Insert as New Page (Before Target)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Creates a new page preceding the selected page</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Target Page</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Inserting a missed cover or table of contents page</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Replace Target Page Content</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Clears current elements on active page and applies template</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Unchanged</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Restyling an existing page without modifying document page count</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Append Elements onto Target Page</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Preserves existing elements and pastes template on top</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Unchanged</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Composing hybrid designs (e.g., adding sidebar widgets to a flyer)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="western"><span style="color: #007670;">Page Dimension &amp; Orientation Handling</span></h3>
+<p class="western">When incorporating templates into a publication, Open Publisher provides two intelligent sizing modes:</p>
 <ul>
-<li><p align="left"><span style="font-size: small;"><strong>Insert as New Page (After Target):</strong> Creates a brand new page immediately following the currently selected page (default behavior).</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Insert as New Page (At End of Document):</strong> Appends a new page at the very end of your multi-page publication.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Insert as New Page (Before Target):</strong> Inserts a new page preceding the active target page.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Replace Target Page Content:</strong> Replaces existing elements and background on the target page with the chosen template layout, preserving overall document page count and order.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Append Elements onto Target Page:</strong> Keeps existing page elements intact while importing template layout elements on top.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Use Template Page Size:</strong> Preserves the template's authentic dimensions, orientation (Portrait or Landscape), and aspect ratio for the imported page. Open Publisher supports mixed page orientations within the same publication.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Match Target Page Size:</strong> Automatically adapts the template elements to fit the current target page's width and height.</span></p></li>
 </ul>
 
-<h3 class="western"><span style="color: #007670;">Page Dimension &amp; Orientation Modes</span></h3>
-<p class="western">When inserting templates, users can choose how page geometry is handled:</p>
-<ul>
-<li><p align="left"><span style="font-size: small;"><strong>Use Template Page Size:</strong> Preserves the template's native dimensions, orientation (Portrait or Landscape), and aspect ratio for the imported page.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Match Target Page Size:</strong> Automatically scales and fits the template layout to match the existing target page's dimensions.</span></p></li>
-</ul>
+<h3 class="western"><span style="color: #007670;">Non-Destructive Unique Element IDs &amp; Full History Integration</span></h3>
+<p class="western">When a template is inserted, every element receives a freshly generated unique ID, completely preventing ID collisions with existing document elements. The entire insertion registers on Open Publisher's history stack (<span style="font-family: Courier New, monospace;">pushHistory()</span>), allowing instant one-click reversal with <span style="font-family: Courier New, monospace;">Ctrl+Z</span>. Instant floating toast notifications confirm the inserted template name and target page destination.</p>
 
-<h3 class="western"><span style="color: #007670;">Non-Destructive Unique Element IDs &amp; Full Undo Support</span></h3>
-<p class="western">Every imported element receives a newly minted unique ID upon insertion, preventing any collisions with existing elements in the document. All template insertions are registered on Open Publisher's history stack (<span style="font-family: Courier New, monospace;">pushHistory()</span>), allowing one-click reversal with <span style="font-family: Courier New, monospace;">Ctrl+Z</span>. Instant toast notifications confirm the inserted template name and destination page number.</p>
-
-<h3 class="western"><span style="color: #007670;">Access Points</span></h3>
-<p class="western">You can access the Multi-Page Template Insertion Studio through several convenient entry points:</p>
+<h3 class="western"><span style="color: #007670;">Direct Access Points Across the Interface</span></h3>
 <ul>
-<li><p align="left"><span style="font-size: small;"><strong>Insert Ribbon Tab:</strong> Click the <strong>Template</strong> button in the Illustrations group on the Insert tab.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Minimap Context Menu:</strong> Right-click any page thumbnail in the left-hand minimap navigation pane and select <strong>Insert Template Page...</strong>.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Canvas Context Menu:</strong> Right-click blank canvas space and select <strong>Insert Template Page...</strong> from the context flyout.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Template Modal Banner:</strong> A prominent navigation banner inside the standard Templates modal provides direct entry when working on an active document.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Insert Ribbon Tab:</strong> Click the dedicated <strong>Template</strong> button in the Illustrations group.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Minimap Context Menu:</strong> Right-click any page thumbnail in the left navigation minimap and select <strong>Insert Template Page...</strong>.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Canvas Context Menu:</strong> Right-click empty canvas space and choose <strong>Insert Template Page...</strong>.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Standard Template Modal:</strong> When browsing templates with an active document open, Open Publisher presents a non-destructive choice dialog ("Insert as New Page", "Apply to Current Page", or "Start Fresh").</span></p></li>
 </ul>
 </div>
 	</div>

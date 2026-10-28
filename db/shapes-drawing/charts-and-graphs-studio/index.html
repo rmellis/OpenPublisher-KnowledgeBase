@@ -1381,36 +1381,146 @@ footer[role="contentinfo"] {
 <div style="text-align: center; margin: 24px 0 28px 0;">
   <img src="https://github.com/user-attachments/assets/dd7ff7fe-9e1b-4438-817a-995d184a180d" alt="Charts &amp; Graphs Studio" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); border: 1px solid #d1d5db;" />
 </div>
-<p class="western">Open Publisher features a dedicated, zero-dependency <strong>Charts &amp; Graphs Studio</strong> that empowers creators to generate crisp, publication-grade vector visualizations directly on the canvas. Designed from the ground up for crisp precision, all charts render as pure, scalable SVG objects that maintain razor-sharp clarity at any canvas zoom level and during 300 DPI high-resolution print and PDF export.</p>
+<p class="western">Open Publisher features a dedicated, zero-dependency <strong>Charts &amp; Graphs Studio</strong> that empowers creators to generate crisp, publication-grade vector visualizations directly on the canvas. Designed from the ground up for publishing excellence, all charts render as pure, scalable SVG objects that maintain razor-sharp clarity at any canvas zoom level and during 300 DPI high-resolution print and PDF export.</p>
+
+<div style="background-color: #f0fdf4; border-left: 4px solid #007670; padding: 14px 18px; margin: 20px 0; border-radius: 4px;">
+  <p style="margin: 0; color: #164e63; font-size: 0.95em;"><strong>Zero External Dependencies:</strong> Unlike web applications that embed heavy external charting libraries (such as Chart.js or D3), Open Publisher generates mathematical, lightweight SVG elements natively. This guarantees instant canvas rendering, zero bundle bloat, and total offline reliability.</p>
+</div>
 
 <h3 class="western"><span style="color: #007670;">9 Distinct Chart &amp; Graph Types</span></h3>
 <p class="western">The studio provides nine specialized chart architectures tailored for reports, newsletters, resumes, brochures, and commercial publications:</p>
-<ul>
-<li><p align="left"><span style="font-size: small;"><strong>Pie Chart:</strong> High-precision radial SVG slices with automatic percentage badges and perimeter legends.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Donut Chart:</strong> Hollow ring chart featuring an inner cutout radius, central metric summary (such as grand totals), and elegant slice separation.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Vertical Column Graph:</strong> Vertical comparison columns with rounded corners, benchmark Y-axis scale lines, dashed gridlines, and clear data value labels.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Horizontal Bar Graph:</strong> Horizontal metric bars with category labels on the left, rounded end caps, and numerical callouts.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Line Graph:</strong> Continuous trend polyline with circular vertex data markers, value callouts, and an optional subtle semi-transparent gradient fill beneath the curve.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Area Chart:</strong> Mountain and area graph with multi-stop rich gradient fill beneath a bold stroke line, vertex markers, and data labels.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Semi-Circle Gauge:</strong> 180-degree radial arch from 9 o'clock to 3 o'clock, featuring proportional segment arcs, center metric readout, and baseline guide lines.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Stacked Column:</strong> Cumulative stacked vertical column showing category composition from bottom to top, 0% to 100% gridlines, segment percentage readouts, and guide callouts.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Radar / Spider Web Chart:</strong> 3-tier concentric polygonal web rings, radial spoke axes, closed semi-transparent polygon data fill, colored vertex points, and perimeter category labels.</span></p></li>
-</ul>
+
+<div style="overflow-x: auto; margin: 20px 0;">
+<table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+<thead>
+<tr style="background-color: #007670; color: #ffffff;">
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Chart Format</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Visual Geometry</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Best Used For</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Key Customization Options</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Pie Chart</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Radial 360-degree SVG wedges</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Market share, demographic breakdowns, budget shares</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Percentage callouts, perimeter legends, slice color overrides</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Donut Chart</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Hollow ring with inner cutout radius</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">KPI dashboards, portfolio summaries, ratio displays</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Center grand total metric, slice separation gaps, labels</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Vertical Column Graph</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Vertical bars with rounded top caps</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Quarterly earnings, monthly revenue, year-over-year comparisons</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Y-axis scale benchmarks, dashed gridlines, top value labels</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Horizontal Bar Graph</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Horizontal bars with left category axis</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Survey rankings, multi-category benchmarks, lead generation</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">End-cap value readouts, custom category font sizes</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Line Graph</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Continuous stroke polyline with vertex circles</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Time-series analysis, stock trends, performance growth</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Point value markers, stroke thickness, subtle gradient fill</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Area Chart</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Filled mountain silhouette beneath contour stroke</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Cumulative volume, traffic growth, resource utilization</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Multi-stop rich gradient fill, vertex callout dots</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Semi-Circle Gauge</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">180-degree radial arch from 9 to 3 o'clock</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Target completion, satisfaction ratings, speedometer metrics</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Proportional segment arcs, large central readout, guide lines</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Stacked Column</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Cumulative segments stacked bottom-to-top</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Part-to-whole categorical contributions, departmental budgets</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">0% to 100% scale gridlines, segment percentage readouts</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Radar / Spider Web</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Concentric polygonal web rings with spoke axes</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Competency evaluations, feature matrixes, multidimensional audits</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Translucent polygon fill, vertex dots, perimeter labels</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 <h3 class="western"><span style="color: #007670;">Interactive 3-Panel Chart Studio Modal</span></h3>
-<p class="western">Clicking <strong>Chart</strong> on the <strong>Insert</strong> ribbon tab (or right-clicking the canvas and choosing <em>Chart or Graph...</em>) launches the interactive 3-panel Chart Studio modal:</p>
+<p class="western">Clicking <strong>Chart</strong> on the <strong>Insert</strong> ribbon tab (or right-clicking the canvas and choosing <em>Chart or Graph...</em>) opens the Chart Studio modal (<span style="font-family: Courier New, monospace;">window.showChartModal()</span>). Engineered with an expanded 980px zero-scrollbar layout, all data fields and controls fit comfortably without horizontal overflow:</p>
 <ul>
-<li><p align="left"><span style="font-size: small;"><strong>Left Panel (Chart Type Selector):</strong> Visual gallery displaying all nine chart formats with dedicated icons and an instant CSV/TSV fast-paste importer.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Center Panel (Data Editor &amp; Controls):</strong> Configurable chart title, toggleable legend, toggleable data labels, and a live tabular data grid. Each row features a custom color picker, category label text input, themed number stepper, and row deletion buttons.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Themed Number Steppers (<span style="font-family: Courier New, monospace;">.chart-modern-spinner</span>):</strong> Styled with Open Publisher's signature theme colors, these steppers support single-click increments, continuous hold-to-spin adjustments, Shift-click jumping (+5 / -5), and keyboard arrow navigation matching ribbon typography tools.</span></p></li>
-<li><p align="left"><span style="font-size: small;"><strong>Right Panel (Real-Time SVG Preview):</strong> Instant visual feedback that re-renders the vector graph on every keystroke, color pick, or number increment.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Left Panel (Chart Selector &amp; Importer):</strong> Browse the nine visual chart categories with FontAwesome preview badges. Includes a dedicated fast paste prompt to import tabular datasets in seconds.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Center Panel (Data Grid Editor):</strong> Configure title text, toggle chart legends on or off, toggle value labels, and edit data rows. Each row features a native color swatch picker, category label text input, themed number stepper, and quick row deletion button.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Right Panel (Real-Time SVG Preview):</strong> Instant WYSIWYG feedback updating simultaneously as numbers are adjusted, rows are added, or colors are customized.</span></p></li>
 </ul>
 
-<h3 class="western"><span style="color: #007670;">Fast Spreadsheet Data Import</span></h3>
-<p class="western">Creators can paste tabular data directly from spreadsheet software including Microsoft Excel, Google Sheets, or LibreOffice Calc. The built-in parser automatically detects tab-delimited or comma-separated rows, formats values into numeric benchmarks, and populates the data grid in a single click.</p>
+<h3 class="western"><span style="color: #007670;">Themed Number Stepper Controls (<span style="font-family: Courier New, monospace;">.chart-modern-spinner</span>)</span></h3>
+<p class="western">To provide effortless numerical adjustments, the data grid utilizes custom themed number steppers styled with Open Publisher's signature teal colorway and stacked up/down chevrons matching the ribbon font size picker:</p>
 
-<h3 class="western"><span style="color: #007670;">Canvas Interaction &amp; Double-Click Re-Editing</span></h3>
-<p class="western">Charts operate as native first-class canvas elements. Once placed on canvas, you can freely move, scale with corner bounding-box handles, rotate, align with smart snapping guides, and manage layer ordering through the Selection Pane. Double-clicking any existing chart on canvas immediately reopens the Chart Studio with that chart's dataset pre-loaded, enabling quick iterations without starting over. Full undo and redo (<span style="font-family: Courier New, monospace;">Ctrl+Z</span> / <span style="font-family: Courier New, monospace;">Ctrl+Y</span>) is supported across all chart creation and editing actions.</p>
+<div style="overflow-x: auto; margin: 20px 0;">
+<table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+<thead>
+<tr style="background-color: #007670; color: #ffffff;">
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Input / Action</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Behavior &amp; Step Size</th>
+<th style="padding: 10px 14px; border: 1px solid #005a55;">Workflow Benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Single Click Chevron</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Increments or decrements value by +1 / -1</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Precision fine-tuning</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Shift + Click Chevron</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Increments or decrements value by +5 / -5</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Rapid benchmark jumping</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Hold-to-Spin (Long Press)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Accelerated continuous spinning after 250ms hold</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Effortless large number adjustments without repeated clicking</td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Keyboard Arrow Keys</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Up/Down adjusts focused input (+1/-1, Shift: +5/-5)</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Fast keyboard-only data entry</td>
+</tr>
+<tr style="background-color: #f9fbfb;">
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0; font-weight: 600;">Direct Text Typing</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Accepts raw numeric input directly</td>
+<td style="padding: 9px 14px; border: 1px solid #e2e8f0;">Immediate manual override</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 class="western"><span style="color: #007670;">Fast Spreadsheet Tabular Import</span></h3>
+<p class="western">You can paste data directly from spreadsheet software including Microsoft Excel, Google Sheets, or LibreOffice Calc. Click <strong>Import CSV / TSV</strong> in the left panel, paste tab-delimited or comma-separated rows, and Open Publisher automatically parses category names and numeric values into the live editor table.</p>
+
+<h3 class="western"><span style="color: #007670;">Canvas Interaction, Smart Snapping &amp; Double-Click Re-Editing</span></h3>
+<p class="western">Charts operate as first-class canvas elements (<span style="font-family: Courier New, monospace;">.pub-element[data-type="chart"]</span>):</p>
+<ul>
+<li><p align="left"><span style="font-size: small;"><strong>Freeform Scaling &amp; Rotation:</strong> Scale using corner or edge bounding-box handles. Vector paths recalculate in real time to maintain razor-sharp stroke weights and proportional typography.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Smart Snapping &amp; Guides:</strong> Snaps cleanly to margin guides, column guides, ruler guides, and adjacent document objects.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Double-Click Re-Editing:</strong> Double-clicking any chart on the canvas immediately reopens the Chart Studio with that chart's existing dataset pre-loaded for rapid updates.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Full Undo &amp; Redo:</strong> Every chart insertion, dataset change, and repositioning action registers on the history stack (<span style="font-family: Courier New, monospace;">pushHistory()</span>), allowing instant reversal with <span style="font-family: Courier New, monospace;">Ctrl+Z</span>.</span></p></li>
+<li><p align="left"><span style="font-size: small;"><strong>Attribute Serialization:</strong> All chart configuration data is stored in the <span style="font-family: Courier New, monospace;">data-chart-config</span> attribute, ensuring complete preservation across page switches, auto-saves, and <span style="font-family: Courier New, monospace;">.opub</span> file exports.</span></p></li>
+</ul>
 </div>
 	</div>
 
