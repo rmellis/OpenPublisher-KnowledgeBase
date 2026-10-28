@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en-US">
 
@@ -1396,6 +1396,32 @@ footer[role="contentinfo"] {
 <p align="left"><span style="font-size: small;"><strong>Graceful fallback &#8211;</strong> On older browsers that do not support occlusion tracking, the system fails silently via a <span style="font-family: Courier New, monospace;">try-catch</span> &#8211; no errors, no broken functionality, just no protection on unsupported browsers.</span></p>
 </li>
 </ul>
+
+<h3 class="western"><span style="color: #007670;">Authorized Platform Exemptions (Puter.com Cloud Desktop)</span></h3>
+<p class="western">Open Publisher is officially accepted and available as a cloud desktop application on <a href="https://puter.com/app/open-publisher" target="_blank" rel="noopener noreferrer">Puter.com</a>. Within Puter's browser-based desktop operating system, applications run inside container frames where Puter's native floating window controls (minimize, maximize, close buttons and titlebar chrome) naturally float and hover over the upper boundary of the document workspace.</p>
+
+<p class="western">Under standard occlusion tracking, these floating desktop window controls could be perceived by IntersectionObserver v2 as an external occlusion, potentially causing a false-positive "Suspicious Activity Detected" security alert during normal cloud desktop usage.</p>
+
+<p class="western">To ensure a smooth, uninterrupted user experience while maintaining robust anti-clickjacking protection, Open Publisher incorporates an intelligent, multi-vector platform verification engine (<span style="font-family: Courier New, monospace;">isPuterEnvironment()</span>) that verifies authorized runtime contexts before initializing the occlusion watcher:</p>
+
+<ul>
+<li>
+<p align="left"><span style="font-size: small;"><strong>Ancestor Origins Validation:</strong> Verifies <span style="font-family: Courier New, monospace;">window.location.ancestorOrigins</span> against trusted Puter endpoints (<span style="font-family: Courier New, monospace;">puter.com</span>, <span style="font-family: Courier New, monospace;">*.puter.com</span>, and <span style="font-family: Courier New, monospace;">*.puter.site</span>).</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong>Parent Frame Referrer Verification:</strong> Confirms parent frame <span style="font-family: Courier New, monospace;">document.referrer</span> hostnames originate from verified Puter platforms.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong>Native Hosting Detection:</strong> Identifies direct execution hosted under <span style="font-family: Courier New, monospace;">*.puter.site</span> or <span style="font-family: Courier New, monospace;">*.puter.com</span>.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong>Client SDK Telemetry:</strong> Detects genuine runtime <span style="font-family: Courier New, monospace;">window.puter</span> and <span style="font-family: Courier New, monospace;">window.parent.puter</span> client SDK objects.</span></p>
+</li>
+</ul>
+
+<div style="background-color: #f0fdf4; border-left: 4px solid #007670; padding: 14px 18px; margin: 18px 0; border-radius: 4px;">
+<p style="margin: 0; color: #164e63; font-size: 0.95em;"><strong>Security Shield Remains Active:</strong> This exemption applies exclusively to origin-verified Puter environments. Any unauthorized third-party iframes, malicious wrapper sites, or unverified external overlays remain fully blocked by the Anti Ad-Overlay security shield.</p>
+</div>
 </div>
 	</div>
 
