@@ -1404,4 +1404,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/shapes-drawing/charts-and-graphs-studio/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/shapes-drawing/interactive-progress-bars/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/templates/multi-page-template-insertion-studio/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/themes-dark/local-hd-icons-dynamic-theme-hue-shifting/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/layout-tools/insert-tab-ribbon-illustrations-layout-streamlining/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

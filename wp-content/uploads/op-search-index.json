@@ -1540,5 +1540,35 @@
     "category_name": "Text Boxes & Typography",
     "excerpt": "Create professional Arabic, Hebrew, Persian, and Urdu publications for free in OpenPublisher. Features automatic bidirectional (BiDi) text detection (dir=\"auto\"), Microsoft Office [LTR] [RTL] [AUTO] ribbon controls, cursive ligature preservation, and 300 DPI PDF export.",
     "content": "html.opub-in-app .opub-web-only-cta { display: none !important; } .opub-hero-box { background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%); border: 2px solid #007670; border-radius: 10px; padding: 24px 28px; margin: 22px 0 28px 0; box-shadow: 0 6px 20px rgba(0, 118, 112, 0.08); } .opub-cta-btn { display: inline-block; background: #007670; color: #ffffff !important; font-weight: 700; padding: 11px 22px; border-radius: 6px; text-decoration: none !important; margin: 6px 10px 6px 0; font-size: 14px; } .opub-rtl-demo { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px 22px; margin: 18px 0; } .opub-faq-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; } Right-to-Left (RTL) Text: Typing Arabic, Hebrew, Persian, and Bidirectional Languages World-class desktop publishing software must empower creators in every language. For designers, schools, mosques, synagogues, cultural centers, and international businesses working with Arabic, Hebrew, Persian (Farsi), Urdu, Pashto, Kurmanji/Sorani, Syriac, or Yiddish , software that only supports Left-to-Right (LTR) text is unusable. While other desktop publishing tools require expensive \"Middle Eastern (ME)\" editions or suffer from reversed, disconnected letters, OpenPublisher delivers zero-configuration, native Right-to-Left (RTL) and Bidirectional (BiDi) typography right out of the box. Zero-Config RTL &amp; BiDi Publishing in OpenPublisher Automatic Language Detection ( dir=\"auto\" ): Start typing in Arabic or Hebrew and the text box automatically aligns right-to-left with proper punctuation and caret flow. Authentic Office Ribbon Controls: Explicit [ LTR ] , [ RTL ] , and [ AUTO ] buttons right on the Home tab in the Paragraph group. F"
+  },
+  {
+    "title": "Charts & Graphs Studio",
+    "link": "https://kb.openpublisher.app/db/shapes-drawing/charts-and-graphs-studio/",
+    "url": "db/shapes-drawing/charts-and-graphs-studio/index.html",
+    "excerpt": "Generate publication-grade native SVG charts, pie charts, donut charts, column graphs, gauges, and radar charts in OpenPublisher with the interactive Chart Studio."
+  },
+  {
+    "title": "Interactive Progress Bars",
+    "link": "https://kb.openpublisher.app/db/shapes-drawing/interactive-progress-bars/",
+    "url": "db/shapes-drawing/interactive-progress-bars/index.html",
+    "excerpt": "Add interactive, customizable progress bars with 71 professional styles, 16 seamless diagonal striped patterns, and drawing tools ribbon integration in OpenPublisher."
+  },
+  {
+    "title": "Multi-Page Template Insertion Studio",
+    "link": "https://kb.openpublisher.app/db/templates/multi-page-template-insertion-studio/",
+    "url": "db/templates/multi-page-template-insertion-studio/index.html",
+    "excerpt": "Combine multiple templates into a single document with OpenPublisher Multi-Page Template Insertion Studio, flexible insertion modes, and context menu integration."
+  },
+  {
+    "title": "Local HD Icons & Dynamic Theme Hue Shifting",
+    "link": "https://kb.openpublisher.app/db/themes-dark/local-hd-icons-dynamic-theme-hue-shifting/",
+    "url": "db/themes-dark/local-hd-icons-dynamic-theme-hue-shifting/index.html",
+    "excerpt": "Local high-definition PNG icons for WordArt and Templates with dynamic CSS theme hue shifting across all OpenPublisher interface themes."
+  },
+  {
+    "title": "Insert Ribbon Layout Streamlining",
+    "link": "https://kb.openpublisher.app/db/layout-tools/insert-tab-ribbon-illustrations-layout-streamlining/",
+    "url": "db/layout-tools/insert-tab-ribbon-illustrations-layout-streamlining/index.html",
+    "excerpt": "Single-line typography alignment and streamlined Illustrations group toolbar layout in OpenPublisher Insert ribbon tab."
   }
 ]
