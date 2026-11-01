@@ -1440,4 +1440,40 @@
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/extra-tips/direct-pdf-import-editable-layout-reconstruction/</loc>
+    <lastmod>2026-11-01T19:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/templates/css-color-gradient-theme-studio/</loc>
+    <lastmod>2026-11-01T19:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/templates/comprehensive-template-library-modernization/</loc>
+    <lastmod>2026-11-01T19:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/templates/custom-templates-expansion-showcase/</loc>
+    <lastmod>2026-11-01T19:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/graphics/format-picture-sidebar-slider-fill-rounded-corners/</loc>
+    <lastmod>2026-11-01T19:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kb.openpublisher.app/db/layout-tools/classic-ms-publisher-cursor-engine-drag-controls/</loc>
+    <lastmod>2026-11-01T19:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>

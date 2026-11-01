@@ -1634,13 +1634,12 @@ footer[role="contentinfo"] {
 					Can I edit a PDF with OpenPublisher?
 				</h3>
 				<p>
-					Full drag-and-drop vector PDF editing is currently on our active development roadmap. In the current release, OpenPublisher provides full <strong>PDF Export</strong> (generating 300 DPI print-ready documents), while document editing is supported across:
+					Yes! OpenPublisher features native client-side <strong><a href="../../extra-tips/direct-pdf-import-editable-layout-reconstruction/index.html" style="color: #007670; font-weight: bold; text-decoration: underline;">Direct PDF Document Opening &amp; Editable Layout Reconstruction</a></strong>. Simply drag any PDF file straight onto the canvas or choose <kbd>File</kbd> &gt; <kbd>Open</kbd>.
 				</p>
+				<p>An interactive pre-flight modal allows you to choose your preferred processing mode:</p>
 				<ul style="line-height: 1.7; padding-left: 20px;">
-					<li>Native <code>.opub</code> project files.</li>
-					<li>Microsoft Word (<code>.docx</code> / <code>.doc</code>) files with two import choices: <em>Editable Text Mode</em> for full layout adjustments, or <em>Flattened Image Safe Mode</em> for 100% pixel-perfect graphic accuracy.</li>
-					<li>Microsoft Excel and CSV spreadsheets (<code>.xlsx</code>, <code>.csv</code>) for automated table generation.</li>
-					<li>Legacy Microsoft Publisher (<code>.pub</code>, <code>.pubx</code>) files.</li>
+					<li><strong>Editable Text Mode:</strong> Deconstructs the PDF into live, repositionable text boxes, headings, and columns. Advanced baseline grouping prevents table text from drifting across columns, while an automatic Contrast Guard ensures white labels on dark buttons remain completely legible.</li>
+					<li><strong>Flattened Image Safe Mode:</strong> Renders each page into an ultra high-resolution 2.5x raster backdrop plate, perfect for stamping signatures, adding annotations, or filling out forms while guaranteeing 100% visual fidelity to the original file.</li>
 				</ul>
 			</div>
 
@@ -1694,9 +1693,9 @@ footer[role="contentinfo"] {
 						<tr style="background-color: #fdfdfd;">
 							<td style="padding: 9px 12px; border: 1px solid #e0e0e0; font-weight: bold;">Adobe PDF</td>
 							<td style="padding: 9px 12px; border: 1px solid #e0e0e0;"><code>.pdf</code></td>
-							<td style="padding: 9px 12px; border: 1px solid #e0e0e0; color: #d97706; font-weight: bold;"><i class="fas fa-clock"></i> In Development</td>
+							<td style="padding: 9px 12px; border: 1px solid #e0e0e0; color: #007670; font-weight: bold;"><i class="fas fa-check-circle"></i> Dual Mode</td>
 							<td style="padding: 9px 12px; border: 1px solid #e0e0e0; color: #007670; font-weight: bold;"><i class="fas fa-check-circle"></i> 300 DPI Print</td>
-							<td style="padding: 9px 12px; border: 1px solid #e0e0e0;">Industry-standard print-ready output with embedded fonts.</td>
+							<td style="padding: 9px 12px; border: 1px solid #e0e0e0;">Direct opening with Editable Text Mode or 2.5x Flattened Image Safe Mode.</td>
 						</tr>
 						<tr style="background-color: #f7faf9;">
 							<td style="padding: 9px 12px; border: 1px solid #e0e0e0; font-weight: bold;">Microsoft Word</td>
@@ -2135,6 +2134,7 @@ footer[role="contentinfo"] {
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/grid-guides/index.html' class='bpress-nav-item-title'>Grid Guides</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/baseline-guides/index.html' class='bpress-nav-item-title'>Baseline Guides</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/draggable-custom-guides/index.html' class='bpress-nav-item-title'>Draggable Custom Guides</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/classic-ms-publisher-cursor-engine-drag-controls/index.html' class='bpress-nav-item-title'>Classic MS Publisher Cursor Engine &amp; Real-Time Drag Controls</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/non-destructive-selection/index.html' class='bpress-nav-item-title'>Non-Destructive Selection</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/crisp-margin-guides/index.html' class='bpress-nav-item-title'>Crisp Margin Guides at All Zoom Levels</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/margin-guide-stacking-context/index.html' class='bpress-nav-item-title'>Margin Guide Stacking Context &amp; Dropdown Layering</a></span></li>
@@ -2238,6 +2238,7 @@ footer[role="contentinfo"] {
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/shadows-and-glow-effects/index.html' class='bpress-nav-item-title'>Shadows &amp; Glow Effects</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/image-filters-alt-text/index.html' class='bpress-nav-item-title'>Image Filters &amp; Alt Text</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/quick-rounded-corners/index.html' class='bpress-nav-item-title'>Quick Rounded Corners</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/format-picture-sidebar-slider-fill-rounded-corners/index.html' class='bpress-nav-item-title'>Format Picture Sidebar: Dynamic Sliders, Rounded Corners &amp; Color Sync</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/unified-bulk-image-import/index.html' class='bpress-nav-item-title'>Unified Bulk Image Import &amp; Multi-Page Automation</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/in-memory-batch-page-generation/index.html' class='bpress-nav-item-title'>In-Memory Batch Page Generation &amp; Modal Interaction</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/lock-aspect-ratio-hit-target/index.html' class='bpress-nav-item-title'>Lock Aspect Ratio &amp; Picture Tools Precision</a></span></li>
@@ -2280,6 +2281,7 @@ footer[role="contentinfo"] {
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../extra-tips/drop-cap/index.html' class='bpress-nav-item-title'>Drop Cap</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../extra-tips/text-fit-best-fit/index.html' class='bpress-nav-item-title'>Text Fit: Best Fit</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../extra-tips/opening-importing-files/index.html' class='bpress-nav-item-title'>Opening &amp; Importing Files</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../extra-tips/direct-pdf-import-editable-layout-reconstruction/index.html' class='bpress-nav-item-title'>Direct PDF Import &amp; Editable Layout Reconstruction Engine</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../extra-tips/multi-select-grouping-flip/index.html' class='bpress-nav-item-title'>Multi-Select, Grouping &amp; Flip</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../extra-tips/the-custom-colour-picker/index.html' class='bpress-nav-item-title'>The Custom Colour Picker</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../extra-tips/quality-of-life-workflow-shortcuts/index.html' class='bpress-nav-item-title'>QoL &amp; Workflow Shortcuts</a></span></li>
@@ -2330,6 +2332,9 @@ footer[role="contentinfo"] {
 		</li>
 		<li class='bpress-nav-section'><span class='bpress-nav-item'><span class='bpress-nav-widget-icon bp-files'></span><span class="bpress-nav-item-title">Publication Templates Gallery</span></span><ul class='children'>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/multi-page-template-insertion-studio/index.html' class='bpress-nav-item-title'>Multi-Page Template Insertion Studio</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/css-color-gradient-theme-studio/index.html' class='bpress-nav-item-title'>CSS Color, Gradient &amp; Theme Studio for Templates</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/comprehensive-template-library-modernization/index.html' class='bpress-nav-item-title'>Comprehensive Template Library Visual Overhaul &amp; Modernization</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/custom-templates-expansion-showcase/index.html' class='bpress-nav-item-title'>Custom Templates Expansion: Holiday, School &amp; Club Showcase</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/adding-custom-templates/index.html' class='bpress-nav-item-title'>Adding Custom Templates</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/template-page-size-badges/index.html' class='bpress-nav-item-title'>Template Page Size Badges</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/exporting-distributing-custom-templates-manifest-format/index.html' class='bpress-nav-item-title'>Exporting, Distributing &amp; Sharing Custom Templates</a></span></li>

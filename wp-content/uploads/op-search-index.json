@@ -1576,5 +1576,41 @@
     "link": "https://kb.openpublisher.app/db/introduction/frequently-asked-questions/",
     "url": "db/introduction/frequently-asked-questions/index.html",
     "excerpt": "Find answers to frequently asked questions about OpenPublisher: desktop and web features, importing Microsoft Publisher .pub files, PDF editing roadmap, typography, fancy text boxes, tables, charts studio, image borders, and Windows 10 troubleshooting."
+  },
+  {
+    "title": "Direct PDF Import & Editable Layout Reconstruction Engine",
+    "link": "https://kb.openpublisher.app/db/extra-tips/direct-pdf-import-editable-layout-reconstruction/",
+    "url": "db/extra-tips/direct-pdf-import-editable-layout-reconstruction/index.html",
+    "excerpt": "Open and edit PDF documents directly in OpenPublisher with client-side layout reconstruction, Editable Text Mode, Flattened Image Safe Mode, and column-safe baseline alignment."
+  },
+  {
+    "title": "CSS Color, Gradient & Theme Studio for Templates",
+    "link": "https://kb.openpublisher.app/db/templates/css-color-gradient-theme-studio/",
+    "url": "db/templates/css-color-gradient-theme-studio/index.html",
+    "excerpt": "Customize template colors and gradients with OpenPublisher CSS Color Studio, featuring multi-stop gradients, 12 designer themes, and global page color replacement."
+  },
+  {
+    "title": "Comprehensive Template Library Visual Overhaul & Modernization",
+    "link": "https://kb.openpublisher.app/db/templates/comprehensive-template-library-modernization/",
+    "url": "db/templates/comprehensive-template-library-modernization/index.html",
+    "excerpt": "Explore the modernized OpenPublisher template library with 289+ overhauled publication designs, interactive resume progress bars, and print-safe rotated image rendering."
+  },
+  {
+    "title": "Custom Templates Expansion: Holiday, School & Club Showcase",
+    "link": "https://kb.openpublisher.app/db/templates/custom-templates-expansion-showcase/",
+    "url": "db/templates/custom-templates-expansion-showcase/index.html",
+    "excerpt": "Discover newly added custom templates in OpenPublisher including Santa Nice List Certificate, Dear Santa Letter, School Library Opening Times, and student club flyers."
+  },
+  {
+    "title": "Format Picture Sidebar: Dynamic Sliders, Rounded Corners & Color Sync",
+    "link": "https://kb.openpublisher.app/db/graphics/format-picture-sidebar-slider-fill-rounded-corners/",
+    "url": "db/graphics/format-picture-sidebar-slider-fill-rounded-corners/index.html",
+    "excerpt": "Learn how to use OpenPublisher Format Picture sidebar with its 0-100px rounded corners slider, dynamic slider gradient fills, and universal font color synchronization."
+  },
+  {
+    "title": "Classic MS Publisher Cursor Engine & Real-Time Drag Controls",
+    "link": "https://kb.openpublisher.app/db/layout-tools/classic-ms-publisher-cursor-engine-drag-controls/",
+    "url": "db/layout-tools/classic-ms-publisher-cursor-engine-drag-controls/index.html",
+    "excerpt": "Discover OpenPublisher classic MS Publisher cursor engine, featuring the iconic Move Truck and crosshair cursors, ribbon toggle, and real-time text box resizing."
   }
 ]
