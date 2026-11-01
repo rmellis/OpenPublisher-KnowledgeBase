@@ -41,8 +41,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if(searchInputs.length === 0) return;
     
-    // FETCH THE JSON IMMEDIATELY ON LOAD! 
-    fetch(jsonUrl) 
+    // FETCH THE JSON IMMEDIATELY ON LOAD WITH CACHE-BUSTING FOR WEB
+    var fetchUrl = jsonUrl;
+    if (isOnlineWeb) {
+        fetchUrl += (fetchUrl.includes('?') ? '&' : '?') + 'v=' + Date.now();
+    }
+    fetch(fetchUrl, isOnlineWeb ? { cache: 'no-cache' } : {}) 
     .then(res => {
         if(!res.ok) throw new Error("Network response was not ok");
         return res.json();
@@ -170,12 +174,72 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
             
-            var matches = searchIndex.filter(function(article) {
-                if(!article) return false;
+            var queryWords = query.split(/\s+/).filter(function(w) { return w.length > 0; });
+            
+            var scoredMatches = [];
+            for (var i = 0; i < searchIndex.length; i++) {
+                var article = searchIndex[i];
+                if (!article) continue;
                 var title = (article.title || '').toLowerCase();
                 var excerpt = (article.excerpt || '').toLowerCase();
                 var content = (article.content || '').toLowerCase();
-                return title.includes(query) || excerpt.includes(query) || content.includes(query);
+                
+                var score = 0;
+                
+                if (title === query) {
+                    score += 1000;
+                } else if (title.startsWith(query)) {
+                    score += 500;
+                } else if (title.includes(query)) {
+                    score += 250;
+                }
+                
+                if (excerpt.includes(query)) {
+                    score += 100;
+                }
+                
+                if (content.includes(query)) {
+                    score += 20;
+                }
+                
+                if (queryWords.length > 1) {
+                    var allWordsFound = true;
+                    for (var w = 0; w < queryWords.length; w++) {
+                        var word = queryWords[w];
+                        var inTitle = title.includes(word);
+                        var inExcerpt = excerpt.includes(word);
+                        var inContent = content.includes(word);
+                        if (!inTitle && !inExcerpt && !inContent) {
+                            allWordsFound = false;
+                            break;
+                        }
+                        if (inTitle) score += 60;
+                        if (inExcerpt) score += 25;
+                        if (inContent) score += 8;
+                    }
+                    if (allWordsFound) {
+                        score += 150;
+                    }
+                }
+                
+                if (score > 0) {
+                    scoredMatches.push({
+                        article: article,
+                        score: score,
+                        index: i
+                    });
+                }
+            }
+            
+            scoredMatches.sort(function(a, b) {
+                if (b.score !== a.score) {
+                    return b.score - a.score;
+                }
+                return a.index - b.index;
+            });
+            
+            var matches = scoredMatches.slice(0, 20).map(function(item) {
+                return item.article;
             });
             
             resultsContainer.innerHTML = "";
@@ -186,7 +250,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     var rawLink = (match.link || match.url || '').trim();
                     var finalLink = rawLink;
 
-                    if (finalLink.includes('acr.floydcraft.co.uk/openpublisher')) {
+                    if (finalLink.includes('kb.openpublisher.app')) {
+                        var relT = finalLink.split('kb.openpublisher.app')[1];
+                        if (relT.startsWith('/')) relT = relT.substring(1);
+                        finalLink = relT;
+                    } else if (finalLink.includes('acr.floydcraft.co.uk/openpublisher')) {
                         var relT = finalLink.split('acr.floydcraft.co.uk/openpublisher')[1];
                         if (relT.startsWith('/')) relT = relT.substring(1);
                         finalLink = relT;
@@ -237,12 +305,20 @@ document.addEventListener("DOMContentLoaded", function() {
                     a.style.transition = "background-color 0.15s";
                     
                     var regex = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\\\]/g, '\\\\$&') + ")", "gi");
-                    var highlightedTitle = match.title.replace(regex, '<span style="color: #007670; font-weight: bold;">$1</span>');
+                    var highlightedTitle = (match.title || '').replace(regex, '<span style="color: #007670; font-weight: bold;">$1</span>');
                     
                     var excerptHtml = "";
-                    if(match.excerpt) {
-                        var highlightedExcerpt = match.excerpt.replace(regex, '<span style="color: #007670; font-weight: bold;">$1</span>');
-                        excerptHtml = '<div style="font-size: 13px; color: #666; margin-top: 4px; line-height: 1.4;">' + highlightedExcerpt + '...</div>';
+                    var displayExcerpt = match.excerpt || "";
+                    if (!displayExcerpt.toLowerCase().includes(query) && match.content && match.content.toLowerCase().includes(query)) {
+                        var cLower = match.content.toLowerCase();
+                        var pos = cLower.indexOf(query);
+                        var start = Math.max(0, pos - 50);
+                        var end = Math.min(match.content.length, pos + query.length + 80);
+                        displayExcerpt = (start > 0 ? "..." : "") + match.content.substring(start, end).trim() + "...";
+                    }
+                    if(displayExcerpt) {
+                        var highlightedExcerpt = displayExcerpt.replace(regex, '<span style="color: #007670; font-weight: bold;">$1</span>');
+                        excerptHtml = '<div style="font-size: 13px; color: #666; margin-top: 4px; line-height: 1.4;">' + highlightedExcerpt + '</div>';
                     }
                     
                     a.innerHTML = '<div style="font-size: 16px; font-weight: 500; color: #1a1a1a;">' + highlightedTitle + '</div>' + excerptHtml;
