@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en-US">
 
@@ -16,7 +16,7 @@
 
 <meta name="msapplication-TileImage" content="../../../wp-content/uploads/2026/08/web-app-manifest-512x512-1.png">
 <meta name="google" content="nositelinkssearchbox"><link rel="canonical" href="https://kb.openpublisher.app/db/extra-tips/opening-importing-files/">
-<meta name="description" content="Open Publisher can import Word documents, Excel spreadsheets, legacy Publisher files, and images directly onto the canvas, with two Word import modes for text or layout fidelity."><meta name="keywords" content="Open Publisher import files,Open Publisher open Word Excel Publisher,Open Publisher import docx xlsx pub"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"../../../#","name":"","url":"../../../","logo":{"@type":"ImageObject","@id":"../../../#logo","inLanguage":"en-US"},"description":"Open Publisher"}</script><meta property="og:url" content="https://kb.openpublisher.app/db/extra-tips/opening-importing-files/"><meta property="og:site_name" content="Open Publisher"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="Open Publisher KB | Opening &amp; Importing Files"><meta property="og:description" content="Open Publisher can import Word documents, Excel spreadsheets, legacy Publisher files, and images directly onto the canvas, with two Word import modes for text or layout fidelity."><meta property="og:image" content="https://kb.openpublisher.app/assets/socialshare/opening-importing-files.jpeg"><meta property="og:image:height" content="1429"><meta property="og:image:width" content="2560"><meta name="twitter:card" content="summary"><meta name="twitter:locale" content="en_US"><meta name="twitter:title" content="Open Publisher KB | Opening &amp; Importing Files"><meta name="twitter:description" content="Open Publisher can import Word documents, Excel spreadsheets, legacy Publisher files, and images directly onto the canvas, with two Word import modes for text or layout fidelity."><meta name="twitter:url" content="https://kb.openpublisher.app/db/extra-tips/opening-importing-files/"><meta name="twitter:image" content="https://kb.openpublisher.app/assets/socialshare/opening-importing-files.jpeg"><link rel='dns-prefetch' href='//fonts.googleapis.com'>
+<meta name="description" content="OpenPublisher can open and import PDF documents, Word files, Excel and CSV spreadsheets, legacy Microsoft Publisher (.pub) files, SVGs, and images directly onto the canvas with editable text and flattened safe modes."><meta name="keywords" content="Open Publisher import files,Open Publisher open PDF,Open Publisher import Word Excel Publisher,Open Publisher import docx xlsx pub pdf csv svg,PDF layout reconstruction"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"../../../#","name":"","url":"../../../","logo":{"@type":"ImageObject","@id":"../../../#logo","inLanguage":"en-US"},"description":"Open Publisher"}</script><meta property="og:url" content="https://kb.openpublisher.app/db/extra-tips/opening-importing-files/"><meta property="og:site_name" content="Open Publisher"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="Open Publisher KB | Opening &amp; Importing Files"><meta property="og:description" content="OpenPublisher can open and import PDF documents, Word files, Excel and CSV spreadsheets, legacy Microsoft Publisher (.pub) files, SVGs, and images directly onto the canvas with editable text and flattened safe modes."><meta property="og:image" content="https://kb.openpublisher.app/assets/socialshare/opening-importing-files.jpeg"><meta property="og:image:height" content="1429"><meta property="og:image:width" content="2560"><meta name="twitter:card" content="summary"><meta name="twitter:locale" content="en_US"><meta name="twitter:title" content="Open Publisher KB | Opening &amp; Importing Files"><meta name="twitter:description" content="OpenPublisher can open and import PDF documents, Word files, Excel and CSV spreadsheets, legacy Microsoft Publisher (.pub) files, SVGs, and images directly onto the canvas with editable text and flattened safe modes."><meta name="twitter:url" content="https://kb.openpublisher.app/db/extra-tips/opening-importing-files/"><meta name="twitter:image" content="https://kb.openpublisher.app/assets/socialshare/opening-importing-files.jpeg"><link rel='dns-prefetch' href='//fonts.googleapis.com'>
 <style id="wp-img-auto-sizes-contain-inline-css">
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
@@ -1394,34 +1394,84 @@ footer[role="contentinfo"] {
 <tr style="background-color: #ffffff; border-bottom: 1px solid #d9e8e6;">
 <td style="padding: 12px 16px; font-weight: bold; color: #1e4d40; border-left: none; border-right: none;">Native Format</td>
 <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; color: #444; border-left: none; border-right: none;">.opub, .json</td>
-<td style="padding: 12px 16px; border-left: none; border-right: none;">Full fidelity loading &#8211; restores your entire working session exactly as it was saved, preserving all layers, text boxes, styling, and high-resolution assets.</td>
+<td style="padding: 12px 16px; border-left: none; border-right: none;">Full fidelity project loading - restores your entire working session exactly as it was saved, preserving all layers, text boxes, master pages, styling, and high-resolution assets.</td>
 </tr>
 <tr style="background-color: #ffffff; border-bottom: 1px solid #d9e8e6;">
-<td style="padding: 12px 16px; font-weight: bold; color: #1e4d40; border-left: none; border-right: none;">Images</td>
-<td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; color: #444; border-left: none; border-right: none;">.png, .jpg, .gif, .webp, etc.</td>
-<td style="padding: 12px 16px; border-left: none; border-right: none;">Dropped or opened images are instantly placed directly onto the current page canvas as movable, resizable elements, ready to be cropped or filtered.</td>
+<td style="padding: 12px 16px; font-weight: bold; color: #1e4d40; border-left: none; border-right: none;">PDF Documents</td>
+<td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; color: #444; border-left: none; border-right: none;">.pdf</td>
+<td style="padding: 12px 16px; border-left: none; border-right: none;">Direct client-side layout reconstruction with zero cloud dependencies. Choose between <strong>Editable Text Mode</strong> (converts lines and headings into live editable text boxes) or <strong>Flattened Image Safe Mode</strong> (high-res 2.5x raster plates for form stamping and signatures).</td>
+</tr>
+<tr style="background-color: #ffffff; border-bottom: 1px solid #d9e8e6;">
+<td style="padding: 12px 16px; font-weight: bold; color: #1e4d40; border-left: none; border-right: none;">Word Documents</td>
+<td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; color: #444; border-left: none; border-right: none;">.doc, .docx</td>
+<td style="padding: 12px 16px; border-left: none; border-right: none;">Word processor documents trigger an intelligent Import Wizard with two modes: extract flowing text into editable OpenPublisher text boxes or flatten pages into pixel-perfect backdrop images.</td>
+</tr>
+<tr style="background-color: #ffffff; border-bottom: 1px solid #d9e8e6;">
+<td style="padding: 12px 16px; font-weight: bold; color: #1e4d40; border-left: none; border-right: none;">Excel Spreadsheets &amp; Data</td>
+<td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; color: #444; border-left: none; border-right: none;">.xlsx, .xls, .csv</td>
+<td style="padding: 12px 16px; border-left: none; border-right: none;">Spreadsheets and comma-separated data are intelligently rendered as fully interactive, movable, and resizable table objects on the canvas, preserving your grid structure and cell values.</td>
 </tr>
 <tr style="background-color: #ffffff; border-bottom: 1px solid #d9e8e6;">
 <td style="padding: 12px 16px; font-weight: bold; color: #1e4d40; border-left: none; border-right: none;">Publisher Files</td>
 <td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; color: #444; border-left: none; border-right: none;">.pub, .pubx</td>
-<td style="padding: 12px 16px; border-left: none; border-right: none;">Experimental import of legacy Microsoft Publisher files. Our engine maps older assets to new formats, though layout fidelity may vary depending on the complexity of the original file.</td>
-</tr>
-<tr style="background-color: #ffffff; border-bottom: 1px solid #d9e8e6;">
-<td style="padding: 12px 16px; font-weight: bold; color: #1e4d40; border-left: none; border-right: none;">Excel Spreadsheets</td>
-<td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; color: #444; border-left: none; border-right: none;">.xlsx, .xls</td>
-<td style="padding: 12px 16px; border-left: none; border-right: none;">Instead of importing as raw text, spreadsheets are intelligently rendered as fully interactive, movable, and resizable table objects on the canvas, preserving your grid structure.</td>
+<td style="padding: 12px 16px; border-left: none; border-right: none;">Legacy Microsoft Publisher import engine converts older binary and XML publication files into editable canvas elements, text frames, shapes, and images.</td>
 </tr>
 <tr style="background-color: #ffffff;">
-<td style="padding: 12px 16px; font-weight: bold; color: #1e4d40; border-left: none; border-right: none; border-bottom: none;">Word Documents</td>
-<td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; color: #444; border-left: none; border-right: none; border-bottom: none;">.doc, .docx</td>
-<td style="padding: 12px 16px; border-left: none; border-right: none; border-bottom: none;">Because word processors handle layouts differently than publishing software, two distinct import modes are available (see below).</td>
+<td style="padding: 12px 16px; font-weight: bold; color: #1e4d40; border-left: none; border-right: none; border-bottom: none;">Images &amp; Vectors</td>
+<td style="padding: 12px 16px; font-family: 'Courier New', Courier, monospace; color: #444; border-left: none; border-right: none; border-bottom: none;">.png, .jpg, .jpeg, .gif, .webp, .svg</td>
+<td style="padding: 12px 16px; border-left: none; border-right: none; border-bottom: none;">Dropped or opened images and SVG vector files are instantly placed directly onto the active canvas as movable, resizable elements, ready to be cropped, styled, or filtered.</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h3 class="western" style="color: #307870; margin-bottom: 10px;">Word Document Import Modes<img decoding="async" class="alignright wp-image-2080" src="../../../wp-content/uploads/2026/08/WordDocumentImportModes.webp" alt="Word Document Import Modes" width="101" height="117" srcset="../../../wp-content/uploads/2026/08/WordDocumentImportModes.webp 427w, ../../../wp-content/uploads/2026/08/WordDocumentImportModes-259x300.webp 259w" sizes="(max-width: 101px) 100vw, 101px"></h3>
-<p class="western" style="line-height: 1.6; margin-bottom: 20px;">Word processors use &#8220;flowing&#8221; text rather than absolute page coordinates. Because of this, dropping or opening a <span style="font-family: 'Courier New', Courier, monospace; color: #444;">.doc</span> or <span style="font-family: 'Courier New', Courier, monospace; color: #444;">.docx</span> file triggers an intelligent <strong>Import Wizard</strong> with two specific modes, allowing you to choose how the text is handled based on your project&#8217;s needs:</p>
-<p><!-- Word Import Modes Table (Minified) --></p>
+
+<!-- SECTION 1: PDF IMPORT & RECONSTRUCTION -->
+<h3 class="western" style="color: #307870; margin-bottom: 12px; margin-top: 30px;"><i class="fas fa-file-pdf" style="margin-right: 8px;"></i>Direct PDF Document Opening &amp; Layout Reconstruction</h3>
+<p class="western" style="line-height: 1.6; margin-bottom: 16px;">Starting with <strong>OpenPublisher v5.13.1 and v5.13.2</strong>, you can open and edit standard PDF files directly inside the workspace without any third-party conversion software or subscriptions. Every page, paragraph, heading, and graphic element is parsed locally in memory through our high-performance client-side reconstruction pipeline.</p>
+
+<div class="alert alert-info" style="background-color: #f0f9f8; border: 1px solid #bce5df; border-left: 4px solid #007670; color: #005a55; padding: 14px 18px; border-radius: 6px; margin: 20px 0; line-height: 1.6;">
+	<strong><i class="fas fa-shield-alt" style="margin-right: 8px;"></i>100% Client-Side Privacy Guarantee:</strong> Your PDF documents never leave your computer. OpenPublisher performs all stream decoding, vector extraction, and text positioning directly inside your local browser or desktop sandbox.
+</div>
+
+<p class="western" style="line-height: 1.6; margin-bottom: 16px;">Whenever you drag and drop a <span style="font-family: 'Courier New', Courier, monospace; color: #444;">.pdf</span> file into OpenPublisher or select it from <strong>File &gt; Open</strong>, the interactive <strong>Pre-Flight Import Dialog</strong> appears, letting you select how to reconstruct the document:</p>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 25px 0;">
+	<div style="background: #ffffff; border: 1px solid #d2eae4; border-top: 4px solid #007670; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+		<h4 style="margin-top: 0; color: #007670; font-size: 16px; font-weight: 700;">
+			<i class="fas fa-font" style="margin-right: 8px;"></i>1. Editable Text Mode (Recommended)
+		</h4>
+		<p style="font-size: 14px; line-height: 1.6; color: #444; margin-bottom: 10px;">
+			Deconstructs the PDF into live, independent OpenPublisher text boxes, headings, and lines placed at their precise canvas coordinates. You can immediately edit copy, fix typos, alter font families, change colors, and reposition blocks freely.
+		</p>
+		<ul style="font-size: 13px; color: #555; padding-left: 18px; margin-bottom: 0; line-height: 1.5;">
+			<li><strong>Column-Safe Line Grouping:</strong> Bidirectional gap testing preserves distinct columns and tables.</li>
+			<li><strong>Measured Font Ascent Positioning:</strong> Prevents upward or downward text baseline drifting.</li>
+			<li><strong>Automatic Contrast Guard:</strong> Ensures white text on dark backgrounds remains legible.</li>
+		</ul>
+	</div>
+	<div style="background: #ffffff; border: 1px solid #e5e7eb; border-top: 4px solid #4a5568; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+		<h4 style="margin-top: 0; color: #2d3748; font-size: 16px; font-weight: 700;">
+			<i class="fas fa-image" style="margin-right: 8px;"></i>2. Flattened Image Safe Mode
+		</h4>
+		<p style="font-size: 14px; line-height: 1.6; color: #444; margin-bottom: 10px;">
+			Bakes each page into an ultra high-resolution 2.5x raster canvas backdrop plate. This guarantees 100% visual layout accuracy for intricate vector illustrations, architectural blueprints, or documents with rare embedded fonts.
+		</p>
+		<ul style="font-size: 13px; color: #555; padding-left: 18px; margin-bottom: 0; line-height: 1.5;">
+			<li><strong>Zero Formatting Shifts:</strong> Pixel-perfect reproduction of complex print proofs.</li>
+			<li><strong>Form Stamping &amp; Signing:</strong> Overlay new text boxes, checkboxes, or signatures on top of existing forms.</li>
+			<li><strong>Non-Destructive Background:</strong> Underlying source imagery remains locked and protected.</li>
+		</ul>
+	</div>
+</div>
+
+<p style="margin: 15px 0 30px 0;">
+	<a href="../direct-pdf-import-editable-layout-reconstruction/index.html" style="display: inline-block; padding: 9px 18px; background-color: #007670; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; transition: background-color 0.2s;"><i class="fas fa-book-open" style="margin-right: 8px;"></i>Read Full Deep Dive: Direct PDF Import &amp; Layout Reconstruction Engine &rarr;</a>
+</p>
+
+<!-- SECTION 2: WORD DOCUMENT IMPORT MODES -->
+<h3 class="western" style="color: #307870; margin-bottom: 10px;"><i class="fas fa-file-word" style="margin-right: 8px;"></i>Word Document Import Modes<img decoding="async" class="alignright wp-image-2080" src="../../../wp-content/uploads/2026/08/WordDocumentImportModes.webp" alt="Word Document Import Modes" width="101" height="117" srcset="../../../wp-content/uploads/2026/08/WordDocumentImportModes.webp 427w, ../../../wp-content/uploads/2026/08/WordDocumentImportModes-259x300.webp 259w" sizes="(max-width: 101px) 100vw, 101px"></h3>
+<p class="western" style="line-height: 1.6; margin-bottom: 20px;">Word processors use "flowing" text rather than absolute page coordinates. Because of this, dropping or opening a <span style="font-family: 'Courier New', Courier, monospace; color: #444;">.doc</span> or <span style="font-family: 'Courier New', Courier, monospace; color: #444;">.docx</span> file triggers an intelligent <strong>Import Wizard</strong> with two specific modes, allowing you to choose how the text is handled based on your project needs:</p>
+
 <div style="border: 2px solid #307870; border-radius: 16px; overflow: hidden; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 0; background-color: #307870; line-height: 0;">
 <table style="width: 100%; border-collapse: collapse; margin: 0 !important; padding: 0 !important; font-size: 14px; text-align: left; border-spacing: 0; border: none; background-color: #ffffff; line-height: 1.6;">
 <thead style="background-color: #307870; color: #ffffff;">
@@ -1442,6 +1492,48 @@ footer[role="contentinfo"] {
 </tr>
 </tbody>
 </table>
+</div>
+
+<!-- SECTION 3: EXCEL & CSV SPREADSHEETS -->
+<h3 class="western" style="color: #307870; margin-bottom: 12px;"><i class="fas fa-file-excel" style="margin-right: 8px;"></i>Excel Spreadsheets &amp; CSV Data Ingestion</h3>
+<p class="western" style="line-height: 1.6; margin-bottom: 16px;">Unlike standard word processors that paste spreadsheet content as unformatted tabbed text, OpenPublisher automatically converts incoming <span style="font-family: 'Courier New', Courier, monospace; color: #444;">.xlsx</span>, <span style="font-family: 'Courier New', Courier, monospace; color: #444;">.xls</span>, and <span style="font-family: 'Courier New', Courier, monospace; color: #444;">.csv</span> files into full native <strong>Table Objects</strong>.</p>
+<ul style="line-height: 1.7; padding-left: 20px; margin-bottom: 20px;">
+	<li><strong>Automatic Cell Grid Formatting:</strong> Preserves row heights, column widths, headers, and numeric cell alignments directly from the spreadsheet.</li>
+	<li><strong>Interactive Editing on the Canvas:</strong> Click any cell to modify text, insert or delete rows and columns, split and merge cells, or apply alternate row shading.</li>
+	<li><strong>Ribbon Table Tools:</strong> When an imported table is selected, the Table Tools ribbon appears with styling palettes, cell margins, and border controls.</li>
+</ul>
+<p style="margin: 10px 0 30px 0;">
+	<a href="../../tables/inserting-selecting-tables/index.html" style="display: inline-block; padding: 8px 16px; background-color: #007670; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 13px;"><i class="fas fa-table" style="margin-right: 6px;"></i>Learn More in Tables Documentation &rarr;</a>
+</p>
+
+<!-- SECTION 4: MICROSOFT PUBLISHER IMPORT ENGINE -->
+<h3 class="western" style="color: #307870; margin-bottom: 12px;"><i class="fas fa-exchange-alt" style="margin-right: 8px;"></i>Legacy Microsoft Publisher Import (.pub &amp; .pubx)</h3>
+<p class="western" style="line-height: 1.6; margin-bottom: 16px;">With Microsoft Publisher scheduled for official retirement in October 2026, OpenPublisher includes a dedicated Publisher Ingestion Engine designed to migrate legacy assets without requiring an active Microsoft 365 subscription.</p>
+<ul style="line-height: 1.7; padding-left: 20px; margin-bottom: 20px;">
+	<li><strong>Frame Translation:</strong> Deconstructs proprietary Publisher text frames, shapes, clipart, and WordArt objects into native OpenPublisher canvas elements.</li>
+	<li><strong>Direct Drag-and-Drop:</strong> Simply drop your <span style="font-family: 'Courier New', Courier, monospace; color: #444;">.pub</span> file onto the workspace to begin the conversion process.</li>
+	<li><strong>Post-Import Inspection:</strong> Because legacy Publisher documents often use proprietary font metrics, check for any slight text overflow badges or line wrap differences and tweak text box widths accordingly.</li>
+</ul>
+
+<!-- SECTION 5: FAST INGESTION WORKFLOWS -->
+<h3 class="western" style="color: #307870; margin-bottom: 12px;"><i class="fas fa-bolt" style="margin-right: 8px;"></i>Fast Ingestion Workflows &amp; Content Migration</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 20px 0 30px 0;">
+	<div style="background: #fdfdfd; border: 1px solid #e0eae8; border-radius: 8px; padding: 16px;">
+		<h4 style="margin-top: 0; color: #007670; font-size: 15px; font-weight: bold;"><i class="fas fa-mouse-pointer" style="margin-right: 6px;"></i>Canvas Drag-and-Drop</h4>
+		<p style="font-size: 13px; line-height: 1.6; color: #555; margin-bottom: 0;">Drop files directly from File Explorer, Finder, or your desktop onto any open page or the surrounding scratch area to place them instantly.</p>
+	</div>
+	<div style="background: #fdfdfd; border: 1px solid #e0eae8; border-radius: 8px; padding: 16px;">
+		<h4 style="margin-top: 0; color: #007670; font-size: 15px; font-weight: bold;"><i class="fas fa-th-large" style="margin-right: 6px;"></i>Startup Dashboard Dropzone</h4>
+		<p style="font-size: 13px; line-height: 1.6; color: #555; margin-bottom: 0;">Open documents straight from the Startup Dashboard Open tab with dedicated drop targets supporting all recognized formats.</p>
+	</div>
+	<div style="background: #fdfdfd; border: 1px solid #e0eae8; border-radius: 8px; padding: 16px;">
+		<h4 style="margin-top: 0; color: #007670; font-size: 15px; font-weight: bold;"><i class="fas fa-file-import" style="margin-right: 6px;"></i>Insert &gt; File (Merging)</h4>
+		<p style="font-size: 13px; line-height: 1.6; color: #555; margin-bottom: 0;">Merge pages and design elements from another <span style="font-family: 'Courier New', Courier, monospace;">.opub</span> project into your current publication using <a href="../../layout-tools/insert-file-content-migration/index.html" style="color: #007670; font-weight: 600;">Insert File</a>.</p>
+	</div>
+	<div style="background: #fdfdfd; border: 1px solid #e0eae8; border-radius: 8px; padding: 16px;">
+		<h4 style="margin-top: 0; color: #007670; font-size: 15px; font-weight: bold;"><i class="fas fa-eye" style="margin-right: 6px;"></i>External File Watcher</h4>
+		<p style="font-size: 13px; line-height: 1.6; color: #555; margin-bottom: 0;">When external image files are edited in third-party tools like Photoshop or GIMP, the <a href="../../v5-client/external-file-watcher/index.html" style="color: #007670; font-weight: 600;">File Watcher</a> updates them automatically on the canvas.</p>
+	</div>
 </div>
 </div>
 	</div>
