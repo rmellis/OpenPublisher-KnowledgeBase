@@ -1406,7 +1406,40 @@ footer[role="contentinfo"] {
 <h3 class="western"><span style="color: #007670;">Safe Template Branching</span></h3>
 <p class="western">Save As provides the ideal foundation for document templates. You can open a standardized corporate brochure or newsletter template, make project-specific alterations, and save the result as a new <span style="font-family: Courier New, monospace;">.opub</span> file with complete confidence that your original template remains pristine.</p>
 <p class="western"><em style="color: #007670;">Note: All embedded graphics, page layouts, and custom theme swatches are carried over into the new publication file.</em></p>
-</div></div>
+</div>
+
+<h3 class="western"><span style="color: #007670;">Desktop File Path Detachment &amp; Overwrite Prevention (v5.18.0)</span></h3>
+<p>
+	When creating iterative revisions or saving variations of an existing project, ensuring you never accidentally overwrite your base publication is vital. <strong>OpenPublisher v5.18.0</strong> introduced a crucial safety enhancement to the desktop client:
+</p>
+
+<!-- Banner 5.18.0 -->
+<div style="text-align: center; margin: 30px 0;">
+	<img src="https://github.com/user-attachments/assets/9922b846-fc73-4b96-805a-fb3a1d154f98" alt="Desktop Client Save As Overwrite Fix and File Path Detachment in OpenPublisher v5.18.0" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
+	<p style="font-size: 13.5px; color: #666; margin-top: 8px; font-style: italic;">Desktop client file path detachment in OpenPublisher v5.18.0, preventing accidental project overwriting.</p>
+</div>
+
+<p>
+	When you select <kbd>File</kbd> &gt; <kbd>Save As</kbd> and specify a new filename, OpenPublisher immediately detaches the old file path handle in memory. Subsequent standard save operations (<kbd>Ctrl + S</kbd>) write exclusively to the newly chosen destination, ensuring your original template or earlier draft remains completely untouched.
+</p>
+
+<h3 class="western"><span style="color: #007670;">Web Browser File Saving Restoration &amp; Defensive Fallbacks (v5.19.2)</span></h3>
+<p>
+	In web environments where browser security policies restrict direct file system access, <strong>OpenPublisher v5.19.2</strong> delivers a robust, multi-tiered saving architecture:
+</p>
+
+<!-- Banner 5.19.2 -->
+<div style="text-align: center; margin: 30px 0;">
+	<img src="https://github.com/user-attachments/assets/f3a9323a-0d18-4537-942d-6ee330d42e7c" alt="Web Application File Saving Restoration and Defensive Fallbacks in OpenPublisher v5.19.2" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
+	<p style="font-size: 13.5px; color: #666; margin-top: 8px; font-style: italic;">Web application file saving restoration with defensive Blob download fallback in OpenPublisher v5.19.2.</p>
+</div>
+
+<ul style="line-height: 1.7; padding-left: 20px;">
+	<li><strong>Native File System Access API:</strong> In Chromium-based browsers (Chrome, Edge, Opera, Brave), OpenPublisher uses the native File System Access API to save changes directly back to your local file without repeated download prompts.</li>
+	<li><strong>Defensive Blob Fallback:</strong> In Firefox, Safari, or strict private browsing windows where the File System API is blocked, OpenPublisher automatically triggers a seamless client-side Blob download. Your project is preserved safely with zero data loss.</li>
+</ul>
+
+</div>
 
 	
 	<!-- Pagination -->
@@ -1452,6 +1485,7 @@ footer[role="contentinfo"] {
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../marketing/business-information/index.html' class='bpress-nav-item-title'>Business Information</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../marketing/publication-templates/index.html' class='bpress-nav-item-title'>Publication Templates</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../marketing/direct-mail-postcard-layout-design-standards/index.html' class='bpress-nav-item-title'>Direct Mail &amp; Postcard Layout Design Standards</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../marketing/promotional-badge-studio-vector-advertisement-engine/index.html' class='bpress-nav-item-title'>Promotional Badge Studio &amp; Modern Vector Advertisement Engine</a></span></li>
 		</ul>
 		</li>
 		<li class='bpress-nav-section'><span class='bpress-nav-item'><span class='bpress-nav-widget-icon bp-file-text'></span><span class="bpress-nav-item-title">Page &amp; Document Management</span></span><ul class='children'>
@@ -1495,6 +1529,8 @@ footer[role="contentinfo"] {
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/ruler-selection-span-markers-realtime-cursor-indicators/index.html' class='bpress-nav-item-title'>Ruler Selection Span Markers &amp; Smooth Real-Time Cursor Position Indicators</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/canvas-marquee-selection-viewport-clamping-bleed-prevention/index.html' class='bpress-nav-item-title'>Canvas Marquee Selection Viewport Clamping &amp; UI Bleed Prevention</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/workspace-initialization-race-condition-preview-recovery/index.html' class='bpress-nav-item-title'>Workspace Initialization Race Condition Fix &amp; Preview Recovery</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/object-lock-in-place-padlock-controls/index.html' class='bpress-nav-item-title'>Object Lock in Place &amp; Quick Actions Padlock Controls</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../layout-tools/floating-colors-style-toolbar-symmetry-zoom-scaling/index.html' class='bpress-nav-item-title'>Symmetrical Floating Colors &amp; Style Toolbar, Zoom Scaling &amp; Object Selection</a></span></li>
 		</ul>
 		</li>
 		<li class='bpress-nav-section'><span class='bpress-nav-item'><span class='bpress-nav-widget-icon bp-files'></span><span class="bpress-nav-item-title">Master Pages &amp; Themes</span></span><ul class='children'>
@@ -1544,6 +1580,9 @@ footer[role="contentinfo"] {
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../typography/text-box-border-art-padding-context-menu/index.html' class='bpress-nav-item-title'>Text Box Border Art Padding, Context Menu Type Discrimination &amp; Slider Reactivity</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../typography/using-styled-text-boxes-colors-gradients-borders/index.html' class='bpress-nav-item-title'>Using Styled Text Boxes: Colors, Gradients &amp; Borders</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../typography/100-text-box-presets-gallery-search/index.html' class='bpress-nav-item-title'>Choosing Pre-Designed Templates from the 100 Text Box Presets Gallery</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../typography/text-box-margins-inset-drag-handles/index.html' class='bpress-nav-item-title'>Text Box Margins, Inset Drag Handles &amp; Precision Edge Alignment</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../typography/dynamic-document-fonts-typography-suite/index.html' class='bpress-nav-item-title'>Dynamic Document Fonts, Google Fonts Expansion &amp; Typography Suite</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../typography/interactive-line-spacing-modal-live-preview/index.html' class='bpress-nav-item-title'>Interactive Line Spacing Modal, Live Typography Preview &amp; Text Spacing Controls</a></span></li>
 		</ul>
 		</li>
 		<li class='bpress-nav-section'><span class='bpress-nav-item'><span class='bpress-nav-widget-icon bp-lock'></span><span class="bpress-nav-item-title">Document Security &amp; Privacy</span></span><ul class='children'>
@@ -1564,6 +1603,7 @@ footer[role="contentinfo"] {
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../tables/multi-cell-table-formatting/index.html' class='bpress-nav-item-title'>Multi-Cell Table Formatting</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../tables/table-spellchecker-context-menu-integration/index.html' class='bpress-nav-item-title'>Table Spellchecker &amp; Context Menu Proofing Integration</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../tables/importing-tabular-data-csv-spreadsheets/index.html' class='bpress-nav-item-title'>Importing Tabular Data from CSV, TSV &amp; Spreadsheets</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../tables/modern-styled-tables-architecture-solid-cell-fills/index.html' class='bpress-nav-item-title'>Modern Styled Tables Architecture &amp; Solid Cell Fills</a></span></li>
 		</ul>
 		</li>
 		<li class='bpress-nav-section'><span class='bpress-nav-item'><span class='bpress-nav-widget-icon bp-life-bouy'></span><span class="bpress-nav-item-title">Review &amp; Accessibility</span></span><ul class='children'>
@@ -1596,6 +1636,7 @@ footer[role="contentinfo"] {
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/picture-tools-image-glow-drop-shadow-print/index.html' class='bpress-nav-item-title'>Picture Tools Image Glow &amp; Drop Shadow Print Rendering Fidelity</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/image-crop-print-fidelity-live-editor-rounded-corners/index.html' class='bpress-nav-item-title'>Image Crop Print Fidelity &amp; Live Editor Rounded Corners</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/image-drag-through-mirroring-preview-fidelity/index.html' class='bpress-nav-item-title'>Image Drag-Through Mirroring &amp; Preview Fidelity</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../graphics/picture-frame-border-engine-framing-modal/index.html' class='bpress-nav-item-title'>Picture Frame &amp; Border Engine (Framing Modal, Custom Styles &amp; Shadows)</a></span></li>
 		</ul>
 		</li>
 		<li class='bpress-nav-section'><span class='bpress-nav-item'><span class='bpress-nav-widget-icon bp-gear'></span><span class="bpress-nav-item-title">Document Info &amp; App Settings</span></span><ul class='children'>
@@ -1686,6 +1727,8 @@ footer[role="contentinfo"] {
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/adding-custom-templates/index.html' class='bpress-nav-item-title'>Adding Custom Templates</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/template-page-size-badges/index.html' class='bpress-nav-item-title'>Template Page Size Badges</a></span></li>
 <li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/exporting-distributing-custom-templates-manifest-format/index.html' class='bpress-nav-item-title'>Exporting, Distributing &amp; Sharing Custom Templates</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/export-template-package-modal-zip-packaging/index.html' class='bpress-nav-item-title'>Export Template Package Modal, Metadata Embedding &amp; ZIP Packaging</a></span></li>
+<li class='bpress-nav-article'><span class='bpress-nav-item'><span class="bpress-nav-widget-icon bp-file-text"></span><a href='../../templates/commercial-marketing-creative-template-suite/index.html' class='bpress-nav-item-title'>Commercial Marketing &amp; Creative Template Suite (Expanded Designs &amp; Lazy Loading)</a></span></li>
 		</ul>
 		</li>
 		<li class='bpress-nav-section'><span class='bpress-nav-item'><span class='bpress-nav-widget-icon bp-expand'></span><span class="bpress-nav-item-title">Symbols</span></span><ul class='children'>

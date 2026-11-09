@@ -16,7 +16,7 @@
 
 Open Publisher is a WYSIWYG (*What You See Is What You Get*) desktop publishing application built as a completely free, open-source alternative to premium tools like Microsoft Publisher. 
 
-It provides precision layout tools, rich typography, shape and image manipulation, and comprehensive export capabilities (HTML, PDF, XPS, Image) that you would expect from a professional suite—with absolutely no ads and no subscriptions.
+It provides precision layout tools, rich typography, shape and image manipulation, and comprehensive export capabilities (HTML, PDF, XPS, Image) that you would expect from a professional suite - with absolutely no ads and no subscriptions.
 
 ## ⚡ About This Repository
 
