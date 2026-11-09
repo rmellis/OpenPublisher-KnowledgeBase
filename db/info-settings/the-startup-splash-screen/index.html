@@ -1386,7 +1386,31 @@ footer[role="contentinfo"] {
 <h3 class="western"><span style="color: #007670;">Draggable &amp; Dismissible<img loading="lazy" decoding="async" class="alignright wp-image-1994" src="../../../wp-content/uploads/2026/08/DraggableAndDismissible.webp" alt="Draggable &amp; Dismissible" width="128" height="138" srcset="../../../wp-content/uploads/2026/08/DraggableAndDismissible.webp 412w, ../../../wp-content/uploads/2026/08/DraggableAndDismissible-278x300.webp 278w" sizes="auto, (max-width: 128px) 100vw, 128px"></span></h3>
 <p class="western">We know that a splash screen shouldn&#8217;t hijack your workflow. The modal is completely draggable, meaning it can be easily moved out of the way if you need to view files or folders on your desktop while Open Publisher loads. Once the boot sequence completes and all modules are ready, a smooth <strong>1-second countdown</strong> begins before the modal automatically dismisses itself, bringing you straight into the workspace. If you are a power user or simply want to review the terminal log, you can press any key during this countdown to pause it, keeping the log open on your screen until you are ready to close it manually.</p>
 </div>
-	</div>
+	
+
+<h3 class="western"><span style="color: #007670;">Instant Cold Boot &amp; WebP Splash Optimization (v5.18.3)</span></h3>
+<p>
+	To ensure rapid startup across all devices and desktops, <strong>OpenPublisher v5.18.3</strong> migrated all startup splash branding, background geometry, and initialization console backdrops to modern WebP compression:
+</p>
+
+<!-- Banners 5.18.3 -->
+<div style="text-align: center; margin: 30px 0;">
+	<img src="https://github.com/user-attachments/assets/13e6c202-ad4c-46fd-bec7-598a0b92af11" alt="Splash Screen WebP Asset Optimization in OpenPublisher v5.18.3" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
+	<p style="font-size: 13.5px; color: #666; margin-top: 8px; font-style: italic;">High-efficiency WebP splash screen asset compression in OpenPublisher v5.18.3.</p>
+</div>
+
+<div style="text-align: center; margin: 30px 0;">
+	<img src="https://github.com/user-attachments/assets/fe888543-fb98-40d8-b624-7ccd0b72f738" alt="Instant Boot Splash Display and Memory Savings in OpenPublisher v5.18.3" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
+	<p style="font-size: 13.5px; color: #666; margin-top: 8px; font-style: italic;">Startup asset optimization reducing splash screen memory footprint by over 78%.</p>
+</div>
+
+<ul style="line-height: 1.7; padding-left: 20px;">
+	<li><strong>78% Image Payload Reduction:</strong> Replaced legacy <code>startupinfobg.png</code> (456 KB) with ultra-efficient <code>startupinfobg.webp</code> (under 98 KB) while preserving 100% pixel-perfect alpha transparency and console borders.</li>
+	<li><strong>Instant Cold Launch:</strong> Eliminates network download bottlenecks on slower connections and accelerates offline desktop launch times to near-instantaneous speeds.</li>
+	<li><strong>Historical Continuity:</strong> The original PNG asset is securely archived as <code>startupinfobg_v1.png</code> within the codebase for version lineage.</li>
+</ul>
+
+</div>
 
 	
 	<!-- Pagination -->

@@ -1380,22 +1380,183 @@ footer[role="contentinfo"] {
 	Proper spacing between lines and paragraphs transforms cramped copy into comfortable, easily readable publications. Introduced in <strong>OpenPublisher v5.17.3</strong> and refined in <strong>v5.18.6 and v5.18.7</strong>, the <strong>Interactive Line Spacing Modal</strong> introduces live typography previewing, persistent text selection, strikethrough line-height stabilization, and dynamic highlight background scaling.
 </p>
 
-<!-- Banner Images -->
-<div style="text-align: center; margin: 30px 0;">
-	<img src="https://github.com/user-attachments/assets/f08c00cf-5141-4d96-8e41-ebc4cc43f5e0" alt="Interactive Line Spacing Modal Modernization and Live Typography Preview in OpenPublisher v5.17.3" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
-	<p style="font-size: 13.5px; color: #666; margin-top: 8px; font-style: italic;">The modernized Line Spacing modal in OpenPublisher v5.17.3, featuring real-time preview and persistent selection.</p>
+<!-- Interactive Visual Feature Carousel -->
+<div class="op-feature-slider" id="spacing-feature-slider" style="margin: 25px 0 35px 0; background: #f7faf9; border: 1px solid #bce5df; border-radius: 10px; padding: 18px; box-shadow: 0 4px 15px rgba(0,118,112,0.06);">
+	<!-- Main Preview Stage -->
+	<div style="position: relative; overflow: hidden; border-radius: 8px; background: #ffffff; border: 1px solid #d2eae4; min-height: 280px; display: flex; align-items: center; justify-content: center; padding: 10px;">
+		<div class="op-slide" data-index="0" data-caption="Interactive Line Spacing Modal Modernization &amp; Live Typography Preview (v5.17.3)" style="display: block; width: 100%; text-align: center;">
+			<img src="https://github.com/user-attachments/assets/f08c00cf-5141-4d96-8e41-ebc4cc43f5e0" alt="Interactive Line Spacing Modal Modernization and Live Typography Preview in OpenPublisher v5.17.3" style="max-width: 100%; height: auto; max-height: 480px; object-fit: contain; margin: 0 auto; display: block; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+		</div>
+		<div class="op-slide" data-index="1" data-caption="Strikethrough Line-Height Stabilization &amp; Typography Alignment (v5.18.6)" style="display: none; width: 100%; text-align: center;">
+			<img src="https://github.com/user-attachments/assets/9ba1f2df-bea0-4101-9e80-9c15e163d9e4" alt="Strikethrough Line-Height Stabilization in OpenPublisher v5.18.6" style="max-width: 100%; height: auto; max-height: 480px; object-fit: contain; margin: 0 auto; display: block; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+		</div>
+		<div class="op-slide" data-index="2" data-caption="Dynamic Text Highlight Background Font Size Scaling (v5.18.7)" style="display: none; width: 100%; text-align: center;">
+			<img src="https://github.com/user-attachments/assets/25bf4fa7-89c1-4326-a621-799e7c30af7f" alt="Dynamic Text Highlight Font Size Scaling in OpenPublisher v5.18.7" style="max-width: 100%; height: auto; max-height: 480px; object-fit: contain; margin: 0 auto; display: block; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+		</div>
+
+		<!-- Left Arrow Button -->
+		<button type="button" class="op-slider-prev" aria-label="Previous Feature" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); background: rgba(0,118,112,0.85); color: #ffffff; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: background 0.2s, transform 0.2s; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+			<i class="fas fa-chevron-left"></i>
+		</button>
+
+		<!-- Right Arrow Button -->
+		<button type="button" class="op-slider-next" aria-label="Next Feature" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: rgba(0,118,112,0.85); color: #ffffff; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: background 0.2s, transform 0.2s; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+			<i class="fas fa-chevron-right"></i>
+		</button>
+
+		<!-- Navigation Dots -->
+		<div class="op-slider-dots" style="position: absolute; bottom: 12px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; z-index: 10;">
+			<button type="button" class="op-dot" data-index="0" aria-label="Slide 1" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: #007670; cursor: pointer; padding: 0; transition: all 0.2s;"></button>
+			<button type="button" class="op-dot" data-index="1" aria-label="Slide 2" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.6); cursor: pointer; padding: 0; transition: all 0.2s;"></button>
+			<button type="button" class="op-dot" data-index="2" aria-label="Slide 3" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.6); cursor: pointer; padding: 0; transition: all 0.2s;"></button>
+		</div>
+	</div>
+
+	<!-- Live Caption -->
+	<div class="op-slider-caption" style="text-align: center; margin: 12px 0 16px 0; font-size: 13.5px; font-weight: 600; color: #007670; min-height: 20px;">
+		Interactive Line Spacing Modal Modernization &amp; Live Typography Preview (v5.17.3)
+	</div>
+
+	<!-- Thumbnail Selector Bar -->
+	<div style="margin-top: 10px;">
+		<div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #007670; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+			<span><i class="fas fa-layer-group" style="color: #007670; margin-right: 6px;"></i>Click Any Feature to View:</span>
+			<span style="font-size: 11px; font-weight: normal; color: #666;"><i class="fas fa-sync-alt" style="margin-right: 4px;"></i>Auto-cycles every 5s (hover to pause)</span>
+		</div>
+		<div class="op-slider-thumbs" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+			<div class="op-thumb" data-index="0" style="cursor: pointer; border: 2px solid #007670; border-radius: 6px; overflow: hidden; background: #ffffff; opacity: 1; transition: all 0.2s ease; box-shadow: 0 3px 8px rgba(0,118,112,0.25); padding: 4px;">
+				<img src="https://github.com/user-attachments/assets/f08c00cf-5141-4d96-8e41-ebc4cc43f5e0" alt="Interactive Line Spacing Modal Modernization and Live Typography Preview in OpenPublisher v5.17.3" style="width: 100%; height: 60px; object-fit: cover; border-radius: 4px; display: block;" />
+				<div style="font-size: 11.5px; font-weight: 700; color: #007670; text-align: center; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 2px;">
+					v5.17.3: Line Spacing Modal
+				</div>
+			</div>
+			<div class="op-thumb" data-index="1" style="cursor: pointer; border: 2px solid #d2eae4; border-radius: 6px; overflow: hidden; background: #ffffff; opacity: 0.7; transition: all 0.2s ease; box-shadow: none; padding: 4px;">
+				<img src="https://github.com/user-attachments/assets/9ba1f2df-bea0-4101-9e80-9c15e163d9e4" alt="Strikethrough Line-Height Stabilization in OpenPublisher v5.18.6" style="width: 100%; height: 60px; object-fit: cover; border-radius: 4px; display: block;" />
+				<div style="font-size: 11.5px; font-weight: 700; color: #4a5568; text-align: center; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 2px;">
+					v5.18.6: Strikethrough Alignment
+				</div>
+			</div>
+			<div class="op-thumb" data-index="2" style="cursor: pointer; border: 2px solid #d2eae4; border-radius: 6px; overflow: hidden; background: #ffffff; opacity: 0.7; transition: all 0.2s ease; box-shadow: none; padding: 4px;">
+				<img src="https://github.com/user-attachments/assets/25bf4fa7-89c1-4326-a621-799e7c30af7f" alt="Dynamic Text Highlight Font Size Scaling in OpenPublisher v5.18.7" style="width: 100%; height: 60px; object-fit: cover; border-radius: 4px; display: block;" />
+				<div style="font-size: 11.5px; font-weight: 700; color: #4a5568; text-align: center; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 2px;">
+					v5.18.7: Highlight Backgrounds
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 25px 0;">
-	<div style="text-align: center;">
-		<img src="https://github.com/user-attachments/assets/9ba1f2df-bea0-4101-9e80-9c15e163d9e4" alt="Strikethrough Line-Height Stabilization in OpenPublisher v5.18.6" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
-		<p style="font-size: 13px; color: #666; margin-top: 6px; font-style: italic;">Strikethrough line-height stabilization (v5.18.6).</p>
-	</div>
-	<div style="text-align: center;">
-		<img src="https://github.com/user-attachments/assets/25bf4fa7-89c1-4326-a621-799e7c30af7f" alt="Dynamic Text Highlight Font Size Scaling in OpenPublisher v5.18.7" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
-		<p style="font-size: 13px; color: #666; margin-top: 6px; font-style: italic;">Dynamic text highlight background scaling (v5.18.7).</p>
-	</div>
-</div>
+<script>
+(function() {
+	var container = document.getElementById('spacing-feature-slider');
+	if (!container) return;
+	var slides = container.querySelectorAll('.op-slide');
+	var thumbs = container.querySelectorAll('.op-thumb');
+	var dots = container.querySelectorAll('.op-dot');
+	var caption = container.querySelector('.op-slider-caption');
+	var prevBtn = container.querySelector('.op-slider-prev');
+	var nextBtn = container.querySelector('.op-slider-next');
+	var currentIndex = 0;
+	var total = slides.length;
+	var timer = null;
+
+	function showSlide(index) {
+		if (index < 0) index = total - 1;
+		if (index >= total) index = 0;
+		currentIndex = index;
+
+		slides.forEach(function(s, i) {
+			s.style.display = (i === currentIndex) ? 'block' : 'none';
+		});
+
+		dots.forEach(function(d, i) {
+			d.style.background = (i === currentIndex) ? '#007670' : 'rgba(0,118,112,0.3)';
+			d.style.transform = (i === currentIndex) ? 'scale(1.2)' : 'scale(1)';
+		});
+
+		thumbs.forEach(function(t, i) {
+			var label = t.querySelector('div');
+			if (i === currentIndex) {
+				t.style.opacity = '1';
+				t.style.borderColor = '#007670';
+				t.style.boxShadow = '0 3px 8px rgba(0,118,112,0.25)';
+				if (label) label.style.color = '#007670';
+			} else {
+				t.style.opacity = '0.7';
+				t.style.borderColor = '#d2eae4';
+				t.style.boxShadow = 'none';
+				if (label) label.style.color = '#4a5568';
+			}
+		});
+
+		if (caption && slides[currentIndex]) {
+			caption.innerHTML = slides[currentIndex].getAttribute('data-caption') || '';
+		}
+	}
+
+	function nextSlide() {
+		showSlide(currentIndex + 1);
+	}
+
+	function prevSlide() {
+		showSlide(currentIndex - 1);
+	}
+
+	function startAuto() {
+		stopAuto();
+		timer = setInterval(nextSlide, 5000);
+	}
+
+	function stopAuto() {
+		if (timer) {
+			clearInterval(timer);
+			timer = null;
+		}
+	}
+
+	if (prevBtn) {
+		prevBtn.addEventListener('click', function(e) {
+			e.preventDefault();
+			prevSlide();
+			startAuto();
+		});
+	}
+
+	if (nextBtn) {
+		nextBtn.addEventListener('click', function(e) {
+			e.preventDefault();
+			nextSlide();
+			startAuto();
+		});
+	}
+
+	thumbs.forEach(function(th, idx) {
+		th.addEventListener('click', function() {
+			showSlide(idx);
+			startAuto();
+		});
+		th.addEventListener('mouseenter', function() {
+			if (idx !== currentIndex) th.style.opacity = '0.95';
+		});
+		th.addEventListener('mouseleave', function() {
+			if (idx !== currentIndex) th.style.opacity = '0.7';
+		});
+	});
+
+	dots.forEach(function(dt, idx) {
+		dt.addEventListener('click', function() {
+			showSlide(idx);
+			startAuto();
+		});
+	});
+
+	container.addEventListener('mouseenter', stopAuto);
+	container.addEventListener('mouseleave', startAuto);
+
+	showSlide(0);
+	startAuto();
+})();
+</script>
 
 <div class="alert alert-info" style="background-color: #f0f9f8; border-color: #bce5df; color: #005a55; padding: 14px 18px; border-radius: 6px; margin: 25px 0;">
 	<strong><i class="fas fa-eye" style="margin-right: 8px;"></i>Live Canvas Typography Preview:</strong> Adjusting the line spacing slider updates the canvas in real time while keeping the modal open. You never need to apply, close, check, and reopen the modal just to find the right spacing.

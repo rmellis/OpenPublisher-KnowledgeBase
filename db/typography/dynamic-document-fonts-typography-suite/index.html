@@ -1380,27 +1380,193 @@ footer[role="contentinfo"] {
 	Great typography defines great publication design. Across versions <strong>v5.17.2 through v5.17.10</strong>, OpenPublisher received a major typography modernization: featuring a dynamic <strong>Document Fonts</strong> section at the top of font pickers, expanded Google Fonts integration (including authentic Ubuntu, Bungee Display, Caveat Brush, and Chalkboard), rapid triple-click selection, and synchronized ribbon formatting button states.
 </p>
 
-<!-- Banner Images -->
-<div style="text-align: center; margin: 30px 0;">
-	<img src="https://github.com/user-attachments/assets/bca6cc27-bf30-4e20-98f6-fe68deb77bf7" alt="Document Fonts Top Section in Font Dropdown Menus in OpenPublisher v5.17.10" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
-	<p style="font-size: 13.5px; color: #666; margin-top: 8px; font-style: italic;">The dynamic Document Fonts top section in OpenPublisher v5.17.10, pinning currently used typefaces to the top.</p>
+<!-- Interactive Visual Feature Carousel -->
+<div class="op-feature-slider" id="fonts-feature-slider" style="margin: 25px 0 35px 0; background: #f7faf9; border: 1px solid #bce5df; border-radius: 10px; padding: 18px; box-shadow: 0 4px 15px rgba(0,118,112,0.06);">
+	<!-- Main Preview Stage -->
+	<div style="position: relative; overflow: hidden; border-radius: 8px; background: #ffffff; border: 1px solid #d2eae4; min-height: 280px; display: flex; align-items: center; justify-content: center; padding: 10px;">
+		<div class="op-slide" data-index="0" data-caption="Dynamic Document Fonts Top Section in Font Dropdown Menus (v5.17.10)" style="display: block; width: 100%; text-align: center;">
+			<img src="https://github.com/user-attachments/assets/bca6cc27-bf30-4e20-98f6-fe68deb77bf7" alt="Document Fonts Top Section in Font Dropdown Menus in OpenPublisher v5.17.10" style="max-width: 100%; height: auto; max-height: 480px; object-fit: contain; margin: 0 auto; display: block; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+		</div>
+		<div class="op-slide" data-index="1" data-caption="Authentic Ubuntu Font Rendering &amp; Google Fonts Suite Expansion (v5.17.2)" style="display: none; width: 100%; text-align: center;">
+			<img src="https://github.com/user-attachments/assets/f3e6d8af-dc27-4519-a046-992021dd4e11" alt="Ubuntu Font Rendering and Google Fonts Suite Expansion in OpenPublisher v5.17.2" style="max-width: 100%; height: auto; max-height: 480px; object-fit: contain; margin: 0 auto; display: block; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+		</div>
+		<div class="op-slide" data-index="2" data-caption="Triple-Click Select All &amp; Chalkboard / Caveat Brush Typography (v5.17.6)" style="display: none; width: 100%; text-align: center;">
+			<img src="https://github.com/user-attachments/assets/de47dcfd-c87f-4b9e-9f82-3935f9866ada" alt="Triple-Click Text Box Select All and Chalkboard Caveat Brush Typography in OpenPublisher v5.17.6" style="max-width: 100%; height: auto; max-height: 480px; object-fit: contain; margin: 0 auto; display: block; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+		</div>
+		<div class="op-slide" data-index="3" data-caption="Ribbon Formatting Button Active Highlight Synchronization (v5.17.8)" style="display: none; width: 100%; text-align: center;">
+			<img src="https://github.com/user-attachments/assets/65202b85-3461-4ab9-a548-0462d7cd799f" alt="Ribbon Button Active Highlight Synchronization in OpenPublisher v5.17.8" style="max-width: 100%; height: auto; max-height: 480px; object-fit: contain; margin: 0 auto; display: block; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+		</div>
+
+		<!-- Left Arrow Button -->
+		<button type="button" class="op-slider-prev" aria-label="Previous Feature" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); background: rgba(0,118,112,0.85); color: #ffffff; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: background 0.2s, transform 0.2s; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+			<i class="fas fa-chevron-left"></i>
+		</button>
+
+		<!-- Right Arrow Button -->
+		<button type="button" class="op-slider-next" aria-label="Next Feature" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: rgba(0,118,112,0.85); color: #ffffff; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: background 0.2s, transform 0.2s; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+			<i class="fas fa-chevron-right"></i>
+		</button>
+
+		<!-- Navigation Dots -->
+		<div class="op-slider-dots" style="position: absolute; bottom: 12px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; z-index: 10;">
+			<button type="button" class="op-dot" data-index="0" aria-label="Slide 1" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: #007670; cursor: pointer; padding: 0; transition: all 0.2s;"></button>
+			<button type="button" class="op-dot" data-index="1" aria-label="Slide 2" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.6); cursor: pointer; padding: 0; transition: all 0.2s;"></button>
+			<button type="button" class="op-dot" data-index="2" aria-label="Slide 3" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.6); cursor: pointer; padding: 0; transition: all 0.2s;"></button>
+			<button type="button" class="op-dot" data-index="3" aria-label="Slide 4" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.6); cursor: pointer; padding: 0; transition: all 0.2s;"></button>
+		</div>
+	</div>
+
+	<!-- Live Caption -->
+	<div class="op-slider-caption" style="text-align: center; margin: 12px 0 16px 0; font-size: 13.5px; font-weight: 600; color: #007670; min-height: 20px;">
+		Dynamic Document Fonts Top Section in Font Dropdown Menus (v5.17.10)
+	</div>
+
+	<!-- Thumbnail Selector Bar -->
+	<div style="margin-top: 10px;">
+		<div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #007670; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+			<span><i class="fas fa-layer-group" style="color: #007670; margin-right: 6px;"></i>Click Any Feature to View:</span>
+			<span style="font-size: 11px; font-weight: normal; color: #666;"><i class="fas fa-sync-alt" style="margin-right: 4px;"></i>Auto-cycles every 5s (hover to pause)</span>
+		</div>
+		<div class="op-slider-thumbs" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+			<div class="op-thumb" data-index="0" style="cursor: pointer; border: 2px solid #007670; border-radius: 6px; overflow: hidden; background: #ffffff; opacity: 1; transition: all 0.2s ease; box-shadow: 0 3px 8px rgba(0,118,112,0.25); padding: 4px;">
+				<img src="https://github.com/user-attachments/assets/bca6cc27-bf30-4e20-98f6-fe68deb77bf7" alt="Document Fonts Top Section in Font Dropdown Menus in OpenPublisher v5.17.10" style="width: 100%; height: 60px; object-fit: cover; border-radius: 4px; display: block;" />
+				<div style="font-size: 11.5px; font-weight: 700; color: #007670; text-align: center; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 2px;">
+					v5.17.10: Document Fonts
+				</div>
+			</div>
+			<div class="op-thumb" data-index="1" style="cursor: pointer; border: 2px solid #d2eae4; border-radius: 6px; overflow: hidden; background: #ffffff; opacity: 0.7; transition: all 0.2s ease; box-shadow: none; padding: 4px;">
+				<img src="https://github.com/user-attachments/assets/f3e6d8af-dc27-4519-a046-992021dd4e11" alt="Ubuntu Font Rendering and Google Fonts Suite Expansion in OpenPublisher v5.17.2" style="width: 100%; height: 60px; object-fit: cover; border-radius: 4px; display: block;" />
+				<div style="font-size: 11.5px; font-weight: 700; color: #4a5568; text-align: center; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 2px;">
+					v5.17.2: Ubuntu &amp; Google Fonts
+				</div>
+			</div>
+			<div class="op-thumb" data-index="2" style="cursor: pointer; border: 2px solid #d2eae4; border-radius: 6px; overflow: hidden; background: #ffffff; opacity: 0.7; transition: all 0.2s ease; box-shadow: none; padding: 4px;">
+				<img src="https://github.com/user-attachments/assets/de47dcfd-c87f-4b9e-9f82-3935f9866ada" alt="Triple-Click Text Box Select All and Chalkboard Caveat Brush Typography in OpenPublisher v5.17.6" style="width: 100%; height: 60px; object-fit: cover; border-radius: 4px; display: block;" />
+				<div style="font-size: 11.5px; font-weight: 700; color: #4a5568; text-align: center; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 2px;">
+					v5.17.6: Triple-Click &amp; Brush
+				</div>
+			</div>
+			<div class="op-thumb" data-index="3" style="cursor: pointer; border: 2px solid #d2eae4; border-radius: 6px; overflow: hidden; background: #ffffff; opacity: 0.7; transition: all 0.2s ease; box-shadow: none; padding: 4px;">
+				<img src="https://github.com/user-attachments/assets/65202b85-3461-4ab9-a548-0462d7cd799f" alt="Ribbon Button Active Highlight Synchronization in OpenPublisher v5.17.8" style="width: 100%; height: 60px; object-fit: cover; border-radius: 4px; display: block;" />
+				<div style="font-size: 11.5px; font-weight: 700; color: #4a5568; text-align: center; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 2px;">
+					v5.17.8: Ribbon Button Sync
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div style="text-align: center; margin: 30px 0;">
-	<img src="https://github.com/user-attachments/assets/f3e6d8af-dc27-4519-a046-992021dd4e11" alt="Ubuntu Font Rendering and Google Fonts Suite Expansion in OpenPublisher v5.17.2" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
-	<p style="font-size: 13.5px; color: #666; margin-top: 8px; font-style: italic;">Authentic Ubuntu font family rendering and Google Fonts suite expansion in OpenPublisher v5.17.2.</p>
-</div>
+<script>
+(function() {
+	var container = document.getElementById('fonts-feature-slider');
+	if (!container) return;
+	var slides = container.querySelectorAll('.op-slide');
+	var thumbs = container.querySelectorAll('.op-thumb');
+	var dots = container.querySelectorAll('.op-dot');
+	var caption = container.querySelector('.op-slider-caption');
+	var prevBtn = container.querySelector('.op-slider-prev');
+	var nextBtn = container.querySelector('.op-slider-next');
+	var currentIndex = 0;
+	var total = slides.length;
+	var timer = null;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 25px 0;">
-	<div style="text-align: center;">
-		<img src="https://github.com/user-attachments/assets/de47dcfd-c87f-4b9e-9f82-3935f9866ada" alt="Triple-Click Text Box Select All and Chalkboard Caveat Brush Typography in OpenPublisher v5.17.6" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
-		<p style="font-size: 13px; color: #666; margin-top: 6px; font-style: italic;">Triple-click text selection and casual brush typography (v5.17.6).</p>
-	</div>
-	<div style="text-align: center;">
-		<img src="https://github.com/user-attachments/assets/65202b85-3461-4ab9-a548-0462d7cd799f" alt="Ribbon Button Active Highlight Synchronization in OpenPublisher v5.17.8" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.12); border: 1px solid #d2eae4;" />
-		<p style="font-size: 13px; color: #666; margin-top: 6px; font-style: italic;">Ribbon formatting button active synchronization (v5.17.8).</p>
-	</div>
-</div>
+	function showSlide(index) {
+		if (index < 0) index = total - 1;
+		if (index >= total) index = 0;
+		currentIndex = index;
+
+		slides.forEach(function(s, i) {
+			s.style.display = (i === currentIndex) ? 'block' : 'none';
+		});
+
+		dots.forEach(function(d, i) {
+			d.style.background = (i === currentIndex) ? '#007670' : 'rgba(0,118,112,0.3)';
+			d.style.transform = (i === currentIndex) ? 'scale(1.2)' : 'scale(1)';
+		});
+
+		thumbs.forEach(function(t, i) {
+			var label = t.querySelector('div');
+			if (i === currentIndex) {
+				t.style.opacity = '1';
+				t.style.borderColor = '#007670';
+				t.style.boxShadow = '0 3px 8px rgba(0,118,112,0.25)';
+				if (label) label.style.color = '#007670';
+			} else {
+				t.style.opacity = '0.7';
+				t.style.borderColor = '#d2eae4';
+				t.style.boxShadow = 'none';
+				if (label) label.style.color = '#4a5568';
+			}
+		});
+
+		if (caption && slides[currentIndex]) {
+			caption.innerHTML = slides[currentIndex].getAttribute('data-caption') || '';
+		}
+	}
+
+	function nextSlide() {
+		showSlide(currentIndex + 1);
+	}
+
+	function prevSlide() {
+		showSlide(currentIndex - 1);
+	}
+
+	function startAuto() {
+		stopAuto();
+		timer = setInterval(nextSlide, 5000);
+	}
+
+	function stopAuto() {
+		if (timer) {
+			clearInterval(timer);
+			timer = null;
+		}
+	}
+
+	if (prevBtn) {
+		prevBtn.addEventListener('click', function(e) {
+			e.preventDefault();
+			prevSlide();
+			startAuto();
+		});
+	}
+
+	if (nextBtn) {
+		nextBtn.addEventListener('click', function(e) {
+			e.preventDefault();
+			nextSlide();
+			startAuto();
+		});
+	}
+
+	thumbs.forEach(function(th, idx) {
+		th.addEventListener('click', function() {
+			showSlide(idx);
+			startAuto();
+		});
+		th.addEventListener('mouseenter', function() {
+			if (idx !== currentIndex) th.style.opacity = '0.95';
+		});
+		th.addEventListener('mouseleave', function() {
+			if (idx !== currentIndex) th.style.opacity = '0.7';
+		});
+	});
+
+	dots.forEach(function(dt, idx) {
+		dt.addEventListener('click', function() {
+			showSlide(idx);
+			startAuto();
+		});
+	});
+
+	container.addEventListener('mouseenter', stopAuto);
+	container.addEventListener('mouseleave', startAuto);
+
+	showSlide(0);
+	startAuto();
+})();
+</script>
 
 <h3 class="western"><span style="color: #007670;">1. The "Document Fonts" Dynamic Section (v5.17.10)</span></h3>
 <p>
