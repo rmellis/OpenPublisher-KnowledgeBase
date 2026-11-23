@@ -1413,6 +1413,31 @@ before the snapshot is taken:</p>
 <p align="left"><span style="font-size: small;"><strong>Margin guides and selection boxes &#8211;</strong> Stripped from the snapshot so they never appear in the exported file.<img loading="lazy" decoding="async" class="alignnone wp-image-1565 size-full" src="../../../wp-content/uploads/2026/08/ExportingPDF-e1787520400425.webp" alt="Export to High-Res PDF" width="1544" height="486" srcset="../../../wp-content/uploads/2026/08/ExportingPDF-e1787520400425.webp 1544w, ../../../wp-content/uploads/2026/08/ExportingPDF-e1787520400425-300x94.webp 300w, ../../../wp-content/uploads/2026/08/ExportingPDF-e1787520400425-1024x322.webp 1024w, ../../../wp-content/uploads/2026/08/ExportingPDF-e1787520400425-768x242.webp 768w, ../../../wp-content/uploads/2026/08/ExportingPDF-e1787520400425-1536x483.webp 1536w" sizes="auto, (max-width: 1544px) 100vw, 1544px"></span></p>
 </li>
 </ul>
+
+<hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 32px 0;" />
+
+<h2 class="western"><span style="color: #007670;">iPadOS / iOS PDF Export Guidance &amp; Theme-Aware Export Buttons (v5.24.4)</span></h2>
+<p class="western">Saving a high-resolution vector PDF works differently on iPad and iPhone than on Windows, macOS, or Linux desktops. In <strong>OpenPublisher v5.24.4</strong>, the <strong>Export High-Res PDF</strong> dialog automatically detects Apple touch devices and standalone Home Screen web apps to show accurate on-device steps without extra pop-ups, while updating export action buttons to follow your active OpenPublisher UI theme.</p>
+
+<figure style="margin: 24px 0; text-align: center;">
+<img decoding="async" loading="lazy" class="wp-image aligncenter opub-styled-img" src="../../../assets/banners/op-IpadOsAndIosPdfExportGuidanceAndThemeAwareButtons.webp" alt="iPadOS and iOS PDF Export Guidance and Theme-Aware Export Buttons in OpenPublisher v5.24.4" style="max-width: 100%; height: auto; border-radius: 14px !important; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.14) !important; border: 1px solid #e2e8f0 !important;" />
+<figcaption style="margin-top: 8px; font-size: 0.88rem; color: #555;">Platform-aware iPadOS/iOS Print Preview instructions and UI-theme-matched export buttons (v5.24.4).</figcaption>
+</figure>
+
+<ul>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Standard Safari on iPadOS / iOS:</strong> When running in Safari on iPad or iPhone (including iPad desktop-class User-Agent detection), the dialog replaces desktop &ldquo;Save as PDF&rdquo; printer notes with touch instructions: open the Print Preview, tap the <strong>Share</strong> button at the top (or pinch outward with two fingers on the preview page), and choose <strong>Save to Files</strong> to save a full vector PDF.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Home Screen Web App Mode (Standalone PWA):</strong> Apple's iPadOS/iOS standalone web app container (<em>Open as Web App</em> enabled on a Home Screen bookmark) restricts printing and PDF generation. When launched in standalone mode on iOS/iPadOS, the Export High-Res PDF modal displays an inline amber <strong>iPadOS / iOS Web App Notice</strong> explaining why system print may fail, advising you to open <code>openpublisher.app</code> in standard Safari (or re-add the bookmark with <strong>Open as Web App</strong> turned off), and relabels the button to <strong>Try Print Dialog Anyway</strong>.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Desktop &amp; NW.js Isolation:</strong> Desktop browsers and the standalone NW.js desktop client keep the standard <strong>Save as PDF</strong> destination instructions and <strong>Open Print Dialog</strong> action button unchanged.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Theme-Aware Action Buttons:</strong> Both the <strong>Export High-Res PDF</strong> and <a href="../export-as-xps/">Export as XPS</a> primary buttons now use OpenPublisher's active accent palette, hover tones, and high-luminance dark text contrast on bright UI themes.</span></p>
+</li>
+</ul>
 </div>
 	</div>
 

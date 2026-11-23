@@ -1410,6 +1410,34 @@ footer[role="contentinfo"] {
 <h3 class="western"></h3>
 </li>
 </ul>
+
+<hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 32px 0;" />
+
+<h2 class="western"><span style="color: #007670;">Crisp High-DPI &amp; Zoomed-Out Canvas Grid Rendering (v5.24.3)</span></h2>
+<p class="western">When working on high-resolution print publications (such as <strong>300 DPI</strong> posters or flyers zoomed out to <strong>Fit Page</strong> on 1080p or 1440p monitors), scaled CSS backgrounds inside the page container can blur or disappear completely. Starting in <strong>OpenPublisher v5.24.3</strong>, the <strong>Grid</strong> (<strong>View &gt; Grid</strong>) is powered by a native device-pixel viewport overlay that stays razor-sharp at every DPI and zoom level.</p>
+
+<figure style="margin: 24px 0; text-align: center;">
+<img decoding="async" loading="lazy" class="wp-image aligncenter opub-styled-img" src="../../../assets/banners/op-CrispHighDPIAndZoomedOutCanvasGrid.webp" alt="Crisp High-DPI and Zoomed-Out Canvas Grid Rendering in OpenPublisher v5.24.3" style="max-width: 100%; height: auto; border-radius: 14px !important; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.14) !important; border: 1px solid #e2e8f0 !important;" />
+<figcaption style="margin-top: 8px; font-size: 0.88rem; color: #555;">Native device-pixel grid overlay with DPI-proportional spacing and adaptive zoom-out subdivisions (v5.24.3).</figcaption>
+</figure>
+
+<ul>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Native Device-Pixel Overlay:</strong> The grid renders in a dedicated fixed viewport layer aligned cleanly to your paper bounds (matching <a href="../crisp-margin-guides/">Crisp Margin Guides</a>) rather than sitting inside CSS <code>scale(zoom)</code> transforms. Every grid line stays a crisp <code>1px</code> screen pixel even at <code>20%</code> Fit-Page zoom, and clips cleanly to the active viewport during panning, scrolling, and zooming.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Automatic Print &amp; Overview Exclusion:</strong> The viewport grid overlay hides automatically in <strong>Multi-Page Overview</strong>, whenever Grid is toggled off, and inside all print/PDF outputs.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Consistent Physical Cell Density Across DPI:</strong> Your configured grid spacing (<code>20px</code> default at <code>96 DPI</code>) now scales automatically by <code>activeDpi / 96</code> (for example, <code>62.5px</code> in canvas coordinates at <code>300 DPI</code>) so grid cells always represent the same real-world physical spacing relative to page rulers instead of shrinking into overly dense squares on high-DPI documents.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Adaptive Zoom-Out Subdivisions:</strong> If extreme zoom-out or a very fine custom grid interval drops screen line spacing below <code>10px</code>, OpenPublisher automatically steps visible grid lines by powers of <code>2</code> so lines remain clear instead of washing out into a solid tint, seamlessly restoring full <code>1:1</code> subdivisions as you zoom back in.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Synchronized Snap to Grid:</strong> <a href="../snapping-smart-guides/">Snap to Grid</a> reads the exact same active spacing and <code>activeDpi / 96</code> scale factor, keeping dragged or resized elements locked accurately to visible grid intersections at every resolution.</span></p>
+</li>
+</ul>
 </div>
 	</div>
 

@@ -1401,6 +1401,32 @@ footer[role="contentinfo"] {
 </ul>
 <h3 class="western"><span style="color: #007670;">Native Desktop Drag Zone Clearance</span></h3>
 <p class="western">In standalone desktop client wrappers (such as NW.js or Electron), modal dialogs must coexist with operating system window frames. Version 4.17.2 tuned the dashboard positioning to a top offset of <span style="font-family: Courier New, monospace;">7vh</span> and maximum height of <span style="font-family: Courier New, monospace;">88vh</span>. This ensures the modal never obstructs native window controls (such as Windows minimize/maximize/close icons or macOS window traffic lights) regardless of display scaling.</p>
+
+<hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 32px 0;" />
+
+<h2 class="western"><span style="color: #007670;">Bright-Theme Contrast Suite &amp; Options Theme Dropdown Layering (v5.24.5)</span></h2>
+<p class="western">Expanding high-luminance accessibility across the full workspace, <strong>OpenPublisher v5.24.5</strong> eliminates remaining white-on-bright text and icon contrast issues on high-luminance themes (such as <strong>Snapchat Gold</strong>) in both Light Mode and Dark Mode, and fixes modal z-index layering when choosing UI themes from the <strong>Options</strong> window.</p>
+
+<figure style="margin: 24px 0; text-align: center;">
+<img decoding="async" loading="lazy" class="wp-image aligncenter opub-styled-img" src="../../../assets/banners/op-ContrastAndLayeringFixesAndUpdates.webp" alt="Bright-Theme Contrast Fixes and Options Theme Dropdown Layering in OpenPublisher v5.24.5" style="max-width: 100%; height: auto; border-radius: 14px !important; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.14) !important; border: 1px solid #e2e8f0 !important;" />
+<figcaption style="margin-top: 8px; font-size: 0.88rem; color: #555;">Dark foreground contrast on bright UI themes and properly layered UI Theme picker inside Options (v5.24.5).</figcaption>
+</figure>
+
+<ul>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Options Dialog Theme Dropdown Above Modals:</strong> Selecting the UI Theme control inside <strong>File &gt; Options</strong> now opens the theme dropdown cleanly above the Options modal with fixed viewport boundary clamping so it never renders behind the dialog or clips off-screen. Its active theme row uses theme-aware contrast styling in both Light Mode and Dark Mode.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Ribbon Galleries &amp; Status Bar:</strong> Page Design Theme Studio gallery buttons, Color Schemes scroll arrows, the Status Bar Page/Spreads view toggles, and the protected-document badge now switch reliably to dark text and dark icons whenever a bright accent theme is active (including when combined with Dark Mode).</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Floating Toolbars, Dropdown Arrows &amp; Number Steppers:</strong> Restored crisp dark arrow and spinner glyph contrast across modern dropdowns, spinner controls, font picker highlights, Dimensions unit badges, Charts spinners, and the floating WordArt toolbar and drag handle.</span></p>
+</li>
+<li>
+<p align="left"><span style="font-size: small;"><strong style="color: #007670;">Modals, Variable Font Studio &amp; Help Windows:</strong> Updated headers, badges, close buttons, active chips, segmented pills, category tabs, and action buttons inside the <strong>About</strong> dialog (including Knowledge Base button icon inversion), <a href="../../typography/variable-font-support-and-studio/">Variable Font Studio</a>, and <a href="../../info-settings/universal-modal-attention-flash-and-help-system/">Universal Feature Help ([?])</a> so controls remain sharp against bright accents.</span></p>
+</li>
+</ul>
+
 <p class="western"><em style="color: #007670;">Tip: You can preview how your publication canvas looks against both bright accent themes and Dark Mode by opening the UI Themes dialog from the View tab.</em></p>
 </div></div>
 
